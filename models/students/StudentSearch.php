@@ -2,6 +2,7 @@
 
 namespace app\models\students;
 
+use app\models\User;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use app\models\students\Student;
@@ -18,7 +19,7 @@ class StudentSearch extends Student
     {
         return [
             [['id', 'type', 'status', 'created_at', 'updated_at'], 'integer'],
-            [['username', 'first_name', 'last_name', 'auth_key', 'password_hash', 'password_reset_token', 'email', 'verification_token'], 'safe'],
+            [['username', 'first_name', 'last_name', 'auth_key', 'password_hash', 'password_reset_token', 'email', 'verification_token','born_date'], 'safe'],
         ];
     }
 
@@ -42,6 +43,8 @@ class StudentSearch extends Student
     {
         $query = Student::find();
 
+        $query->where(['type'=>User::Student]);
+
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
@@ -61,6 +64,7 @@ class StudentSearch extends Student
             'id' => $this->id,
             'type' => $this->type,
             'status' => $this->status,
+            'born_date'=>$this->born_date,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ]);

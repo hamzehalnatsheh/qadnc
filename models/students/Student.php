@@ -18,6 +18,7 @@ use Yii;
  * @property string|null $verification_token
  * @property int|null $type
  * @property int $status
+ * @property date born_date
  * @property int $created_at
  * @property int $updated_at
  */
@@ -45,6 +46,7 @@ class Student extends \yii\db\ActiveRecord
             [['auth_key'], 'string', 'max' => 32],
             [['username'], 'unique'],
             [['email'], 'unique'],
+            ['born_date','self'],
             [['password_reset_token'], 'unique'],
             [['file'], 'image', 'skipOnEmpty' => true, 'extensions' => 'png,jpg,jpeg,gif'],
         ];
@@ -67,6 +69,7 @@ class Student extends \yii\db\ActiveRecord
             'verification_token' => Yii::t('app', 'Verification Token'),
             'type' => Yii::t('app', 'Type'),
             'status' => Yii::t('app', 'Status'),
+            'born_date'=>Yii::t('app','Born_Date'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
         ];
