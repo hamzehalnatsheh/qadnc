@@ -23,6 +23,7 @@ use Yii;
  */
 class Student extends \yii\db\ActiveRecord
 {
+    public $file;
     /**
      * {@inheritdoc}
      */
@@ -37,14 +38,15 @@ class Student extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['username', 'auth_key', 'password_hash', 'email', 'created_at', 'updated_at'], 'required'],
-            [['type', 'status', 'created_at', 'updated_at'], 'integer'],
+            [['username', 'email'], 'required'],
+            [['type', 'status'], 'integer'],
             [['username', 'password_hash', 'password_reset_token', 'email', 'verification_token'], 'string', 'max' => 255],
             [['first_name', 'last_name'], 'string', 'max' => 100],
             [['auth_key'], 'string', 'max' => 32],
             [['username'], 'unique'],
             [['email'], 'unique'],
             [['password_reset_token'], 'unique'],
+            [['file'], 'image', 'skipOnEmpty' => true, 'extensions' => 'png,jpg,jpeg,gif'],
         ];
     }
 
@@ -70,6 +72,29 @@ class Student extends \yii\db\ActiveRecord
         ];
     }
 
+
+    /**
+     * @inheritdoc
+     */
+    public function beforeSave($insert)
+    {
+        $today=Carbon::now("Asia/Amman");
+        if (parent::beforeSave($insert)) {
+            // Place your custom code here
+            if ($this->isNewRecord) {
+                $this->created_at = $today;
+                $this->updated_at = $today;
+
+
+            } else {
+                $this->updated_at =$today;
+            }
+
+            return true;
+        } else {
+            return false;
+        }
+    }
     /**
      * {@inheritdoc}
      * @return StudentQuery the active query used by this AR class.

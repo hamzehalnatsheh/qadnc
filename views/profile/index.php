@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     <div class="row">
         <div class="col-md-3">
-            <?= $form->field($model, 'avatar')->widget(\kartik\file\FileInput::classname(), [
+            <?= $form->field($model, 'file')->widget(\kartik\file\FileInput::classname(), [
                 'options' => ['accept' => 'image/*'],
                 'pluginOptions' => [
                     'showCaption' => true,

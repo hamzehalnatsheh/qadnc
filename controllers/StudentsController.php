@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\students\Student;
 use app\models\students\StudentSearch;
+use app\models\User;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -69,7 +70,19 @@ class StudentsController extends Controller
         $model = new Student();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
+            if ($model->load($this->request->post()) && $model->validate()) {
+                $file = UploadedFile::getInstance($model, 'file');
+                $model->status=User::STATUS_ACTIVE;
+                $model->type=User::Student;
+                if (!is_null($file)) {
+                    $folder_path = "uploads/avatar/$model->id";
+                    FileHelper::createDirectory($folder_path, $mode = 0775, $recursive = true);
+                    $avatar = "$folder_path/index" . "." . $file->extension;
+                    $model->avatar = $avatar;
+                    $file->saveAs($avatar);
+                }
+                $model->save(false);
+
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
@@ -92,7 +105,18 @@ class StudentsController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
+        if ($this->request->isPost && $model->load($this->request->post()) && $model->validate()) {
+            $file = UploadedFile::getInstance($model, 'file');
+
+            if (!is_null($file)) {
+                $folder_path = "uploads/avatar/$model->id";
+                FileHelper::createDirectory($folder_path, $mode = 0775, $recursive = true);
+                $avatar = "$folder_path/index" . "." . $file->extension;
+                $model->avatar = $avatar;
+                $file->saveAs($avatar);
+            }
+            $model->save(false);
+
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
