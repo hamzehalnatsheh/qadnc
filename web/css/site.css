@@ -1,84 +1,58 @@
-main > .container {
-    padding: 70px 15px 20px;
+/* You can add global styles to this file, and also import other style files */
+@font-face{
+	font-family:'Monotype';
+	src:url('/assets/fonts/Monotype-SST-Arabic-Roman.otf');
+}
+@font-face{
+	font-family:'Monotype Medium';
+	src:url('/assets/fonts/Monotype-SST-Arabic-Medium.otf');
+}
+@font-face{
+	font-family:'Monotype Light';
+	src:url('/assets/fonts/Monotype-SST-Arabic-Light.otf');
+}
+@font-face{
+	font-family:'Monotype Bold';
+	src:url('/assets/fonts/Monotype-SST-Arabic-Bold.otf');
 }
 
-.footer {
-    background-color: #f5f5f5;
-    font-size: .9em;
-    height: 60px;
+body{
+    font-family:'Monotype Light' !important;
+    line-height: 1.4;
+    overflow-x: hidden;
+    /* margin-top: 98px; */
 }
 
-.footer > .container {
-    padding-right: 15px;
-    padding-left: 15px;
+strong, b {
+    font-family:'Monotype Bold' !important;
 }
 
-.not-set {
-    color: #c55;
-    font-style: italic;
+.text-left {
+    text-align: left;
 }
 
-/* add sorting icons to gridview sort links */
-a.asc:after, a.desc:after {
-    content: '';
-    left: 3px;
-    display: inline-block;
-    width: 0;
-    height: 0;
-    border: solid 5px transparent;
-    margin: 4px 4px 2px 4px;
-    background: transparent;
+a {
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease;
+    color: #00d0c5;
 }
 
-a.asc:after {
-    border-bottom: solid 7px #212529;
-    border-top-width: 0;
+a, a:hover {
+    text-decoration: none !important;
 }
 
-a.desc:after {
-    border-top: solid 7px #212529;
-    border-bottom-width: 0;
+footer {
+    background-color: #005a8b;
+    padding: 55px 25px;
+    color: #fff;
 }
-
-.grid-view th {
-    white-space: nowrap;
+.copyright {
+    background-color: #00d0c5;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
 }
-
-.hint-block {
-    display: block;
-    margin-top: 5px;
-    color: #999;
-}
-
-.error-summary {
-    color: #a94442;
-    background: #fdf7f7;
-    border-left: 3px solid #eed3d7;
-    padding: 10px 20px;
-    margin: 0 0 15px 0;
-}
-
-/* align the logout "link" (button in form) of the navbar */
-.nav li > form > button.logout {
-    padding-top: 7px;
-    color: rgba(255, 255, 255, 0.5);
-}
-
-@media(max-width:767px) {
-    .nav li > form > button.logout {
-        display:block;
-        text-align: left;
-        width: 100%;
-        padding: 10px 0;
-    }
-}
-
-.nav > li > form > button.logout:focus,
-.nav > li > form > button.logout:hover {
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.75);
-}
-
-.nav > li > form > button.logout:focus {
-    outline: none;
+.w-400 {
+    max-width: 400px;
 }
