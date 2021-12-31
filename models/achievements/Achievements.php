@@ -15,6 +15,9 @@ use Yii;
  */
 class Achievements extends \yii\db\ActiveRecord
 {
+    public  $file;
+    public  $vedio_file;
+    public $ext="3g2,3gp,avi,flv,h264,m4v,webm,mkv,mov,mp4,mpg,mpeg,rm,swf,vob,wmv,qt,ogv,avchd,amv,m4p,MOV";
     /**
      * {@inheritdoc}
      */
@@ -31,8 +34,9 @@ class Achievements extends \yii\db\ActiveRecord
         return [
             [['body'], 'string'],
             [['title'], 'string', 'max' => 1000],
-            [['image'], 'string', 'max' => 256],
             [['vedio'], 'string', 'max' => 265],
+            [['file'], 'image', 'skipOnEmpty' => true, 'extensions' => 'png,jpg,jpeg,gif'],
+            ['vedio_file', 'file', 'extensions' => $this->ext , 'maxSize' => 1024 * 1024 * 350 , 'tooBig' => 'Limit is 350MB'],
         ];
     }
 

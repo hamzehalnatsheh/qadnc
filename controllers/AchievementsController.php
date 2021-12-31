@@ -69,7 +69,25 @@ class AchievementsController extends Controller
         $model = new Achievements();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
+            if ($model->load($this->request->post()) && $model->validate()) {
+                $file = UploadedFile::getInstance($model, 'file');
+                $vedio_file = UploadedFile::getInstance($model, 'vedio_file');
+                if (!is_null($file)) {
+                    $folder_path = "uploads/images/$model->id";
+                    FileHelper::createDirectory($folder_path, $mode = 0775, $recursive = true);
+                    $image = "$folder_path/index" . "." . $file->extension;
+                    $model->image = $image;
+                    $file->saveAs($image);
+                }
+                if (!is_null($vedio_file)) {
+                    $folder_path = "uploads/vedios/$model->id";
+                    FileHelper::createDirectory($folder_path, $mode = 0775, $recursive = true);
+                    $vedio_path = "$folder_path/index" . "." . $file->extension;
+                    $model->vedio = $vedio_path;
+                    $file->saveAs($vedio_path);
+                }
+                $model->save(false);
+
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
@@ -92,7 +110,25 @@ class AchievementsController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
+        if ($this->request->isPost && $model->load($this->request->post()) && $model->validate()) {
+            $file = UploadedFile::getInstance($model, 'file');
+            $vedio_file = UploadedFile::getInstance($model, 'vedio_file');
+            if (!is_null($file)) {
+                $folder_path = "uploads/images/$model->id";
+                FileHelper::createDirectory($folder_path, $mode = 0775, $recursive = true);
+                $image = "$folder_path/index" . "." . $file->extension;
+                $model->image = $image;
+                $file->saveAs($image);
+            }
+            if (!is_null($vedio_file)) {
+                $folder_path = "uploads/vedios/$model->id";
+                FileHelper::createDirectory($folder_path, $mode = 0775, $recursive = true);
+                $vedio_path = "$folder_path/index" . "." . $file->extension;
+                $model->vedio = $vedio_path;
+                $file->saveAs($vedio_path);
+            }
+
+            $model->save(false);
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
