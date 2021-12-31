@@ -1,12 +1,9 @@
-<footer>
+<footer class="footer">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
                 <div class="mb-4">
                     <img src="assets/images/ligth-logo.png" alt="qadnc logo" width="300" />
-                </div>
-                <div>
-                    الرياض - حي المربع - طريق الأمير فيصل بن تركي بن عبدالعزيز
                 </div>
             </div>
         </div>

@@ -42,7 +42,7 @@ a, a:hover {
     text-decoration: none !important;
 }
 
-footer {
+.footer {
     background-color: #005a8b;
     padding: 55px 25px;
     color: #fff;
