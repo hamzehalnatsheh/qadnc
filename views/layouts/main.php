@@ -29,13 +29,11 @@ use yii\bootstrap4\Html;
         <?php include "header.php" ?>
     </header>
 
-    <main role="main" class="flex-shrink-0">
-        <div class="container">
-            <?= $content ?>
-        </div>
+    <main role="main">
+        <?= $content ?>
     </main>
 
-    <footer class="footer mt-auto py-3 text-muted">
+    <footer>
         <?php include "footer.php" ?>
     </footer>
 

@@ -1,0 +1,109 @@
+.about-us {
+    padding: 80px 0;
+}
+
+.about-us-title {
+    font-size: 50px;
+    font-weight: bold;
+    padding-bottom: 30px;
+}
+
+.about-us-orgname {
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 20px;
+    color: #00d0c5
+}
+
+.about-us-desc {
+    font-size: 20px;
+    color: gray;
+    text-align: justify;
+}
+
+.activity {
+    padding: 45px 0;
+    background: linear-gradient(135deg, #005a8b 37%, #00d0c5 100%);
+    color: #fff;
+    text-align: center;
+}
+
+.activity-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 65px;
+    position: relative;
+}
+
+.activity-body {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.activity-title:after {
+    position: absolute;
+    bottom: -0.5em;
+    left: 50%;
+    height: 0.09em;
+    content: '';
+    background: #00d0c5;
+    width: 5em;
+    margin-left: -2.5em;
+}
+
+.activity-icon img {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 8px;
+}
+
+.contact-us-icon {
+    font-size: 25px;
+}
+
+.board {
+    background: #f8f9fa;
+    padding: 80px 0;
+}
+
+.board-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 1px solid #000;
+}
+
+.slider-image {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+    width: 100%;
+    height: 90vh;
+}
+
+.slider-image:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    background: rgba(39, 66, 74, 0.32);
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-caption {
+    top:20.5rem
+}
+
+.carousel-title {
+    font-size: 67px;
+    line-height: 72px;
+    letter-spacing: 0px;
+    margin-bottom: 22px;
+}
+
+.carousel-desc {
+    font-size: 24px;
+    line-height: 35px;
+}
