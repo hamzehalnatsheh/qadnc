@@ -1,6 +1,6 @@
 
 <div id="header" >
-    <div class="site-mobile-menu">
+    <div id="siteMobile" class="site-mobile-menu">
         <div class="site-mobile-menu-header">
             <a href="javascript:MyFunction();" class="site-mobile-menu-close menu-icon mt-3 text-dark" onclick="closeMobileMenu()">
                 <i class="fas fa-times"></i>
@@ -9,12 +9,12 @@
         <div class="site-mobile-menu-body">
             <ul class="site-nav-wrap">
                 <li class="active"><a href="<?= Yii::$app->request->baseUrl?>/"><span>الرئيسية</span></a></li>
-                <li><a href="#aboutUs"><span>من نحن</span></a></li>
-                <li><a href="#activity"><span>أنشطة الجمعية</span></a></li>
-                <li><a href="#contactUs"><span>اتصل بنا</span></a></li>
-                <li><a href="/"><span>مجلس الادارة</span></a></li>
-                <li><a href="/courses"><span>الدورات</span></a></li>
-                <li><a href="/consulting"><span>الاستشارات</span></a></li>
+                <li><a href="/#aboutUs"><span>من نحن</span></a></li>
+                <li><a href="/#activity"><span>أنشطة الجمعية</span></a></li>
+                <li><a href="/#contactUs"><span>اتصل بنا</span></a></li>
+                <li><a href="/site/board"><span>مجلس الادارة</span></a></li>
+                <li><a href="/site/courses"><span>الدورات</span></a></li>
+                <li><a href="/site/consulting"><span>الاستشارات</span></a></li>
                 <li><a href="<?= Yii::$app->request->baseUrl?>/site/login"><span>تسجيل دخول</span></a></li>
             </ul>
         </div>
@@ -42,14 +42,14 @@
                                     </span>
                                 </a>
                                 <ul class="dropdown arrow-top">
-                                    <li><a href="#aboutUs">من نحن</a></li>
-                                    <li><a href="#activity">أنشطة الجمعية</a></li>
-                                    <li><a href="#contactUs">اتصل بنا</a></li>
-                                    <li><a href="#board">مجلس الادارة</a></li>
+                                    <li><a href="/#aboutUs">من نحن</a></li>
+                                    <li><a href="/#activity">أنشطة الجمعية</a></li>
+                                    <li><a href="/#contactUs">اتصل بنا</a></li>
                                 </ul>
                             </li>
-                            <li><a href="/courses"><span>الدورات</span></a></li>
-                            <li><a href="/consulting"><span>الاستشارات</span></a></li>
+                            <li><a href="/site/board"><span>مجلس الادارة</span></a></li>
+                            <li><a href="/site/courses"><span>الدورات</span></a></li>
+                            <li><a href="/site/consulting"><span>الاستشارات</span></a></li>
                             <li><a href="<?= Yii::$app->request->baseUrl?>/site/login"><span>تسجيل دخول</span></a></li>
                         </ul>
                     </nav>

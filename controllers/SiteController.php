@@ -78,6 +78,7 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
+        // $this->layout = "empty";
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
@@ -253,6 +254,33 @@ class SiteController extends Controller
         ]);
     }
 
+    /**
+     * Displays consulting.
+     *
+     * @return string
+     */
+    public function actionConsulting()
+    {
+        return $this->render('consulting');
+    }
 
+    /**
+     * Displays consulting.
+     *
+     * @return string
+     */
+    public function actionCourses()
+    {
+        return $this->render('courses');
+    }
 
+    /**
+     * Displays consulting.
+     *
+     * @return string
+     */
+    public function actionBoard()
+    {
+        return $this->render('board');
+    }
 }

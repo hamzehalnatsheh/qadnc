@@ -208,7 +208,7 @@
 .site-mobile-menu {
     width: 300px;
     position: fixed;
-    right: 0;
+    right: -300px;
     z-index: 2000;
     padding-top: 20px;
     background: #fff;
@@ -224,6 +224,7 @@
 }
 
 .offcanvas-menu .site-mobile-menu {
+    right: 0;
     -webkit-transform: translateX(0%);
     -ms-transform: translateX(0%);
     transform: translateX(0%);
@@ -413,12 +414,4 @@
 
 .menu-icon {
     font-size: 30px;
-}
-
-.sticky-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #fff;
-    z-index: 2;
 }

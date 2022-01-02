@@ -48,7 +48,7 @@ $this->title = 'My Yii Application';
     <div id="aboutUs" class="container">
         <div class="row about-us">
             <div class="col-md-4 col-12">
-                <img src="assets/images/Business-1.png" style="width: 100%;" />
+                <img src="<?= Yii::$app->request->baseUrl ?>/assets/images/Business-1.png" style="width: 100%;" />
             </div>
             <div class="col-md-8 col-12">
                 <div class="about-us-title">
@@ -88,7 +88,7 @@ $this->title = 'My Yii Application';
             <div class="row activity-body">
                 <div class="col-3">
                     <div class="activity-icon">
-                        <img src="assets/images/icon.svg" width="100%" />
+                        <img src="<?= Yii::$app->request->baseUrl ?>/assets/images/icon.svg" width="100%" />
                     </div>
                     <div>
                         الأبحاث والدراسات 
@@ -96,7 +96,7 @@ $this->title = 'My Yii Application';
                 </div>
                 <div class="col-3">
                     <div class="activity-icon">
-                        <img src="assets/images/icon.svg" width="100%" />
+                        <img src="<?= Yii::$app->request->baseUrl ?>/assets/images/icon.svg" width="100%" />
                     </div>
                     <div>
                         التوعية والتثقيف
@@ -104,7 +104,7 @@ $this->title = 'My Yii Application';
                 </div>
                 <div class="col-3">
                     <div class="activity-icon">
-                        <img src="assets/images/icon.svg" width="100%" />
+                        <img src="<?= Yii::$app->request->baseUrl ?>/assets/images/icon.svg" width="100%" />
                     </div>
                     <div>
                         التأهيل والتدريب
@@ -112,7 +112,7 @@ $this->title = 'My Yii Application';
                 </div>
                 <div class="col-3">
                     <div class="activity-icon">
-                        <img src="assets/images/icon.svg" width="100%" />
+                        <img src="<?= Yii::$app->request->baseUrl ?>/assets/images/icon.svg" width="100%" />
                     </div>
                     <div>
                         الفعاليات
@@ -124,89 +124,7 @@ $this->title = 'My Yii Application';
     </div>
 
 
-    <!-- <div id="board" class="board">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-12 ">
-                    <div class="activity-title">
-                        أعضاء مجلس الإدارة
-                    </div>
-                </div>
-            </div>
-            <div class="row mb-5">
-                <div class="col-6 text-center">
-                    <div class="mb-2">
-                        <img src="assets/images/default.png" alt="" class="board-img">
-                    </div>
-                    <div class="mb-2">
-                        <strong>
-                            عبدالله الهدلق
-                        </strong>
-                    </div>
-                    <div>
-                        رئيس مجلس الإدارة
-                    </div>
-                </div>
-                <div class="col-6 text-center">
-                    <div class="mb-2">
-                        <img src="assets/images/default.png" alt="" class="board-img">
-                    </div>
-                    <div class="mb-2">
-                        <strong>
-                            صالح الجعيلان
-                        </strong>
-                    </div>
-                    <div>
-                        نائب رئيس مجلس الإدارة
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4 text-center">
-                    <div class="mb-2">
-                        <img src="assets/images/default.png" alt="" class="board-img">
-                    </div>
-                    <div class="mb-2">
-                        <strong>
-                            عبده أزيبي
-                        </strong>
-                    </div>
-                    <div>
-                        المشرف المالي
-                    </div>
-                    <div>
-                        عضو مجلس إدارة
-                    </div>
-                </div>
-                <div class="col-4 text-center">
-                    <div class="mb-2">
-                        <img src="assets/images/default.png" alt="" class="board-img">
-                    </div>
-                    <div class="mb-2">
-                        <strong>
-                            يحي أزيبي
-                        </strong>
-                    </div>
-                    <div>
-                        عضو مجلس إدارة
-                    </div>
-                </div>
-                <div class="col-4 text-center">
-                    <div class="mb-2">
-                        <img src="assets/images/default.png" alt="" class="board-img">
-                    </div>
-                    <div class="mb-2">
-                        <strong>
-                            عبدالرحمن الرشيد
-                        </strong>
-                    </div>
-                    <div>
-                        عضو مجلس إدارة
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
+ 
 
     <div id="contactUs" class="container">
         <div class="row about-us">
@@ -246,7 +164,7 @@ $this->title = 'My Yii Application';
                 </div>
             </div>
             <div class="col text-left">
-                <img src="assets/images/contact-us.png" />
+                <img src="<?= Yii::$app->request->baseUrl ?>/assets/images/contact-us.png" />
             </div>
         </div>
     </div>

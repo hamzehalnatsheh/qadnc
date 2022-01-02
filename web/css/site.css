@@ -47,12 +47,148 @@ a, a:hover {
     padding: 55px 25px;
     color: #fff;
 }
+
 .copyright {
     background-color: #00d0c5;
     color: #fff;
     padding: 30px 0;
     text-align: center;
 }
+
 .w-400 {
     max-width: 400px;
+}
+
+.board {
+    background: #f8f9fa;
+    padding: 80px 0;
+}
+
+.board-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 1px solid #000;
+}
+
+.activity-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 65px;
+    position: relative;
+}
+
+.activity-body {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.activity-title:after {
+    position: absolute;
+    bottom: -0.5em;
+    left: 50%;
+    height: 0.09em;
+    content: '';
+    background: #00d0c5;
+    width: 5em;
+    margin-left: -2.5em;
+}
+
+.btn-green {
+    color: #00d0c5;
+    border-color: #00d0c5;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 10px;
+}
+
+.btn-green:hover {
+    color: #fff;
+    background-color: #00d0c5;
+    border-color: #00d0c5;
+}
+
+.courses-body {
+    padding: 80px 0;
+    background-color: #f8f9fa;  
+}
+
+.card {
+    box-shadow: 0 0 10px #ccc;
+    -webkit-box-shadow: 0 0 10px #ccc;
+}
+
+.category {
+    color: #999;
+    font-size: 14px;
+}
+
+.activity-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.activity-title:after {
+    position: absolute;
+    bottom: -0.5em;
+    left: 50%;
+    height: 0.09em;
+    content: '';
+    background: #00d0c5;
+    width: 5em;
+    margin-left: -2.5em;
+}
+
+.consulting-body {
+    padding: 80px 0;
+    background-color: #f8f9fa;  
+}
+
+.activity-title {
+    font-size: 30px;
+    font-weight: bold;
+    position: relative;
+}
+
+.activity-title:after {
+    position: absolute;
+    bottom: -0.5em;
+    left: 50%;
+    height: 0.09em;
+    content: '';
+    background: #00d0c5;
+    width: 5em;
+    margin-left: -2.5em;
+}
+
+.btn-primary {
+    min-width: 90px;
+    /* float: left; */
+    background-color: #00d0c5;
+    border-color: #00d0c5;
+}
+
+.pull-left {
+    float: left;
+}
+
+.registration-box {
+    border: 1px solid #ced4da;
+    padding: 12px 6px;
+    border-radius: 0.25rem;
+}
+
+.login-box {
+    max-width: 480px;
+    margin: auto;
+}
+
+.border-left {
+    border-left: 1px solid #ced4da;
+}
+
+.f-20 {
+    font-size: 20px;
 }

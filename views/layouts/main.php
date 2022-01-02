@@ -22,14 +22,14 @@ use yii\bootstrap4\Html;
     <?php $this->head() ?>
 </head>
 
-<body class="d-flex flex-column h-100" dir="rtl">
+<body id="body" class="d-flex flex-column h-100" dir="rtl">
     <?php $this->beginBody() ?>
 
     <header>
         <?php include "header.php" ?>
     </header>
 
-    <main role="main">
+    <main id="main" role="main">
         <?= $content ?>
     </main>
 
