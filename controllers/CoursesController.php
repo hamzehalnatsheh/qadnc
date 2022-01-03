@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use app\models\courses\Courses;
 use app\models\courses\CoursesSearch;
-use app\models\User;
+use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -16,11 +16,10 @@ class CoursesController extends Controller
 {
     public function init()
     {
-        if (!\Yii::$app->user->isGuest) {
-            $this->layout = "admin";
-            if (Yii::$app->user->identity->type != User::SUPER_ADMIN) {
-                throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
-            }
+        $this->layout = "admin";
+
+        if (Yii::$app->user->isGuest) {
+            //throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
         }
         parent::init();
     }

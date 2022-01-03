@@ -98,6 +98,10 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/bootstrap-fileinput" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-widget-fileinput" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-widget-datepicker" />
+      <excludeFolder url="file://$MODULE_DIR$/runtime/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/runtime/debug" />
+      <excludeFolder url="file://$MODULE_DIR$/runtime/gii-2.0.43" />
+      <excludeFolder url="file://$MODULE_DIR$/runtime/logs" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
