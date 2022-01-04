@@ -2,6 +2,8 @@
 
 namespace app\controllers;
 
+use app\models\consultation\Consultation;
+use app\models\Consulting;
 use app\models\PasswordResetRequestForm;
 use app\models\ResendVerificationEmailForm;
 use app\models\ResetPasswordForm;
@@ -261,7 +263,21 @@ class SiteController extends Controller
      */
     public function actionConsulting()
     {
-        return $this->render('consulting');
+
+        $model = new Consultation();
+
+        if ($this->request->isPost) {
+            if ($model->load($this->request->post()) && $model->save()) {
+                Yii::$app->session->setFlash('success-consulting');
+            }
+        } else {
+            $model->loadDefaultValues();
+        }
+
+        return $this->render('consulting', [
+            'model' => $model,
+        ]);
+
     }
 
     /**

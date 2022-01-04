@@ -2,27 +2,17 @@
 
 namespace app\controllers;
 
-use app\models\courses\Courses;
-use app\models\courses\CoursesSearch;
-use Yii;
+use app\models\consultation\Consultation;
+use app\models\consultation\ConsultationSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * CoursesController implements the CRUD actions for Courses model.
+ * ConsultationController implements the CRUD actions for Consultation model.
  */
-class CoursesController extends Controller
+class ConsultationController extends Controller
 {
-    public function init()
-    {
-        $this->layout = "admin";
-
-        if (Yii::$app->user->isGuest) {
-            //throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
-        }
-        parent::init();
-    }
     /**
      * @inheritDoc
      */
@@ -42,12 +32,12 @@ class CoursesController extends Controller
     }
 
     /**
-     * Lists all Courses models.
+     * Lists all Consultation models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new CoursesSearch();
+        $searchModel = new ConsultationSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -57,7 +47,7 @@ class CoursesController extends Controller
     }
 
     /**
-     * Displays a single Courses model.
+     * Displays a single Consultation model.
      * @param int $id ID
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -70,27 +60,16 @@ class CoursesController extends Controller
     }
 
     /**
-     * Creates a new Courses model.
+     * Creates a new Consultation model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Courses();
+        $model = new Consultation();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->validate()) {
-                $file = UploadedFile::getInstance($model, 'file');
-
-                if (!is_null($file)) {
-                    $folder_path = "uploads/avatar/$model->id";
-                    FileHelper::createDirectory($folder_path, $mode = 0775, $recursive = true);
-                    $imge = "$folder_path/index" . "." . $file->extension;
-                    $model->image = $imge;
-                    $file->saveAs($imge);
-                }
-                $model->save(false);
-
+            if ($model->load($this->request->post()) && $model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
@@ -103,7 +82,7 @@ class CoursesController extends Controller
     }
 
     /**
-     * Updates an existing Courses model.
+     * Updates an existing Consultation model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param int $id ID
      * @return mixed
@@ -113,17 +92,7 @@ class CoursesController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->validate()) {
-            $file = UploadedFile::getInstance($model, 'file');
-
-            if (!is_null($file)) {
-                $folder_path = "uploads/avatar/$model->id";
-                FileHelper::createDirectory($folder_path, $mode = 0775, $recursive = true);
-                $imge = "$folder_path/index" . "." . $file->extension;
-                $model->image = $imge;
-                $file->saveAs($imge);
-            }
-            $model->save(false);
+        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
@@ -133,7 +102,7 @@ class CoursesController extends Controller
     }
 
     /**
-     * Deletes an existing Courses model.
+     * Deletes an existing Consultation model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param int $id ID
      * @return mixed
@@ -147,15 +116,15 @@ class CoursesController extends Controller
     }
 
     /**
-     * Finds the Courses model based on its primary key value.
+     * Finds the Consultation model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param int $id ID
-     * @return Courses the loaded model
+     * @return Consultation the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Courses::findOne($id)) !== null) {
+        if (($model = Consultation::findOne($id)) !== null) {
             return $model;
         }
 
