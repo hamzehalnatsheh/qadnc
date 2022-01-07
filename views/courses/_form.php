@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use dosamigos\datepicker\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\courses\Courses */
@@ -16,25 +17,27 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'start_at')->widget(\kartik\date\DatePicker::classname(), [
-         'options' => ['placeholder' => 'Enter birth date ...'],
-         'pluginOptions' => [
-             'autoclose' => true
-         ]
-     ]);
-    ?>
+    <?= $form->field($model, 'start_at')->widget(
+        DatePicker::className(), [
+        // inline too, not bad
+        'inline' => false,
 
-    <?= $form->field($model, 'end_at')->widget(DatePicker::classname(), [
-         'options' => ['placeholder' => 'Enter birth date ...'],
-         'pluginOptions' => [
-             'autoclose' => true
-         ]
-     ]);
+        'clientOptions' => [
+            'autoclose' => true,
+            'format' => 'dd-M-yyyy'
+        ]
+    ]);?>
 
-    ?>
+    <?= $form->field($model, 'end_at')->widget(
+        DatePicker::className(), [
+        // inline too, not bad
+        'inline' => false,
 
-
-
+        'clientOptions' => [
+            'autoclose' => true,
+            'format' => 'dd-M-yyyy'
+        ]
+    ]);?>
 
 
 
@@ -45,16 +48,17 @@ use yii\widgets\ActiveForm;
 //                        'showRemove' => true,
                     'showUpload' => false,
                     'initialPreview' => [
-                        Yii::getAlias('@web') .'/'.Yii::$app->user->identity->avatar
+                        Yii::getAlias('@web')
                     ],
                     'initialPreviewAsData' => true,
-                    'initialCaption' => Yii::getAlias('@web') . '/' . Yii::$app->user->identity->avatar,
+                    'initialCaption' => Yii::getAlias('@web'),
                     'initialPreviewConfig' => [
-                        ['caption' => Yii::$app->user->identity->name],
+
                     ],
                     'overwriteInitial'=>true
                 ]
             ]);
+
     ?>
     <?= $form->field($model, 'category')->textInput() ?>
 

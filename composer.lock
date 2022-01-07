@@ -4,8 +4,111 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "166a44b95290ec0625364ef6b79d80a8",
+    "content-hash": "c26d929db1a6ae41bcfb4356298a5c19",
     "packages": [
+        {
+            "name": "2amigos/yii2-date-picker-widget",
+            "version": "1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/2amigos/yii2-date-picker-widget.git",
+                "reference": "d09c2444e8c2329e38528bba77002dd65186c1ff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/2amigos/yii2-date-picker-widget/zipball/d09c2444e8c2329e38528bba77002dd65186c1ff",
+                "reference": "d09c2444e8c2329e38528bba77002dd65186c1ff",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/bootstrap-datepicker": "1.7.0",
+                "yiisoft/yii2": ">=2.0.9",
+                "yiisoft/yii2-bootstrap": "*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                },
+                "asset-installer-paths": {
+                    "bower-asset-library": "vendor/bower"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "dosamigos\\datepicker\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "2amigOS! Consulting Group",
+                    "email": "hola@2amigos.us",
+                    "homepage": "http://2amigos.us",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Bootstrap DatePicker widget for Yii2.",
+            "homepage": "http://yiiwheels.com/extension/bootstrap-datepicker",
+            "keywords": [
+                "2amigos",
+                "datepicker",
+                "extension",
+                "widget",
+                "yii",
+                "yii 2",
+                "yii2"
+            ],
+            "time": "2017-07-05T05:52:03+00:00"
+        },
+        {
+            "name": "bower-asset/bootstrap",
+            "version": "v3.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twbs/bootstrap.git",
+                "reference": "68b0d231a13201eb14acd3dc84e51543d16e5f7e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/68b0d231a13201eb14acd3dc84e51543d16e5f7e",
+                "reference": "68b0d231a13201eb14acd3dc84e51543d16e5f7e"
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.9.1,<4.0"
+            },
+            "type": "bower-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/bootstrap-datepicker",
+            "version": "v1.7.0",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:eternicode/bootstrap-datepicker.git",
+                "reference": "d364be5b066b38f3675a5a1dc174ce1ab1f3360e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/eternicode/bootstrap-datepicker/zipball/d364be5b066b38f3675a5a1dc174ce1ab1f3360e",
+                "reference": "d364be5b066b38f3675a5a1dc174ce1ab1f3360e"
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.7.1,<4.0.0"
+            },
+            "type": "bower-asset",
+            "license": [
+                "Apache-2.0"
+            ]
+        },
         {
             "name": "bower-asset/inputmask",
             "version": "3.3.11",
@@ -32,7 +135,7 @@
             "version": "3.6.0",
             "source": {
                 "type": "git",
-                "url": "git@github.com:jquery/jquery-dist.git",
+                "url": "https://github.com/jquery/jquery-dist.git",
                 "reference": "e786e3d9707ffd9b0dd330ca135b66344dcef85a"
             },
             "dist": {
@@ -1312,16 +1415,16 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v5.4.1",
+            "version": "v5.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "8c82cd35ed861236138d5ae1c78c0c7ebcd62107"
+                "reference": "ff8bb2107b6a549dc3c5dd9c498dcc82c9c098ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/8c82cd35ed861236138d5ae1c78c0c7ebcd62107",
-                "reference": "8c82cd35ed861236138d5ae1c78c0c7ebcd62107",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/ff8bb2107b6a549dc3c5dd9c498dcc82c9c098ca",
+                "reference": "ff8bb2107b6a549dc3c5dd9c498dcc82c9c098ca",
                 "shasum": ""
             },
             "require": {
@@ -1402,7 +1505,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-12-05T20:33:52+00:00"
+            "time": "2021-12-25T19:45:36+00:00"
         },
         {
             "name": "symfony/translation-contracts",
@@ -1481,16 +1584,16 @@
         },
         {
             "name": "yiisoft/yii2",
-            "version": "2.0.43",
+            "version": "2.0.44",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "f370955faa3067d9b27879aaf14b0978a805cd59"
+                "reference": "fa89647a2d2c5de1c12c65eb94084404f52a6059"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/f370955faa3067d9b27879aaf14b0978a805cd59",
-                "reference": "f370955faa3067d9b27879aaf14b0978a805cd59",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/fa89647a2d2c5de1c12c65eb94084404f52a6059",
+                "reference": "fa89647a2d2c5de1c12c65eb94084404f52a6059",
                 "shasum": ""
             },
             "require": {
@@ -1592,7 +1695,94 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-08-09T17:38:43+00:00"
+            "time": "2021-12-30T07:50:56+00:00"
+        },
+        {
+            "name": "yiisoft/yii2-bootstrap",
+            "version": "2.0.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-bootstrap.git",
+                "reference": "83d144f4089adaa7064ad60dc4c1436daa2eb30e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/83d144f4089adaa7064ad60dc4c1436daa2eb30e",
+                "reference": "83d144f4089adaa7064ad60dc4c1436daa2eb30e",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/bootstrap": "3.4.* | 3.3.* | 3.2.* | 3.1.*",
+                "yiisoft/yii2": "~2.0.6"
+            },
+            "require-dev": {
+                "cweagans/composer-patches": "^1.7",
+                "phpunit/phpunit": "4.8.34"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                },
+                "patches": {
+                    "phpunit/phpunit-mock-objects": {
+                        "Fix PHP 7 and 8 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_mock_objects.patch"
+                    },
+                    "phpunit/phpunit": {
+                        "Fix PHP 7 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_php7.patch",
+                        "Fix PHP 8 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_php8.patch"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii\\bootstrap\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Qiang Xue",
+                    "email": "qiang.xue@gmail.com",
+                    "homepage": "http://www.yiiframework.com/"
+                },
+                {
+                    "name": "Alexander Makarov",
+                    "email": "sam@rmcreative.ru",
+                    "homepage": "http://rmcreative.ru/"
+                },
+                {
+                    "name": "Antonio Ramirez",
+                    "email": "amigo.cobos@gmail.com"
+                },
+                {
+                    "name": "Paul Klimov",
+                    "email": "klimov.paul@gmail.com"
+                }
+            ],
+            "description": "The Twitter Bootstrap extension for the Yii framework",
+            "keywords": [
+                "bootstrap",
+                "yii2"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/yiisoft",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/yiisoft",
+                    "type": "open_collective"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/yiisoft/yii2-bootstrap",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-08-09T20:54:06+00:00"
         },
         {
             "name": "yiisoft/yii2-bootstrap4",
@@ -1758,26 +1948,40 @@
         },
         {
             "name": "yiisoft/yii2-swiftmailer",
-            "version": "2.1.2",
+            "version": "2.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-swiftmailer.git",
-                "reference": "09659a55959f9e64b8178d842b64a9ffae42b994"
+                "reference": "7b7ec871b4a63c0abbcd10e1ee3fb5be22f8b340"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-swiftmailer/zipball/09659a55959f9e64b8178d842b64a9ffae42b994",
-                "reference": "09659a55959f9e64b8178d842b64a9ffae42b994",
+                "url": "https://api.github.com/repos/yiisoft/yii2-swiftmailer/zipball/7b7ec871b4a63c0abbcd10e1ee3fb5be22f8b340",
+                "reference": "7b7ec871b4a63c0abbcd10e1ee3fb5be22f8b340",
                 "shasum": ""
             },
             "require": {
                 "swiftmailer/swiftmailer": "~6.0",
                 "yiisoft/yii2": ">=2.0.4"
             },
+            "require-dev": {
+                "cweagans/composer-patches": "^1.7",
+                "phpunit/phpunit": "4.8.34"
+            },
             "type": "yii2-extension",
             "extra": {
                 "branch-alias": {
                     "dev-master": "2.1.x-dev"
+                },
+                "composer-exit-on-patch-failure": true,
+                "patches": {
+                    "phpunit/phpunit-mock-objects": {
+                        "Fix PHP 7 and 8 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_mock_objects.patch"
+                    },
+                    "phpunit/phpunit": {
+                        "Fix PHP 7 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_php7.patch",
+                        "Fix PHP 8 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_php8.patch"
+                    }
                 }
             },
             "autoload": {
@@ -1804,7 +2008,21 @@
                 "swiftmailer",
                 "yii2"
             ],
-            "time": "2018-09-23T22:00:47+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/yiisoft",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/yiisoft",
+                    "type": "open_collective"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/yiisoft/yii2-swiftmailer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-12-30T08:48:48+00:00"
         }
     ],
     "packages-dev": [
@@ -2934,16 +3152,16 @@
         },
         {
             "name": "phpdocumentor/type-resolver",
-            "version": "1.5.1",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/TypeResolver.git",
-                "reference": "a12f7e301eb7258bb68acd89d4aefa05c2906cae"
+                "reference": "93ebd0014cab80c4ea9f5e297ea48672f1b87706"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/a12f7e301eb7258bb68acd89d4aefa05c2906cae",
-                "reference": "a12f7e301eb7258bb68acd89d4aefa05c2906cae",
+                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/93ebd0014cab80c4ea9f5e297ea48672f1b87706",
+                "reference": "93ebd0014cab80c4ea9f5e297ea48672f1b87706",
                 "shasum": ""
             },
             "require": {
@@ -2976,7 +3194,7 @@
                 }
             ],
             "description": "A PSR-5 based resolver of Class names, Types and Structural Element Names",
-            "time": "2021-10-02T14:08:47+00:00"
+            "time": "2022-01-04T19:58:01+00:00"
         },
         {
             "name": "phpspec/php-diff",
@@ -3451,22 +3669,27 @@
         },
         {
             "name": "psr/container",
-            "version": "1.1.2",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/container.git",
-                "reference": "513e0666f7216c7459170d56df27dfcefe1689ea"
+                "reference": "c71ecc56dfe541dbd90c5360474fbc405f8d5963"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/container/zipball/513e0666f7216c7459170d56df27dfcefe1689ea",
-                "reference": "513e0666f7216c7459170d56df27dfcefe1689ea",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/c71ecc56dfe541dbd90c5360474fbc405f8d5963",
+                "reference": "c71ecc56dfe541dbd90c5360474fbc405f8d5963",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.4.0"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Psr\\Container\\": "src/"
@@ -3491,7 +3714,7 @@
                 "container-interop",
                 "psr"
             ],
-            "time": "2021-11-05T16:50:12+00:00"
+            "time": "2021-11-05T16:47:00+00:00"
         },
         {
             "name": "psr/event-dispatcher",
@@ -4421,16 +4644,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v5.4.1",
+            "version": "v5.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "9130e1a0fc93cb0faadca4ee917171bd2ca9e5f4"
+                "reference": "a2c6b7ced2eb7799a35375fb9022519282b5405e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/9130e1a0fc93cb0faadca4ee917171bd2ca9e5f4",
-                "reference": "9130e1a0fc93cb0faadca4ee917171bd2ca9e5f4",
+                "url": "https://api.github.com/repos/symfony/console/zipball/a2c6b7ced2eb7799a35375fb9022519282b5405e",
+                "reference": "a2c6b7ced2eb7799a35375fb9022519282b5405e",
                 "shasum": ""
             },
             "require": {
@@ -4513,20 +4736,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-12-09T11:22:43+00:00"
+            "time": "2021-12-20T16:11:12+00:00"
         },
         {
             "name": "symfony/css-selector",
-            "version": "v5.4.0",
+            "version": "v5.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
-                "reference": "44b933f98bb4b5220d10bed9ce5662f8c2d13dcc"
+                "reference": "cfcbee910e159df402603502fe387e8b677c22fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/css-selector/zipball/44b933f98bb4b5220d10bed9ce5662f8c2d13dcc",
-                "reference": "44b933f98bb4b5220d10bed9ce5662f8c2d13dcc",
+                "url": "https://api.github.com/repos/symfony/css-selector/zipball/cfcbee910e159df402603502fe387e8b677c22fd",
+                "reference": "cfcbee910e159df402603502fe387e8b677c22fd",
                 "shasum": ""
             },
             "require": {
@@ -4576,20 +4799,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-09-09T08:06:01+00:00"
+            "time": "2021-12-16T21:58:21+00:00"
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "v4.4.30",
+            "version": "v4.4.36",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",
-                "reference": "4632ae3567746c7e915c33c67a2fb6ab746090c4"
+                "reference": "42de12bee3b5e594977209bcdf58ec4fef8dde39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/4632ae3567746c7e915c33c67a2fb6ab746090c4",
-                "reference": "4632ae3567746c7e915c33c67a2fb6ab746090c4",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/42de12bee3b5e594977209bcdf58ec4fef8dde39",
+                "reference": "42de12bee3b5e594977209bcdf58ec4fef8dde39",
                 "shasum": ""
             },
             "require": {
@@ -4647,7 +4870,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-08-28T15:40:01+00:00"
+            "time": "2021-12-28T14:48:02+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -4809,16 +5032,16 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v5.4.0",
+            "version": "v5.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "d2f29dac98e96a98be467627bd49c2efb1bc2590"
+                "reference": "e77046c252be48c48a40816187ed527703c8f76c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/d2f29dac98e96a98be467627bd49c2efb1bc2590",
-                "reference": "d2f29dac98e96a98be467627bd49c2efb1bc2590",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/e77046c252be48c48a40816187ed527703c8f76c",
+                "reference": "e77046c252be48c48a40816187ed527703c8f76c",
                 "shasum": ""
             },
             "require": {
@@ -4865,7 +5088,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-11-28T15:25:38+00:00"
+            "time": "2021-12-15T11:06:13+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -5099,37 +5322,29 @@
         },
         {
             "name": "symfony/service-contracts",
-            "version": "v2.5.0",
+            "version": "v1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/service-contracts.git",
-                "reference": "1ab11b933cd6bc5464b08e81e2c5b07dec58b0fc"
+                "reference": "191afdcb5804db960d26d8566b7e9a2843cab3a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/1ab11b933cd6bc5464b08e81e2c5b07dec58b0fc",
-                "reference": "1ab11b933cd6bc5464b08e81e2c5b07dec58b0fc",
+                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/191afdcb5804db960d26d8566b7e9a2843cab3a0",
+                "reference": "191afdcb5804db960d26d8566b7e9a2843cab3a0",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2.5",
-                "psr/container": "^1.1",
-                "symfony/deprecation-contracts": "^2.1"
-            },
-            "conflict": {
-                "ext-psr": "<1.1|>=2"
+                "php": "^7.1.3"
             },
             "suggest": {
+                "psr/container": "",
                 "symfony/service-implementation": ""
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.5-dev"
-                },
-                "thanks": {
-                    "name": "symfony/contracts",
-                    "url": "https://github.com/symfony/contracts"
+                    "dev-master": "1.1-dev"
                 }
             },
             "autoload": {
@@ -5161,34 +5376,20 @@
                 "interoperability",
                 "standards"
             ],
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2021-11-04T16:48:04+00:00"
+            "time": "2019-05-28T07:50:59+00:00"
         },
         {
             "name": "symfony/string",
-            "version": "v5.4.0",
+            "version": "v5.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/string.git",
-                "reference": "9ffaaba53c61ba75a3c7a3a779051d1e9ec4fd2d"
+                "reference": "e6a5d5ecf6589c5247d18e0e74e30b11dfd51a3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/string/zipball/9ffaaba53c61ba75a3c7a3a779051d1e9ec4fd2d",
-                "reference": "9ffaaba53c61ba75a3c7a3a779051d1e9ec4fd2d",
+                "url": "https://api.github.com/repos/symfony/string/zipball/e6a5d5ecf6589c5247d18e0e74e30b11dfd51a3d",
+                "reference": "e6a5d5ecf6589c5247d18e0e74e30b11dfd51a3d",
                 "shasum": ""
             },
             "require": {
@@ -5258,20 +5459,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-11-24T10:02:00+00:00"
+            "time": "2021-12-16T21:52:00+00:00"
         },
         {
             "name": "symfony/yaml",
-            "version": "v5.4.0",
+            "version": "v5.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "034ccc0994f1ae3f7499fa5b1f2e75d5e7a94efc"
+                "reference": "b9eb163846a61bb32dfc147f7859e274fab38b58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/034ccc0994f1ae3f7499fa5b1f2e75d5e7a94efc",
-                "reference": "034ccc0994f1ae3f7499fa5b1f2e75d5e7a94efc",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/b9eb163846a61bb32dfc147f7859e274fab38b58",
+                "reference": "b9eb163846a61bb32dfc147f7859e274fab38b58",
                 "shasum": ""
             },
             "require": {
@@ -5330,7 +5531,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-11-28T15:25:38+00:00"
+            "time": "2021-12-16T21:58:21+00:00"
         },
         {
             "name": "theseer/tokenizer",
@@ -5592,16 +5793,16 @@
         },
         {
             "name": "yiisoft/yii2-gii",
-            "version": "2.2.3",
+            "version": "2.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-gii.git",
-                "reference": "eb14e9cc4c9d80a59e1252e5200600b42aa2bfbf"
+                "reference": "80893fc4c0df97f3638938948bf34ca43dd8bff6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/eb14e9cc4c9d80a59e1252e5200600b42aa2bfbf",
-                "reference": "eb14e9cc4c9d80a59e1252e5200600b42aa2bfbf",
+                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/80893fc4c0df97f3638938948bf34ca43dd8bff6",
+                "reference": "80893fc4c0df97f3638938948bf34ca43dd8bff6",
                 "shasum": ""
             },
             "require": {
@@ -5664,7 +5865,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-08-09T21:07:34+00:00"
+            "time": "2021-12-30T08:36:02+00:00"
         }
     ],
     "aliases": [],
