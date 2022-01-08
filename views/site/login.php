@@ -10,63 +10,59 @@ use yii\bootstrap4\ActiveForm;
 $this->title = 'تسجيل الدخول';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-login courses-body">
-    <div class="container">
+<link rel="stylesheet" href="<?= Yii::$app->request->baseUrl ?>/css/bootstrap.rtl.min.css" />
+<link rel="stylesheet" href="<?= Yii::$app->request->baseUrl ?>/css/all.min.css" />
+<link rel="stylesheet" href="<?= Yii::$app->request->baseUrl ?>/css/site.css" />
+<link rel="stylesheet" href="<?= Yii::$app->request->baseUrl ?>/css/login.css" />
+<div class="site-login login">
+    <div class="login-container">
 
         <!-- <p>Please fill out the following fields to login:</p> -->
 
         <div class="row">
-            <div class="col-lg-6 border-left">
-                <div class="login-box">
+            <div class="col-lg-6 login-right-side">
+                <div class="content">
+                    <!-- <div class="text-center mb-4">
+                        <a href="/">
+                            <img src="<?= Yii::$app->request->baseUrl ?>/images/dark-logo.png" alt="qadnc logo" class="site-logo" />
+                        </a>
+                    </div> -->
                     <h1><?= Html::encode($this->title) ?></h1>
                     <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
-                    <?= $form->field($model, 'username')->textInput(['autofocus' => true,'placeholder'=>Yii::t('app','Username')])->label('')  ?>
+                    <?= $form->field($model, 'username')->textInput(['autofocus' => true, 'placeholder' => Yii::t('app', 'Username')])->label('')  ?>
 
-                    <?= $form->field($model, 'password')->passwordInput(['placeholder'=>Yii::t('app','Password')])->label('') ?>
+                    <?= $form->field($model, 'password')->passwordInput(['placeholder' => Yii::t('app', 'Password')])->label('') ?>
 
-                    <div style="color:#999;margin:1em 0">
-                        هل نسيت كلمة المرور؟ <?= Html::a(Yii::t('app','reset it'), ['site/request-password-reset']) ?>.
-                        <br>
-                        <!-- Need new verification email? <?= Html::a('Resend', ['site/resend-verification-email']) ?> -->
+
+
+                    <div class="form-group mt-4">
+                        <?= Html::submitButton(Yii::t('app', 'Login'), ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
                     </div>
 
-                    <div class="form-group">
-                        <?= Html::submitButton(Yii::t('app','Login'), ['class' => 'btn btn-primary w-100', 'name' => 'login-button']) ?>
+                    <div class="mt-5">
+                        <div class="reg-options">
+                            <i class="fas fa-redo"></i>
+                            <?= Html::a(Yii::t('app', 'نسيت كلمة المرور'), ['site/request-password-reset']) ?>
+                        </div>
+                        <div class="reg-options">
+                            <i class="fas fa-user-graduate"></i>
+                            <?= Html::a(Yii::t('app', ' تسجيل الطلاب'), ['site/request-password-reset']) ?>
+                        </div>
+                        <div class="reg-options">
+                            <i class="fas fa-user-tie"></i>
+                            <?= Html::a(Yii::t('app', 'تسجيل الأعضاء'), ['site/request-password-reset']) ?>
+                        </div>
                     </div>
 
                     <?php ActiveForm::end(); ?>
                 </div>
+                <footer class="login-ft">
+                    جميع الحقوق محفوظة © الجمعية التعاونية تأهيل وتطوير الكوادر الوطنية
+                </footer>
             </div>
-            <div class="col-lg-6">
-                <div class="login-box">
-                    <div class="row">
-                        <div class="col-6 text-center">
-                            <img src="<?= Yii::$app->request->baseUrl ?>/assets/images/graduated.png" alt="" style="width: 75px">
-                            <div class="mb-3">
-                                <strong>
-                                    تسجيل طالب جديد
-                                </strong>
-                            </div>
-                            <div>
-                                <a href="#" class="btn btn-primary">
-                                    سجل الان
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-6  text-center">
-                            <img src="<?= Yii::$app->request->baseUrl ?>/assets/images/members.png" alt="" style="width: 75px">
-                            <div class="mb-3">
-                                <strong>
-                                    تسجيل عضو جديد
-                                </strong>
-                            </div>
-                            <a href="#" class="btn btn-primary">
-                                سجل الان
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-lg-6  login-left-side">
+                <div class="hero-banner"></div>
             </div>
         </div>
     </div>

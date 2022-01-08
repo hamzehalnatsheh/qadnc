@@ -1,0 +1,139 @@
+/*------------ Login CSS ---------------- */
+.login {
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    font-size: 14px;
+}
+.login .content {
+    background: #fff;
+    margin: 0 auto;
+    margin-bottom: 0px;
+    padding: 0 25px;
+    color: #555;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    border-radius: 2px;
+    z-index: 10;
+    width: 400px;
+    max-width: 98%;
+}
+.login .content .form-control {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px 0px;
+    height: 46px !important;
+    border-radius: 0px !important;
+    border: 0;
+    border-bottom: 1px solid #e2e2e2;
+    box-shadow: 0 0 0;
+    font-size: 1.3rem;
+    margin: 0 0 0px;
+    font-family: inherit !important;
+}
+.login .form-control::-webkit-input-placeholder {
+    color: #ccc;
+}
+.login .form-control::-moz-placeholder {
+    color: #ccc;
+}
+.login .form-control:-ms-input-placeholder {
+    color: #ccc;
+}
+.login .form-control:-moz-placeholder {
+    color: #ccc;
+}
+.login .hero-banner {
+    background: url("/images/Roadmap-1.jpg") no-repeat center top;
+    background-size: cover;
+    min-height: 100vh;
+    height: 100%;
+    position: relative;
+    display: block;
+    display: flex;
+    align-items: flex-end;
+    color: #fff;
+}
+.login .hero-banner:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #1f1647;
+    opacity: 0.1;
+}
+.login .login-right-side {
+    position: relative;
+    display: block;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background: #fff;
+}
+.login .login-right-side:before {
+    content: "";
+    display: block;
+    width: 50vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: auto;
+    left: -61px;
+    background: #fff;
+    z-index: 1;
+    transform: skew(7deg, 0deg);
+    -webkit-transform: skew(7deg, 0deg);
+    -moz-transform: skew(7deg, 0deg);
+    -o-transform: skew(7deg, 0deg);
+    -ms-transform: skew(6deg, 0deg);
+}
+.login .login-left-side,
+.login .login-right-side {
+    padding: 0;
+    min-height: 100vh;
+}
+
+.btn-primary {
+    padding: 13px 25px 18px;
+    line-height: 1;
+    width: 100%;
+    cursor: pointer;
+    background-color: #005a8b;
+    border-color: #005a8b;
+    border-radius: 0;
+    font-size: 1.3rem;
+}
+
+.login-ft {
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    width: 100%;
+    left: 0;
+    overflow: hidden;
+    z-index: 2;
+    font-size: 0.85rem;
+    color: #999;
+    text-align: center;
+}
+.reg-options {
+    background: #eff2f8;
+    border-bottom: 1px solid #fff;
+    padding: 10px 15px 12px 10px;
+    color: #575757;
+    line-height: 1;
+    font-size: 1rem;
+}
+.reg-options i {
+    padding-left: 10px;
+    font-size: 19px;
+}
+.reg-options a {
+    color: #575757;
+    font-weight: bold;
+}
+/*------------ End Login CSS ---------------- */

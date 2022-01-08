@@ -10,7 +10,7 @@
         <div class="row mb-5">
             <div class="col-6 text-center">
                 <div class="mb-3">
-                    <img src="<?= Yii::$app->request->baseUrl ?>/assets/images/default.png" alt="" class="board-img">
+                    <img src="<?= Yii::$app->request->baseUrl ?>/images/default.png" alt="" class="board-img">
                 </div>
                 <div class="mb-2">
                     <strong>
@@ -28,7 +28,7 @@
             </div>
             <div class="col-6 text-center">
                 <div class="mb-3">
-                    <img src="<?= Yii::$app->request->baseUrl ?>/assets/images/default.png" alt="" class="board-img">
+                    <img src="<?= Yii::$app->request->baseUrl ?>/images/default.png" alt="" class="board-img">
                 </div>
                 <div class="mb-2">
                     <strong>
@@ -48,7 +48,7 @@
         <div class="row">
             <div class="col-4 text-center">
                 <div class="mb-3">
-                    <img src="<?= Yii::$app->request->baseUrl ?>/assets/images/default.png" alt="" class="board-img">
+                    <img src="<?= Yii::$app->request->baseUrl ?>/images/default.png" alt="" class="board-img">
                 </div>
                 <div class="mb-2">
                     <strong>
@@ -69,7 +69,7 @@
             </div>
             <div class="col-4 text-center">
                 <div class="mb-3">
-                    <img src="<?= Yii::$app->request->baseUrl ?>/assets/images/default.png" alt="" class="board-img">
+                    <img src="<?= Yii::$app->request->baseUrl ?>/images/default.png" alt="" class="board-img">
                 </div>
                 <div class="mb-2">
                     <strong>
@@ -87,7 +87,7 @@
             </div>
             <div class="col-4 text-center">
                 <div class="mb-3">
-                    <img src="<?= Yii::$app->request->baseUrl ?>/assets/images/default.png" alt="" class="board-img">
+                    <img src="<?= Yii::$app->request->baseUrl ?>/images/default.png" alt="" class="board-img">
                 </div>
                 <div class="mb-2">
                     <strong>

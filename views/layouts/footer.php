@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                    <img src="<?= Yii::$app->request->baseUrl?>/assets/images/ligth-logo.png" alt="qadnc logo" width="300" />
+                    <img src="<?= Yii::$app->request->baseUrl?>/images/ligth-logo.png" alt="qadnc logo" width="300" />
             </div>
         </div>
     </div>
