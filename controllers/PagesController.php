@@ -8,6 +8,8 @@ use app\models\User;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use Yii;
+
 
 /**
  * PagesController implements the CRUD actions for Pages model.
@@ -16,13 +18,12 @@ class PagesController extends Controller
 {
     public function init()
     {
-        if (!Yii::$app->user->isGuest) {
-            $this->layout = "admin";
-            if (Yii::$app->user->identity->type != User::SUPER_ADMIN) {
-                throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
-            }
-        }
+        $this->layout = "admin";
         parent::init();
+        if (Yii::$app->user->isGuest) {
+            return $this->redirect('site/login');
+        }
+
     }
     /**
      * @inheritDoc

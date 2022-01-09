@@ -17,11 +17,11 @@ class CoursesController extends Controller
     public function init()
     {
         $this->layout = "admin";
-
-        if (Yii::$app->user->isGuest) {
-            //throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
-        }
         parent::init();
+        if (Yii::$app->user->isGuest) {
+            return $this->redirect('site/login');
+        }
+
     }
     /**
      * @inheritDoc

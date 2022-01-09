@@ -59,6 +59,10 @@ class ComposerStaticInit4f825adb0e671aa7197888622491e86a
         array (
             'cebe\\markdown\\' => 14,
         ),
+        'a' => 
+        array (
+            'airani\\bootstrap\\' => 17,
+        ),
         'W' => 
         array (
             'Webmozart\\Assert\\' => 17,
@@ -187,6 +191,10 @@ class ComposerStaticInit4f825adb0e671aa7197888622491e86a
         'cebe\\markdown\\' => 
         array (
             0 => __DIR__ . '/..' . '/cebe/markdown',
+        ),
+        'airani\\bootstrap\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/airani/yii2-bootstrap-rtl',
         ),
         'Webmozart\\Assert\\' => 
         array (

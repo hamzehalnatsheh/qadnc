@@ -7,12 +7,25 @@ use app\models\courses\UserCoursesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use Yii;
+
 
 /**
  * UserCoursesController implements the CRUD actions for UserCourses model.
  */
 class UserCoursesController extends Controller
 {
+
+
+    public function init()
+    {
+        $this->layout = "admin";
+        parent::init();
+        if (Yii::$app->user->isGuest) {
+            return $this->redirect('site/login');
+        }
+
+    }
     /**
      * @inheritDoc
      */

@@ -8,6 +8,7 @@ use app\models\User;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use Yii;
 
 /**
  * StudentsController implements the CRUD actions for Student model.
@@ -17,8 +18,8 @@ class StudentsController extends Controller
 
     public function init()
     {
+        $this->layout = "admin";
         if (!Yii::$app->user->isGuest) {
-            $this->layout = "admin";
             if (Yii::$app->user->identity->type != User::SUPER_ADMIN) {
                 throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
             }

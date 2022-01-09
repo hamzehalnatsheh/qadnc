@@ -15,17 +15,36 @@ use yii\web\AssetBundle;
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class AdminAsset extends AssetBundle
+class  AdminAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
-    public $css = [
-        'css/site.css',
-    ];
-    public $js = [
-    ];
+    public $css ;
+    public $js ;
     public $depends = [
         'yii\web\YiiAsset',
-       // 'yii\bootstrap4\BootstrapAsset',
+        'yii\bootstrap\BootstrapAsset',
+        'airani\bootstrap\BootstrapRtlAsset',
     ];
+
+
+    function __construct() {
+        $path_theme="theme/new";
+        $this->css=[
+            "https://use.fontawesome.com/releases/v5.0.6/css/all.css",
+            "$path_theme/css_ar/main.css",
+//            'css/site.css?v='.rand(),
+            'css/orders.css?v='.rand(),
+            'css/swiper/swiper-bundle.min.css',
+
+        ];
+        $this->js=[
+            "$path_theme/main.js",
+            'js/main.js?v='.rand(),
+            'js/custum.js?v='.rand(),
+            'js/sweetalert2/main.js',
+//            "https://js.pusher.com/beams/1.0/push-notifications-cdn.js",
+//            "https://js.pusher.com/7.0/pusher.min.js"
+        ];
+    }
 }

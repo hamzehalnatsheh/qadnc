@@ -93,4 +93,13 @@ return array (
       '@dosamigos/datepicker' => $vendorDir . '/2amigos/yii2-date-picker-widget/src',
     ),
   ),
+  'airani/yii2-bootstrap-rtl' => 
+  array (
+    'name' => 'airani/yii2-bootstrap-rtl',
+    'version' => '1.2.1.0',
+    'alias' => 
+    array (
+      '@airani/bootstrap' => $vendorDir . '/airani/yii2-bootstrap-rtl',
+    ),
+  ),
 );

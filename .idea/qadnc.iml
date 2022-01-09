@@ -106,6 +106,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-bootstrap" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bower-asset/bootstrap" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bower-asset/bootstrap-datepicker" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/airani/yii2-bootstrap-rtl" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/bower-asset/bootstrap-rtl" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

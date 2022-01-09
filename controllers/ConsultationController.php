@@ -7,12 +7,26 @@ use app\models\consultation\ConsultationSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use Yii;
+
 
 /**
  * ConsultationController implements the CRUD actions for Consultation model.
  */
 class ConsultationController extends Controller
 {
+
+
+    public function init()
+    {
+        $this->layout = "admin";
+        parent::init();
+        if (Yii::$app->user->isGuest) {
+            return $this->redirect('site/login');
+        }
+
+    }
+
     /**
      * @inheritDoc
      */

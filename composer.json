@@ -21,7 +21,8 @@
         "nesbot/carbon": "^2.55",
         "kartik-v/yii2-widget-fileinput": "dev-master",
         "kartik-v/yii2-widget-datepicker": "@dev",
-        "2amigos/yii2-date-picker-widget": "~1.0"
+        "2amigos/yii2-date-picker-widget": "~1.0",
+        "airani/yii2-bootstrap-rtl": "^1.2"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

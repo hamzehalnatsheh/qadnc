@@ -1,4 +1,6 @@
-
+<?php
+use yii\helpers\Html;
+?>
 <div id="header" >
     <div id="siteMobile" class="site-mobile-menu">
         <div class="site-mobile-menu-header">
@@ -15,7 +17,18 @@
                 <li><a href="/site/board"><span>مجلس الادارة</span></a></li>
                 <li><a href="/site/courses"><span>الدورات</span></a></li>
                 <li><a href="/site/consulting"><span>الاستشارات</span></a></li>
-                <li><a href="<?= Yii::$app->request->baseUrl?>/site/login"><span>تسجيل دخول</span></a></li>
+                <?php if (Yii::$app->user->isGuest) :?>
+                    <li><a href="<?= Yii::$app->request->baseUrl?>/site/login"><span>تسجيل دخول</span></a></li>
+                <?php else:?>
+                    <?php  echo '<li>'
+                        . Html::beginForm(['/site/logout'], 'post')
+                        . Html::submitButton(
+                            ' تسجيل الخروج (' . Yii::$app->user->identity->username . ')',
+                            ['class' => 'btn btn-link logout']
+                        )
+                        . \yii\helpers\Html::endForm()
+                        . '</li>';?>
+                <?php endif;?>
             </ul>
         </div>
     </div>
@@ -50,7 +63,25 @@
                             <li><a href="/site/board"><span>مجلس الادارة</span></a></li>
                             <li><a href="/site/courses"><span>الدورات</span></a></li>
                             <li><a href="/site/consulting"><span>الاستشارات</span></a></li>
-                            <li><a href="<?= Yii::$app->request->baseUrl?>/site/login"><span>تسجيل دخول</span></a></li>
+
+                            <?php if (Yii::$app->user->isGuest) :?>
+                                <li><a href="<?= Yii::$app->request->baseUrl?>/site/login"><span>تسجيل دخول</span></a></li>
+                            <?php else:?>
+
+                              <?php  echo '<li>'
+                                    . Html::beginForm(['/site/logout'], 'post')
+                                    . Html::submitButton(
+                                    ' تسجيل الخروج (' . Yii::$app->user->identity->username . ')',
+                                    ['class' => 'btn btn-link logout']
+                                    )
+                                    . \yii\helpers\Html::endForm()
+                                    . '</li>';?>
+
+
+
+
+                            <?php endif;?>
+
                         </ul>
                     </nav>
                 </div>

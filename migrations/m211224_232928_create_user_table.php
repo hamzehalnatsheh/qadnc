@@ -34,6 +34,39 @@ class m211224_232928_create_user_table extends Migration
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
         ], $tableOptions);
+
+
+
+        $data=[
+            ['username'=>'admin',
+                'first_name'=>'admin',
+                'last_name'=>'admin',
+                'email'=>'admin@admin.com',
+                'type'=>\app\models\User::SUPER_ADMIN,
+                'status'=>\app\models\User::STATUS_ACTIVE,
+                'password_hash'=>Yii::$app->security->generatePasswordHash("admin"),
+                'auth_key'=>'dddddddsdfewpdsfopjsofjsdof',
+                'created_at'=>time(),
+                'updated_at'=>time(),
+            ]
+        ];
+
+        Yii::$app->db
+            ->createCommand()
+            ->batchInsert('user',
+                [
+                    'username',
+                    'first_name',
+                    'last_name',
+                    'email',
+                    'type',
+                    'status',
+                    'password_hash',
+                    'auth_key',
+                    'created_at',
+                    'updated_at'
+                ], $data)
+            ->execute();
     }
 
     /**

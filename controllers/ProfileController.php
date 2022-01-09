@@ -1,11 +1,23 @@
 <?php
 
 namespace app\controllers;
+use Yii;
+use yii\web\Controller;
 
-class ProfileController
+
+class ProfileController extends Controller
 {
 
 
+    public function init()
+    {
+        $this->layout = "admin";
+        parent::init();
+        if (Yii::$app->user->isGuest) {
+            return $this->redirect('site/login');
+        }
+
+    }
 
     /**
      * Lists all Area models.

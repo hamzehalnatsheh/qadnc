@@ -1,44 +1,57 @@
 <?php
-# add by hassan
+use app\assets\AdminAsset;
+use app\widgets\Alert;
+use yii\helpers\Html;
+use yii\widgets\Breadcrumbs;
 
-/* @var $this \yii\web\View */
-/* @var $content string */
-
-use yii\bootstrap4\Html;
-
+AdminAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
     <!DOCTYPE html>
-    <html lang="<?= Yii::$app->language ?>" class="h-100">
+    <html lang="<?= Yii::$app->language ?>">
 
     <head>
-
         <meta charset="<?= Yii::$app->charset ?>">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <?php $this->registerCsrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
+
         <?php $this->head() ?>
     </head>
 
-    <body class="d-flex flex-column h-100" dir="rtl">
+    <body>
     <?php $this->beginBody() ?>
 
-    <header>
-        <?php include "admin/header.php" ?>
-    </header>
 
-    <main role="main" class="flex-shrink-0">
-        <div class="container">
-            <?= $content ?>
-        </div>
-    </main>
+    <div class="page-wrapper chiller-theme toggled">
+        <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+            <i class="fas fa-bars"></i>
+        </a>
 
-    <footer class="footer mt-auto py-3 text-muted">
-        <?php include "admin/footer.php" ?>
-    </footer>
+        <?php include "sidebar.php"; ?>
+
+        <!-- sidebar-wrapper  -->
+        <div class="loader"></div>
+        <main class="page-content">
+            <?= Breadcrumbs::widget([
+                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            ]) ?>
+            <div class="container-fluid">
+                <?= Alert::widget() ?>
+                <?= $content ?>
+            </div>
+        </main>
+        <!-- page-content" -->
+
+    </div>
+
+
+
+
 
     <?php $this->endBody() ?>
     </body>
-    <script src="<?= Yii::$app->request->baseUrl?>/assets/js/all.js"></script>
+
     </html>
 <?php $this->endPage() ?>

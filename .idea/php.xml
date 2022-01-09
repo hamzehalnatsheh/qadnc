@@ -100,6 +100,8 @@
       <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-bootstrap" />
       <path value="$PROJECT_DIR$/vendor/bower-asset/bootstrap" />
       <path value="$PROJECT_DIR$/vendor/bower-asset/bootstrap-datepicker" />
+      <path value="$PROJECT_DIR$/vendor/airani/yii2-bootstrap-rtl" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/bootstrap-rtl" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration">
