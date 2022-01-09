@@ -4,7 +4,7 @@
 
 $this->title = 'My Yii Application';
 ?>
-<link rel="stylesheet" href="<?= Yii::$app->request->baseUrl ?>/assets/css/home.css" />
+<link rel="stylesheet" href="<?= Yii::$app->request->baseUrl ?>/css/home.css" />
 <div>
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -14,21 +14,21 @@ $this->title = 'My Yii Application';
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <div class="slider-image" style="background-image: url(<?= Yii::$app->request->baseUrl ?>/assets/images/Roadmap-1.jpg);"></div>
+                <div class="slider-image" style="background-image: url(<?= Yii::$app->request->baseUrl ?>/images/Roadmap-1.jpg);"></div>
                 <div class="carousel-caption d-none d-md-block">
                     <h2 class="carousel-title">نقدم الإستشارات التسويقية</h2>
                     <p class="carousel-desc">الدراسات - البحوث - الإحصاءات</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <div class="slider-image" style="background-image: url(<?= Yii::$app->request->baseUrl ?>/assets/images/Roadmap.jpg);"></div>
+                <div class="slider-image" style="background-image: url(<?= Yii::$app->request->baseUrl ?>/images/Roadmap.jpg);"></div>
                 <div class="carousel-caption">
                     <h2 class="carousel-title">نقدم الإستشارات التسويقية</h2>
                     <p class="carousel-desc">الدراسات - البحوث - الإحصاءات</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <div class="slider-image" style="background-image: url(<?= Yii::$app->request->baseUrl ?>/assets/images/teamwork.jpg);"></div>
+                <div class="slider-image" style="background-image: url(<?= Yii::$app->request->baseUrl ?>/images/teamwork.jpg);"></div>
                 <div class="carousel-caption d-none d-md-block">
                     <h2 class="carousel-title">نقدم الإستشارات التسويقية</h2>
                     <p class="carousel-desc">الدراسات - البحوث - الإحصاءات</p>
@@ -48,7 +48,7 @@ $this->title = 'My Yii Application';
     <div id="aboutUs" class="container">
         <div class="row about-us">
             <div class="col-md-4 col-12">
-                <img src="<?= Yii::$app->request->baseUrl ?>/assets/images/Business-1.png" style="width: 100%;" />
+                <img src="<?= Yii::$app->request->baseUrl ?>/images/Business-1.png" style="width: 100%;" />
             </div>
             <div class="col-md-8 col-12">
                 <div class="about-us-title">
@@ -88,7 +88,7 @@ $this->title = 'My Yii Application';
             <div class="row activity-body">
                 <div class="col-3">
                     <div class="activity-icon">
-                        <img src="<?= Yii::$app->request->baseUrl ?>/assets/images/icon.svg" width="100%" />
+                        <img src="<?= Yii::$app->request->baseUrl ?>/images/icon.svg" width="100%" />
                     </div>
                     <div>
                         الأبحاث والدراسات 
@@ -96,7 +96,7 @@ $this->title = 'My Yii Application';
                 </div>
                 <div class="col-3">
                     <div class="activity-icon">
-                        <img src="<?= Yii::$app->request->baseUrl ?>/assets/images/icon.svg" width="100%" />
+                        <img src="<?= Yii::$app->request->baseUrl ?>/images/icon.svg" width="100%" />
                     </div>
                     <div>
                         التوعية والتثقيف
@@ -104,7 +104,7 @@ $this->title = 'My Yii Application';
                 </div>
                 <div class="col-3">
                     <div class="activity-icon">
-                        <img src="<?= Yii::$app->request->baseUrl ?>/assets/images/icon.svg" width="100%" />
+                        <img src="<?= Yii::$app->request->baseUrl ?>/images/icon.svg" width="100%" />
                     </div>
                     <div>
                         التأهيل والتدريب
@@ -112,7 +112,7 @@ $this->title = 'My Yii Application';
                 </div>
                 <div class="col-3">
                     <div class="activity-icon">
-                        <img src="<?= Yii::$app->request->baseUrl ?>/assets/images/icon.svg" width="100%" />
+                        <img src="<?= Yii::$app->request->baseUrl ?>/images/icon.svg" width="100%" />
                     </div>
                     <div>
                         الفعاليات
@@ -164,9 +164,9 @@ $this->title = 'My Yii Application';
                 </div>
             </div>
             <div class="col text-left">
-                <img src="<?= Yii::$app->request->baseUrl ?>/assets/images/contact-us.png" />
+                <img src="<?= Yii::$app->request->baseUrl ?>/images/contact-us.png" />
             </div>
         </div>
     </div>
 </div>
-<script src="<?= Yii::$app->request->baseUrl ?>/assets/js/bootstrap.bundle.min.js"></script>
+<script src="<?= Yii::$app->request->baseUrl ?>/js/bootstrap.bundle.min.js"></script>

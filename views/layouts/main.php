@@ -11,10 +11,10 @@ use yii\bootstrap4\Html;
 <html lang="<?= Yii::$app->language ?>" class="h-100">
 
 <head>
-    <link rel="stylesheet" href="<?= Yii::$app->request->baseUrl?>/assets/css/bootstrap.rtl.min.css" />
-    <link rel="stylesheet" href="<?= Yii::$app->request->baseUrl?>/assets/css/all.min.css" />
+    <link rel="stylesheet" href="<?= Yii::$app->request->baseUrl?>/css/bootstrap.rtl.min.css" />
+    <link rel="stylesheet" href="<?= Yii::$app->request->baseUrl?>/css/all.min.css" />
     <link rel="stylesheet" href="<?= Yii::$app->request->baseUrl?>/css/site.css" />
-    <link rel="stylesheet" href="<?= Yii::$app->request->baseUrl?>/assets/css/header.css" />
+    <link rel="stylesheet" href="<?= Yii::$app->request->baseUrl?>/css/header.css" />
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <?php $this->registerCsrfMetaTags() ?>
@@ -39,6 +39,6 @@ use yii\bootstrap4\Html;
 
     <?php $this->endBody() ?>
 </body>
-<script src="<?= Yii::$app->request->baseUrl?>/assets/js/all.js"></script>
+<script src="<?= Yii::$app->request->baseUrl?>/js/all.js"></script>
 </html>
 <?php $this->endPage() ?>

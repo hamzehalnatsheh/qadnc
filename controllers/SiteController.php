@@ -80,7 +80,7 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
-        // $this->layout = "empty";
+        $this->layout = "empty";
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
@@ -165,6 +165,7 @@ class SiteController extends Controller
      */
     public function actionRequestPasswordReset()
     {
+        $this->layout = "empty";
         $model = new PasswordResetRequestForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) {

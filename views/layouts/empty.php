@@ -27,6 +27,6 @@ use yii\bootstrap4\Html;
 
     <?php $this->endBody() ?>
     </body>
-    <script src="<?= Yii::$app->request->baseUrl?>/assets/js/all.js"></script>
+    <script src="<?= Yii::$app->request->baseUrl?>/js/all.js"></script>
     </html>
 <?php $this->endPage() ?>

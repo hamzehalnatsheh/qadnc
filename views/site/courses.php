@@ -11,7 +11,7 @@
             <div class="col-3 mb-4">
                 <div class="card">
                     <div>
-                        <img src="<?= Yii::$app->request->baseUrl ?>/assets/images/courses-cover.jpg" width="100%" />
+                        <img src="<?= Yii::$app->request->baseUrl ?>/images/courses-cover.jpg" width="100%" />
                     </div>
                     <div class="card-body">
                         <div class="mb-4">
@@ -35,7 +35,7 @@
             <div class="col-3 mb-4">
                 <div class="card">
                     <div>
-                        <img src="<?= Yii::$app->request->baseUrl ?>/assets/images/courses-cover.jpg" width="100%" />
+                        <img src="<?= Yii::$app->request->baseUrl ?>/images/courses-cover.jpg" width="100%" />
                     </div>
                     <div class="card-body">
                         <div class="mb-4">
@@ -59,7 +59,7 @@
             <div class="col-3 mb-4">
                 <div class="card">
                     <div>
-                        <img src="<?= Yii::$app->request->baseUrl ?>/assets/images/courses-cover.jpg" width="100%" />
+                        <img src="<?= Yii::$app->request->baseUrl ?>/images/courses-cover.jpg" width="100%" />
                     </div>
                     <div class="card-body">
                         <div class="mb-4">
@@ -83,7 +83,7 @@
             <div class="col-3 mb-4">
                 <div class="card">
                     <div>
-                        <img src="<?= Yii::$app->request->baseUrl ?>/assets/images/courses-cover.jpg" width="100%" />
+                        <img src="<?= Yii::$app->request->baseUrl ?>/images/courses-cover.jpg" width="100%" />
                     </div>
                     <div class="card-body">
                         <div class="mb-4">
@@ -107,7 +107,7 @@
             <div class="col-3 mb-4">
                 <div class="card">
                     <div>
-                        <img src="<?= Yii::$app->request->baseUrl ?>/assets/images/courses-cover.jpg" width="100%" />
+                        <img src="<?= Yii::$app->request->baseUrl ?>/images/courses-cover.jpg" width="100%" />
                     </div>
                     <div class="card-body">
                         <div class="mb-4">
@@ -131,7 +131,7 @@
             <div class="col-3 mb-4">
                 <div class="card">
                     <div>
-                        <img src="<?= Yii::$app->request->baseUrl ?>/assets/images/courses-cover.jpg" width="100%" />
+                        <img src="<?= Yii::$app->request->baseUrl ?>/images/courses-cover.jpg" width="100%" />
                     </div>
                     <div class="card-body">
                         <div class="mb-4">
@@ -155,7 +155,7 @@
             <div class="col-3 mb-4">
                 <div class="card">
                     <div>
-                        <img src="<?= Yii::$app->request->baseUrl ?>/assets/images/courses-cover.jpg" width="100%" />
+                        <img src="<?= Yii::$app->request->baseUrl ?>/images/courses-cover.jpg" width="100%" />
                     </div>
                     <div class="card-body">
                         <div class="mb-4">
@@ -179,7 +179,7 @@
             <div class="col-3 mb-4">
                 <div class="card">
                     <div>
-                        <img src="<?= Yii::$app->request->baseUrl ?>/assets/images/courses-cover.jpg" width="100%" />
+                        <img src="<?= Yii::$app->request->baseUrl ?>/images/courses-cover.jpg" width="100%" />
                     </div>
                     <div class="card-body">
                         <div class="mb-4">

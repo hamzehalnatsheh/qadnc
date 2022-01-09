@@ -1,19 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 @font-face{
 	font-family:'Monotype';
-	src:url('/assets/fonts/Monotype-SST-Arabic-Roman.otf');
+	src:url('/fonts/Monotype-SST-Arabic-Roman.otf');
 }
 @font-face{
 	font-family:'Monotype Medium';
-	src:url('/assets/fonts/Monotype-SST-Arabic-Medium.otf');
+	src:url('/fonts/Monotype-SST-Arabic-Medium.otf');
 }
 @font-face{
 	font-family:'Monotype Light';
-	src:url('/assets/fonts/Monotype-SST-Arabic-Light.otf');
+	src:url('/fonts/Monotype-SST-Arabic-Light.otf');
 }
 @font-face{
 	font-family:'Monotype Bold';
-	src:url('/assets/fonts/Monotype-SST-Arabic-Bold.otf');
+	src:url('/fonts/Monotype-SST-Arabic-Bold.otf');
 }
 
 body{
@@ -180,10 +180,6 @@ a, a:hover {
     border-radius: 0.25rem;
 }
 
-.login-box {
-    max-width: 480px;
-    margin: auto;
-}
 
 .border-left {
     border-left: 1px solid #ced4da;
@@ -191,4 +187,13 @@ a, a:hover {
 
 .f-20 {
     font-size: 20px;
+}
+
+.consulting-body label {
+    display: none;
+}
+
+.consulting-image {
+    width: 100%;
+    height: 100%;
 }
