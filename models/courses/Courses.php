@@ -2,6 +2,7 @@
 
 namespace app\models\courses;
 
+use Carbon\Carbon;
 use Yii;
 
 /**
@@ -22,6 +23,8 @@ use Yii;
 class Courses extends \yii\db\ActiveRecord
 {
     public $file;
+    const Active=1;
+    const  DisActive=2;
     /**
      * {@inheritdoc}
      */
@@ -36,8 +39,9 @@ class Courses extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [[ 'title','description','start_at','end_at','category','status','file'], 'required'],
             [['description'], 'string'],
-            [['start_at', 'end_at', 'created_at', 'update_at', 'deleted_at'], 'safe'],
+            [['start_at', 'end_at'], 'safe'],
             [['category', 'status'], 'integer'],
             [['title'], 'string', 'max' => 1000],
             [['image'], 'string', 'max' => 256],
@@ -54,16 +58,45 @@ class Courses extends \yii\db\ActiveRecord
             'id' => Yii::t('app', 'ID'),
             'title' => Yii::t('app', 'Title'),
             'description' => Yii::t('app', 'Description'),
-            'start_at' => Yii::t('app', 'Start At'),
-            'end_at' => Yii::t('app', 'End At'),
+            'start_at' => Yii::t('app', 'Start_At'),
+            'end_at' => Yii::t('app', 'End_At'),
             'image' => Yii::t('app', 'Image'),
             'category' => Yii::t('app', 'Category'),
             'status' => Yii::t('app', 'Status'),
-            'created_at' => Yii::t('app', 'Created At'),
-            'update_at' => Yii::t('app', 'Update At'),
-            'deleted_at' => Yii::t('app', 'Deleted At'),
+            'created_at' => Yii::t('app', 'Created_At'),
+            'update_at' => Yii::t('app', 'Update_At'),
+            'deleted_at' => Yii::t('app', 'Deleted_At'),
+            'file'=> Yii::t('app', 'File'),
         ];
     }
+
+
+
+
+    /**
+     * @inheritdoc
+     */
+    public function beforeSave($insert)
+    {
+        $today=Carbon::now("Asia/Amman");
+        if (parent::beforeSave($insert)) {
+            // Place your custom code here
+            if ($this->isNewRecord) {
+                $this->created_at = $today;
+                $this->updated_at = $today;
+
+
+            } else {
+                $this->updated_at =$today;
+            }
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
 
     /**
      * {@inheritdoc}
@@ -73,4 +106,10 @@ class Courses extends \yii\db\ActiveRecord
     {
         return new CoursesQuery(get_called_class());
     }
+
+
+
+
+
+
 }

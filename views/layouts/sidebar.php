@@ -57,6 +57,13 @@ use app\models\User;use yii\helpers\Html;
 
                 </li>
 
+
+
+                <li>
+                    <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Categories'), ['categories/index'])?>
+
+                </li>
+
             </ul>
         </div>
         <!-- sidebar-menu  -->

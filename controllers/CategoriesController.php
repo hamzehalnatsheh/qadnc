@@ -7,12 +7,23 @@ use app\models\categories\CategoriesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use Yii;
 /**
  * CategoriesController implements the CRUD actions for Categories model.
  */
 class CategoriesController extends Controller
 {
+
+
+    public function init()
+    {
+        $this->layout = "admin";
+        parent::init();
+        if (Yii::$app->user->isGuest) {
+            return $this->redirect('site/login');
+        }
+
+    }
     /**
      * @inheritDoc
      */
