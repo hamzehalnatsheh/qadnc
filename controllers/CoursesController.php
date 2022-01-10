@@ -5,9 +5,11 @@ namespace app\controllers;
 use app\models\courses\Courses;
 use app\models\courses\CoursesSearch;
 use Yii;
+use yii\helpers\FileHelper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * CoursesController implements the CRUD actions for Courses model.

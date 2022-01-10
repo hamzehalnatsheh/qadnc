@@ -39,13 +39,14 @@ class Courses extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [[ 'title','description','start_at','end_at','category','status','file'], 'required'],
+            [[ 'title','description','start_at','end_at','category','status'], 'required'],
             [['description'], 'string'],
             [['start_at', 'end_at'], 'safe'],
             [['category', 'status'], 'integer'],
             [['title'], 'string', 'max' => 1000],
             [['image'], 'string', 'max' => 256],
             [['file'], 'image', 'skipOnEmpty' => true, 'extensions' => 'png,jpg,jpeg,gif'],
+
         ];
     }
 
@@ -83,7 +84,8 @@ class Courses extends \yii\db\ActiveRecord
             // Place your custom code here
             if ($this->isNewRecord) {
                 $this->created_at = $today;
-                $this->updated_at = $today;
+                $this->update_at = $today;
+                $this->deleted_at = null;
 
 
             } else {
