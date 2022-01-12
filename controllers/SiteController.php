@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\consultation\Consultation;
 use app\models\Consulting;
+use app\models\courses\Courses;
 use app\models\PasswordResetRequestForm;
 use app\models\ResendVerificationEmailForm;
 use app\models\ResetPasswordForm;
@@ -288,7 +289,8 @@ class SiteController extends Controller
      */
     public function actionCourses()
     {
-        return $this->render('courses');
+        $courses=Courses::find()->where(['deleted_at'=>null])->all();
+        return $this->render('courses',['courses'=>$courses]);
     }
 
     /**

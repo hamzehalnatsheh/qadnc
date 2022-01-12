@@ -2,6 +2,7 @@
 
 namespace app\models\courses;
 
+use app\models\categories\Categories;
 use Carbon\Carbon;
 use Yii;
 
@@ -99,6 +100,13 @@ class Courses extends \yii\db\ActiveRecord
     }
 
 
+    /**
+     * @return int|null
+     */
+    public function getCategorytype()
+    {
+        return $this->hasOne(Categories::class,['id'=>'category']);
+    }
 
     /**
      * {@inheritdoc}
