@@ -12,32 +12,49 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-signup mt-5 mb-5">
     <div class="container">
-        <h1><?= Html::encode($this->title) ?></h1>
 
-        <p>Please fill out the following fields to signup:</p>
-
-        <div class="row">
-            <div class="col-lg-6">
-                <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
-
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
-
-                <?= $form->field($model, 'email') ?>
-
-                <?= $form->field($model, 'password')->passwordInput() ?>
-
-                <?= $form->field($model, 'password_repeat')->passwordInput() ?>
-
-
-
-                <div class="form-group">
-                    <?= Html::submitButton('Signup', ['class' => 'btn btn-primary w-100 mt-3', 'name' => 'signup-button']) ?>
+        <div class="row text-center">
+            <div class="col-12 ">
+                <div class="activity-title">
+                    <?= Html::encode($this->title) ?>
                 </div>
-
-                <?php ActiveForm::end(); ?>
             </div>
-            <div class="col-lg-6">
-                    
+        </div>
+
+        <div class="card">
+
+
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card-body mb-5">
+                        <div class="mt-3 mb-4 text-green">
+                            <h1 class="f-20">
+                                يرجى ملء الحقول التالية للتسجيل
+                            </h1>
+                        </div>
+                        <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
+
+                        <?= $form->field($model, 'username')->textInput(['placeholder' => 'اسم المستخدم'])->label('') ?>
+
+                        <?= $form->field($model, 'email') ?>
+
+                        <?= $form->field($model, 'password')->passwordInput(['placeholder' => 'كلمة المرور'])->label('') ?>
+
+                        <?= $form->field($model, 'password_repeat')->passwordInput(['placeholder' => 'إعادة كلمة المرور'])->label('') ?>
+
+
+
+                        <div class="form-group">
+                            <?= Html::submitButton('Signup', ['class' => 'btn btn-primary w-100 mt-3', 'name' => 'signup-button']) ?>
+                        </div>
+
+                        <?php ActiveForm::end(); ?>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="<?= Yii::$app->request->baseUrl ?>/images/reg.jpg" class="consulting-image" />
+                </div>
             </div>
         </div>
     </div>

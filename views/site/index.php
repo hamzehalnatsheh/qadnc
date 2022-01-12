@@ -4,6 +4,7 @@
 
 $this->title = 'My Yii Application';
 ?>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 <link rel="stylesheet" href="<?= Yii::$app->request->baseUrl ?>/css/home.css" />
 <div>
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -91,7 +92,7 @@ $this->title = 'My Yii Application';
                         <img src="<?= Yii::$app->request->baseUrl ?>/images/icon.svg" width="100%" />
                     </div>
                     <div>
-                        الأبحاث والدراسات 
+                        الأبحاث والدراسات
                     </div>
                 </div>
                 <div class="col-3">
@@ -122,10 +123,55 @@ $this->title = 'My Yii Application';
             </div>
         </div>
     </div>
-
-
- 
-
+    <div class="achievements">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12 ">
+                    <div class="activity-title">
+                        إنجازات الجمعية
+                    </div>
+                </div>
+            </div>
+            <div class="center">
+                <div>
+                    <img src="https://picsum.photos/300/200?random=1">
+                    <div class="achievements-title">
+                        دوره انجليزية لتأهيل الشباب السعودي
+                    </div>
+                </div>
+                <div>
+                    <img src="https://picsum.photos/300/200?random=2">
+                    <div class="achievements-title">
+                        دوره انجليزية لتأهيل الشباب السعودي
+                    </div>
+                </div>
+                <div>
+                    <img src="https://picsum.photos/300/200?random=3">
+                    <div class="achievements-title">
+                        دوره انجليزية لتأهيل الشباب السعودي
+                    </div>
+                </div>
+                <div>
+                    <img src="https://picsum.photos/300/200?random=4">
+                    <div class="achievements-title">
+                        دوره انجليزية لتأهيل الشباب السعودي
+                    </div>
+                </div>
+                <div>
+                    <img src="https://picsum.photos/300/200?random=5">
+                    <div class="achievements-title">
+                        دوره انجليزية لتأهيل الشباب السعودي
+                    </div>
+                </div>
+                <div>
+                    <img src="https://picsum.photos/300/200?random=6">
+                    <div class="achievements-title">
+                        دوره انجليزية لتأهيل الشباب السعودي
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="contactUs" class="container">
         <div class="row about-us">
             <div class="col">
@@ -152,12 +198,23 @@ $this->title = 'My Yii Application';
                     </div>
                     <div class="col">
                         <div class="row">
-                            <div class="col-2"><i class="fas fa-phone-alt contact-us-icon"></i></div>
+                            <div class="col-2"><i class="fas fa-mobile-alt contact-us-icon"></i></div>
                             <div class="col-10">
                                 <div class="mb-1">
                                     <strong>الجوال</strong>
                                 </div>
-                                <a href="tel:0504792206" dir="ltr">00966 504792206</a>
+                                <a href="tel:0509117025" dir="ltr">00966 509117025</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col-2"><i class="fas fa-phone-alt contact-us-icon"></i></div>
+                            <div class="col-10">
+                                <div class="mb-1">
+                                    <strong>الهاتف</strong>
+                                </div>
+                                <a href="tel:0112108640" dir="ltr">00966 112108640</a>
                             </div>
                         </div>
                     </div>
@@ -169,4 +226,6 @@ $this->title = 'My Yii Application';
         </div>
     </div>
 </div>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="<?= Yii::$app->request->baseUrl ?>/js/bootstrap.bundle.min.js"></script>

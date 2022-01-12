@@ -1,3 +1,8 @@
+@font-face{
+	font-family:'Monotype Light';
+	src:url('/fonts/Monotype-SST-Arabic-Light.otf');
+}
+
 @keyframes swing {
     0% {
         transform: rotate(0deg);
@@ -39,7 +44,10 @@
     }
 }
 body {
+    font-family:'Monotype Light' !important;
     font-size: 1.9rem;
+    line-height: 1.4;
+    overflow-x: hidden;
 }
 .page-wrapper .sidebar-wrapper,
 .sidebar-wrapper .sidebar-brand > a,
@@ -165,7 +173,7 @@ body {
     width: 60px;
     padding: 2px;
     border-radius: 12px;
-    margin-right: 15px;
+    margin-left: 15px;
     overflow: hidden;
 }
 
@@ -222,11 +230,11 @@ body {
     width: 100%;
     text-decoration: none;
     position: relative;
-    padding: 8px 30px 8px 20px;
+    padding: 8px 20px 8px 30px;
 }
 
 .sidebar-wrapper .sidebar-menu ul li a i {
-    margin-right: 10px;
+    margin-left: 10px;
     font-size: 12px;
     width: 30px;
     height: 30px;
@@ -492,4 +500,9 @@ body {
 
 .chiller-theme .sidebar-wrapper .sidebar-header .user-info .user-role, .chiller-theme .sidebar-wrapper .sidebar-header .user-info .user-status, .chiller-theme .sidebar-wrapper .sidebar-search input.search-menu, .chiller-theme .sidebar-wrapper .sidebar-search .input-group-text, .chiller-theme .sidebar-wrapper .sidebar-brand>a, .chiller-theme .sidebar-wrapper .sidebar-menu ul li a, .chiller-theme .sidebar-footer>a{
     font-size: 14px;
+}
+
+.btn-success {
+    background-color: #00d0c5;
+    border-color: #00d0c5;
 }
