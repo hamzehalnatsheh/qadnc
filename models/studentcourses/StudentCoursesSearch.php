@@ -47,6 +47,8 @@ class StudentCoursesSearch extends StudentCourses
             'query' => $query,
         ]);
 
+        //        $query->joinWith('course');
+//        $query->joinWith('student');
         $this->load($params);
 
         if (!$this->validate()) {

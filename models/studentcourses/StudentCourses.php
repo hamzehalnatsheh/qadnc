@@ -2,6 +2,8 @@
 
 namespace app\models\studentcourses;
 
+use app\models\courses\Courses;
+use app\models\User;
 use Yii;
 
 /**
@@ -42,6 +44,21 @@ class StudentCourses extends \yii\db\ActiveRecord
             'student_id' => Yii::t('app', 'Student ID'),
         ];
     }
+
+
+    public function gtCourse()
+    {
+        return $this->hasOne(Courses::className(), ['id' => 'course_id']);
+    }
+
+
+    public function gtStudent()
+    {
+        return $this->hasOne(User::className(), ['id' => 'student_id']);
+    }
+
+
+
 
     /**
      * {@inheritdoc}
