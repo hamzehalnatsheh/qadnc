@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use dosamigos\datepicker\DatePicker;
 
+
 /* @var $this yii\web\View */
 /* @var $model app\models\courses\Courses */
 /* @var $form yii\widgets\ActiveForm */
@@ -13,35 +14,50 @@ use dosamigos\datepicker\DatePicker;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+    <div class="row">
+        <div class="col-md-4">
+            <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+        </div>
+        <div class="col-md-4">
+            <?= $form->field($model, 'start_at')->widget(
+                DatePicker::className(), [
+                // inline too, not bad
+                'inline' => false,
+
+                'clientOptions' => [
+                    'autoclose' => true,
+                    'format' => 'yyyy-mm-dd'
+                ]
+            ]);?>
+        </div>
+        <div class="col-md-4">
+
+            <?= $form->field($model, 'end_at')->widget(
+                DatePicker::className(), [
+                // inline too, not bad
+                'inline' => false,
+
+                'clientOptions' => [
+                    'autoclose' => true,
+                    'format' => 'yyyy-mm-dd'
+                ]
+            ]);?>
+
+        </div>
+
+    </div>
 
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'start_at')->widget(
-        DatePicker::className(), [
-        // inline too, not bad
-        'inline' => false,
-
-        'clientOptions' => [
-            'autoclose' => true,
-            'format' => 'dd-M-yyyy'
-        ]
-    ]);?>
-
-    <?= $form->field($model, 'end_at')->widget(
-        DatePicker::className(), [
-        // inline too, not bad
-        'inline' => false,
-
-        'clientOptions' => [
-            'autoclose' => true,
-            'format' => 'dd-M-yyyy'
-        ]
-    ]);?>
 
 
 
-    <?= $form->field($model, 'file')->widget(\kartik\file\FileInput::classname(), [
+
+
+
+    <div class="row">
+        <div class="col-md-4">
+            <?= $form->field($model, 'file')->widget(\kartik\file\FileInput::classname(), [
                 'options' => ['accept' => 'image/*'],
                 'pluginOptions' => [
                     'showCaption' => true,
@@ -59,10 +75,25 @@ use dosamigos\datepicker\DatePicker;
                 ]
             ]);
 
-    ?>
-    <?= $form->field($model, 'category')->textInput() ?>
+            ?>
+        </div>
+        <div class="col-md-4">
+            <?= $form->field($model, 'category')->widget(\kartik\select2\Select2::classname(), [
+                'data' =>  \yii\helpers\ArrayHelper::map(\app\models\categories\Categories::find()->all(), 'id', 'name'),
+                'language' => 'ar',
+                'options' => ['placeholder' =>Yii::t('app',"Plz_Select")],
 
-    <?= $form->field($model, 'status')->textInput() ?>
+            ]); ?>
+        </div>
+        <div class="col-md-4">
+            <?= $form->field($model, 'status')->dropDownList
+                    ([
+                            \app\models\courses\Courses::Active => Yii::t('app','Active'),
+                            \app\models\courses\Courses::DisActive => Yii::t('app','DisActive'),
+                    ]);?>
+        </div>
+    </div>
+
 
 
     <div class="form-group">
