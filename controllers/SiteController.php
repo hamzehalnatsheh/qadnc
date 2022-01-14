@@ -302,4 +302,13 @@ class SiteController extends Controller
     {
         return $this->render('board');
     }
+
+    /**
+     * @param $id
+     * @return View
+     */
+    public function actionCourse($id){
+        $course=Courses::findOne($id);
+        return $this->render('course',['course'=>$course]);
+    }
 }

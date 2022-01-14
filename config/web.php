@@ -68,6 +68,7 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'site/courses/<id:\d+>' => 'site/course',
             ],
         ],
 

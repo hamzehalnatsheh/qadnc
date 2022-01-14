@@ -23,7 +23,7 @@ class m220102_223652_create_consultation_table extends Migration
         $this->createTable('{{%consultation}}', [
             'id' => $this->primaryKey(),
             'project_name'=>$this->string(255),
-            'specified_time'=>$this->string(255),
+            'specified_time'=>$this->date(),
             'communication'=>$this->string(255),
             'target'=>$this->text(),
             'about_project'=>$this->text(),

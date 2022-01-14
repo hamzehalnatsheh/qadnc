@@ -16,9 +16,49 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'image')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'vedio')->textInput(['maxlength' => true]) ?>
+
+        <?= $form->field($model, 'file')->widget(\kartik\file\FileInput::classname(), [
+            'options' => ['accept' => 'image/*'],
+            'pluginOptions' => [
+                'showCaption' => true,
+//                        'showRemove' => true,
+                'showUpload' => false,
+                'initialPreview' => [
+                    Yii::getAlias('@web')
+                ],
+                'initialPreviewAsData' => true,
+                'initialCaption' => Yii::getAlias('@web'),
+                'initialPreviewConfig' => [
+
+                ],
+                'overwriteInitial'=>true
+            ]
+        ]);
+
+        ?>
+
+    <?= $form->field($model, 'vedio_file')->widget(\kartik\file\FileInput::classname(), [
+        'options' => ['accept' => 'vedio/*'],
+        'pluginOptions' => [
+            'showCaption' => true,
+//                        'showRemove' => true,
+            'showUpload' => false,
+            'initialPreview' => [
+                Yii::getAlias('@web')
+            ],
+            'initialPreviewAsData' => true,
+            'initialCaption' => Yii::getAlias('@web'),
+            'initialPreviewConfig' => [
+
+            ],
+            'overwriteInitial'=>true
+        ]
+    ]);
+
+    ?>
+
+    
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>

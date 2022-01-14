@@ -48,7 +48,7 @@ use app\models\User;use yii\helpers\Html;
                 </li>
 
                 <li>
-                    <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','User_Courses'), ['user-courses/index'])?>
+                    <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Achievements'), ['achievements/index'])?>
 
                 </li>
 

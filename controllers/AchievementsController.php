@@ -7,12 +7,22 @@ use app\models\achievements\AchievementsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use Yii;
 /**
  * AchievementsController implements the CRUD actions for Achievements model.
  */
 class AchievementsController extends Controller
 {
+
+    public function init()
+    {
+        $this->layout = "admin";
+        parent::init();
+        if (Yii::$app->user->isGuest) {
+            return $this->redirect('site/login');
+        }
+
+    }
     /**
      * @inheritDoc
      */

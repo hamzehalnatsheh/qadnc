@@ -31,6 +31,17 @@ return [
     'Plz_Select'=>'ارجو التحديد',
     'Active'=>'فعال',
     'DisActive'=>'غير فعال',
+    'Achievements'=>'لانجازات',
+    'Body'=>'الوصف',
+    'Student_Courses'=>'دورات الطلاب',
+    'Consultation'=>'الاستشارات',
+    'Pages'=>'الصفحات',
+    'Students'=>'الطلاب',
+    'First_Name'=>'الاسم الاول',
+    'Last_Name'=>'الاسم الثاني',
+    'Email'=>'البريد الاليكتروني',
+
+
 
 
 

@@ -60,8 +60,8 @@ class Student extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('app', 'ID'),
             'username' => Yii::t('app', 'Username'),
-            'first_name' => Yii::t('app', 'First Name'),
-            'last_name' => Yii::t('app', 'Last Name'),
+            'first_name' => Yii::t('app', 'First_Name'),
+            'last_name' => Yii::t('app', 'Last_Name'),
             'auth_key' => Yii::t('app', 'Auth Key'),
             'password_hash' => Yii::t('app', 'Password Hash'),
             'password_reset_token' => Yii::t('app', 'Password Reset Token'),
@@ -70,8 +70,9 @@ class Student extends \yii\db\ActiveRecord
             'type' => Yii::t('app', 'Type'),
             'status' => Yii::t('app', 'Status'),
             'born_date'=>Yii::t('app','Born_Date'),
-            'created_at' => Yii::t('app', 'Created At'),
-            'updated_at' => Yii::t('app', 'Updated At'),
+            'created_at' => Yii::t('app', 'Created_At'),
+            'updated_at' => Yii::t('app', 'Updated_At'),
+            'file'=>Yii::t('app','File'),
         ];
     }
 
@@ -81,22 +82,22 @@ class Student extends \yii\db\ActiveRecord
      */
     public function beforeSave($insert)
     {
-        $today=Carbon::now("Asia/Amman");
-        if (parent::beforeSave($insert)) {
-            // Place your custom code here
-            if ($this->isNewRecord) {
-                $this->created_at = $today;
-                $this->updated_at = $today;
-
-
-            } else {
-                $this->updated_at =$today;
-            }
-
-            return true;
-        } else {
-            return false;
-        }
+//        $today=Carbon::now("Asia/Amman");
+//        if (parent::beforeSave($insert)) {
+//            // Place your custom code here
+//            if ($this->isNewRecord) {
+//                $this->created_at = $today;
+//                $this->updated_at = $today;
+//
+//
+//            } else {
+//                $this->updated_at =$today;
+//            }
+//
+//            return true;
+//        } else {
+//            return false;
+//        }
     }
     /**
      * {@inheritdoc}

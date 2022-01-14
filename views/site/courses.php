@@ -16,7 +16,7 @@
 
                 ?>
 
-                <div class="col-3 mb-4">
+                <a href="<?= Yii::$app->request->baseUrl ."/site/courses/$course->id" ?>" class="col-3 mb-4">
                     <div class="card">
                         <div>
                             <img src="<?= Yii::$app->request->baseUrl .'/'.$course->image  ?>" width="100%" />
@@ -43,7 +43,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
 
             <?php endforeach;?>
 
