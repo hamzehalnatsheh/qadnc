@@ -7,7 +7,7 @@
 use yii\bootstrap4\Html;
 use yii\bootstrap4\ActiveForm;
 
-$this->title = 'تسجيل الطلاب';
+$this->title = 'تسجيل الأعضاء';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-signup mt-5 mb-5">
@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 يرجى ملء الحقول التالية للتسجيل
                             </h1>
                         </div>
-                        <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
+                        <?php $form = ActiveForm::begin(['id' => 'form-memberSignup']); ?>
 
                         <?= $form->field($model, 'username')->textInput(['placeholder' => 'اسم المستخدم'])->label('') ?>
                         <?= $form->field($model, 'dateofbirth')->textInput(['placeholder' => 'تاريخ الميلاد'])->label('') ?>
@@ -44,8 +44,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
                         <?= $form->field($model, 'password_repeat')->passwordInput(['placeholder' => 'إعادة كلمة المرور'])->label('') ?>
 
-
-
                         <div class="form-group">
                             <?= Html::submitButton('إرسال', ['class' => 'btn btn-primary pull-left mt-3', 'name' => 'signup-button']) ?>
                         </div>
@@ -54,7 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <img src="<?= Yii::$app->request->baseUrl ?>/images/reg.jpg" class="consulting-image" />
+                    <img src="<?= Yii::$app->request->baseUrl ?>/images/member.png" class="consulting-image" />
                 </div>
             </div>
         </div>

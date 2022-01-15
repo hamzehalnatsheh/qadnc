@@ -13,6 +13,7 @@ use app\models\User;
 class SignupForm extends Model
 {
     public $username;
+    public $dateofbirth;
     public $email;
     public $password;
     public $password_repeat;
@@ -28,6 +29,7 @@ class SignupForm extends Model
             ['username', 'required'],
             ['username', 'unique', 'targetClass' => '\app\models\User', 'message' => 'This username has already been taken.'],
             ['username', 'string', 'min' => 2, 'max' => 255],
+            ['dateofbirth', 'trim'],
 
             ['email', 'trim'],
             ['email', 'required'],
@@ -53,6 +55,7 @@ class SignupForm extends Model
 
         $user = new User();
         $user->username = $this->username;
+        $user->dateofbirth = $this->dateofbirth;
         $user->email = $this->email;
         $user->status=\app\models\User::STATUS_ACTIVE;
         $user->setPassword($this->password);

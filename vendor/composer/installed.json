@@ -1568,12 +1568,6 @@
             "select2",
             "widget",
             "yii2"
-        ],
-        "funding": [
-            {
-                "url": "https://opencollective.com/yii2-widget-select2",
-                "type": "open_collective"
-            }
         ]
     },
     {

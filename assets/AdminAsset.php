@@ -31,7 +31,7 @@ class  AdminAsset extends AssetBundle
     function __construct() {
         $path_theme="theme/new";
         $this->css=[
-            "https://use.fontawesome.com/releases/v5.0.6/css/all.css",
+            "/css/all.min.css",
             "$path_theme/css_ar/main.css",
 //            'css/site.css?v='.rand(),
             'css/orders.css?v='.rand(),
