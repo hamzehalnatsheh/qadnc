@@ -30,6 +30,7 @@ class Consultation extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['project_name','about_project','specified_time','communication','target'],'required'],
             [['target', 'about_project'], 'string'],
             [['project_name', 'specified_time', 'communication'], 'string', 'max' => 255],
         ];
