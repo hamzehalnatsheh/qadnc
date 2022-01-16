@@ -41,3 +41,27 @@ function getSiteUrl() {
     }
     return site_url+'/web';
 }
+
+
+$(document).on('click','.register_coure',function (e) {
+    e.preventDefault();
+    // check is_logddin
+    var course_id = $(this).attr('course_id');
+    var is_logddin = $(this).attr('is_logddin');
+    if(is_logddin){
+        const Http = new XMLHttpRequest();
+        const url=`${SITE_URL}/student-courses/register?course_id=${course_id}`;
+        Http.open("GET", url);
+        Http.send();
+
+        Http.onreadystatechange = (e) => {
+            console.log(Http.responseText)
+            alert('تم تسجيلك بنجاح')
+        }
+    }else {
+        alert( 'go to login')
+    }
+
+
+});
+

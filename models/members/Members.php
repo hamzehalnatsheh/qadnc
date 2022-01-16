@@ -22,7 +22,7 @@ use Yii;
  * @property int $created_at
  * @property int $updated_at
  */
-class Student extends \yii\db\ActiveRecord
+class Members extends \yii\db\ActiveRecord
 {
     public $file;
     /**

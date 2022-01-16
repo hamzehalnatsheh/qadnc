@@ -12,7 +12,10 @@
             <?php foreach ($courses as $course):?>
                 <?php
                     $is_regist_coures=false;
-                    $coures_user= \app\models\User::find(\Yii::$app->user->identity->id);
+                    if($is_loggedin){
+                        $coures_user= \app\models\User::find(\Yii::$app->user->identity->id);
+                    }
+
 
                 ?>
 
@@ -34,7 +37,7 @@
                             </div>
                             <div>
                                     <?php if(!$is_regist_coures):?>
-                                        <button type="submit" class="btn btn-link " onclick="register_coure(<?= $course->id ?> ,  <?= $is_loggedin ?>)"  >
+                                        <button type="submit" class="btn btn-link register_coure" onclick="register_coure(<?= $course->id ?> ,  <?= $is_loggedin ?>)"  course_id="<?= $course->id ?>"    is_loggedin="<?=$is_loggedin?>" >
                                             <strong>
                                                 تسجيل
                                             </strong>

@@ -37,6 +37,11 @@ use app\models\User;use yii\helpers\Html;
                         <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Courses'), ['courses/index'])?>
 
                     </li>
+
+                    <li>
+                        <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Slider'), ['slider/index'])?>
+
+                    </li>
                     <li>
                         <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Pages'), ['pages/index'])?>
 
@@ -47,6 +52,10 @@ use app\models\User;use yii\helpers\Html;
 
                 </li>
 
+                <li>
+                    <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Members'), ['members/index'])?>
+
+                </li>
                 <li>
                     <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Achievements'), ['achievements/index'])?>
 

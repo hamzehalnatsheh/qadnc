@@ -28,6 +28,7 @@ class m211224_232928_create_user_table extends Migration
             'password_hash' => $this->string()->notNull(),
             'password_reset_token' => $this->string()->unique(),
             'email' => $this->string()->notNull()->unique(),
+            'dateofbirth'=>$this->date()->defaultValue(null),
             'verification_token'=>$this->string()->defaultValue(null),
             'type'=>$this->smallInteger()->defaultValue(\app\models\User::Student),
             'status' => $this->smallInteger()->notNull()->defaultValue(10),
