@@ -12,9 +12,9 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="pages-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1 class="margin-bottom-30"><?= Html::encode($this->title) ?></h1>
 
-    <p>
+    <p class="pull-right">
         <?= Html::a(Yii::t('app', 'Create Pages'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 

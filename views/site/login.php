@@ -47,11 +47,11 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
                         <div class="reg-options">
                             <i class="fas fa-user-graduate"></i>
-                            <?= Html::a(Yii::t('app', ' تسجيل الطلاب'), ['site/request-password-reset']) ?>
+                            <?= Html::a(Yii::t('app', ' تسجيل الطلاب'), ['site/signup']) ?>
                         </div>
                         <div class="reg-options">
                             <i class="fas fa-user-tie"></i>
-                            <?= Html::a(Yii::t('app', 'تسجيل الأعضاء'), ['site/request-password-reset']) ?>
+                            <?= Html::a(Yii::t('app', 'تسجيل الأعضاء'), ['site/membersignup']) ?>
                         </div>
                     </div>
 

@@ -11,7 +11,7 @@ use app\models\User;use yii\helpers\Html;
                 <i class="fas fa-times"></i>
             </div>
         </div>
-        <div class="sidebar-header profile" ">
+        <div class="sidebar-header profile">
             <div class="user-pic">
 
                 <?= Html::img('https://image.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg', ['class' => 'img-responsive img-rounded']) ?>
@@ -20,7 +20,7 @@ use app\models\User;use yii\helpers\Html;
           <span class="user-name">
             <strong><?=  Yii::$app->user->identity->first_name ?></strong>
           </span>
-                <span class="user-role"><?='مدير'?></span>
+                <span class="user-role"><?='مدير النظام'?></span>
                 <span class="user-status">
             <i class="fa fa-circle"></i>
             <span>متصل</span>
@@ -79,7 +79,7 @@ use app\models\User;use yii\helpers\Html;
         <a href="#">
             <?=
             Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton('',["class"=>"btn-danger fa fa-power-off"]
+            . Html::submitButton('تسجيل خروج',["class"=>"logout"]
 
             )
             . Html::endForm()

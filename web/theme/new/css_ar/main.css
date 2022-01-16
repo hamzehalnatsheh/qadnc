@@ -506,3 +506,38 @@ body {
     background-color: #00d0c5;
     border-color: #00d0c5;
 }
+
+table {
+    font-size: 16px;
+}
+
+.summary {
+    margin-bottom: 15px;
+    float: left;
+}
+
+.margin-bottom-30 {
+    margin-bottom: 30px;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #f2f2f2;
+}
+
+a {
+    color: #00d0c5;
+    text-decoration: none;
+}
+
+a svg {
+    margin: 0 5px;
+}
+
+.logout {
+    width: 100%;
+    background: transparent;
+    box-shadow: 0 0 0 0;
+    border: 0;
+    color: #fff;
+    font-size: 17px;
+}
