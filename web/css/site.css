@@ -213,3 +213,24 @@ a, a:hover {
     margin-left: 8px;
     background: #fff;
 }
+
+.pl-2 {
+    padding-left: .5rem;
+}
+
+.course-title {
+    padding-bottom: 15px;
+    font-size: 1.625rem;
+    color: #005a8b;
+}
+
+.course-description {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.f-18 {
+    font-size: 18px;
+}
