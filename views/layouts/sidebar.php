@@ -33,51 +33,112 @@ use app\models\User;use yii\helpers\Html;
             <ul>
 
 
-                    <li>
-                        <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Courses'), ['courses/index'])?>
-
-                    </li>
-
-                    <li>
-                        <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Slider'), ['slider/index'])?>
-
-                    </li>
-                    <li>
-                        <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Pages'), ['pages/index'])?>
-
-                    </li>
-
-                <li>
-                    <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Students'), ['students/index'])?>
-
-                </li>
-
-                <li>
-                    <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Members'), ['members/index'])?>
-
-                </li>
-                <li>
-                    <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Achievements'), ['achievements/index'])?>
-
-                </li>
-
-                <li>
-                    <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Consultation'), ['consultation/index'])?>
-
+                <li class="sidebar-dropdown">
+                    <a href="#">
+                        <i class="fas fa-chart-bar"></i>
+                        <span><?=Yii::t('app','Home')?></span>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <ul>
+                            <li  class="menu-item <?= Yii::$app->controller->route =='slider/index'?'active':''?>">
+                                <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','سلايدر'), ['slider/index'])?>
+                            </li>
+                            <li  class="menu-item <?= Yii::$app->controller->route =='about/index'?'active':''?>">
+                                <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','من نحن'), ['slider/index'])?>
+                            </li>
+                            <li  class="menu-item <?= Yii::$app->controller->route =='about/index'?'active':''?>">
+                                <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','معلومات التواصل'), ['slider/index'])?>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
 
 
+                <li class="sidebar-dropdown">
+                    <a href="#">
+                        <i class="fas fa-chart-bar"></i>
+                        <span><?=Yii::t('app','Users')?></span>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <ul>
 
-                <li>
-                    <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Categories'), ['categories/index'])?>
+                            <li  class="menu-item <?= Yii::$app->controller->route =='about/index'?'active':''?>">
+                                <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','مجلس الاداره'), ['slider/index'])?>
+                            </li>
 
+
+                            <li  class="menu-item <?= Yii::$app->controller->route =='students/index'?'active':''?>">
+                                <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Students'), ['students/index'])?>
+                            </li>
+
+
+                            <li  class="menu-item <?= Yii::$app->controller->route =='members/index'?'active':''?>">
+                                <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Members'), ['members/index'])?>
+                            </li>
+
+
+                        </ul>
+                    </div>
                 </li>
 
 
-                <li>
-                    <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Student_Courses'), ['student-courses/index'])?>
 
+
+                <li class="sidebar-dropdown">
+                    <a href="#">
+                        <i class="fas fa-chart-bar"></i>
+                        <span><?=Yii::t('app','Courses')?></span>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <ul>
+
+                            <li  class="menu-item <?= Yii::$app->controller->route =='courses/index'?'active':''?>">
+                                <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Courses'), ['courses/index'])?>
+                            </li>
+                            <li  class="menu-item <?= Yii::$app->controller->route =='categories/index'?'active':''?>">
+                                <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Categories'), ['categories/index'])?>
+                            </li>
+
+                            <li  class="menu-item <?= Yii::$app->controller->route =='student-courses/index'?'active':''?>">
+                                <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Student_Courses'), ['student-courses/index'])?>
+                            </li>
+
+
+                        </ul>
+                    </div>
                 </li>
+
+
+
+
+
+                <li class="sidebar-dropdown">
+                    <a href="#">
+                        <i class="fas fa-chart-bar"></i>
+                        <span><?=Yii::t('app','المزيد')?></span>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <ul>
+
+                            <li  class="menu-item <?= Yii::$app->controller->route =='achievements/index'?'active':''?>">
+                                <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Achievements'), ['achievements/index'])?>
+                            </li>
+                            <li  class="menu-item <?= Yii::$app->controller->route =='consultation/index'?'active':''?>">
+                                <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Consultation'), ['consultation/index'])?>
+                            </li>
+
+                            <li  class="menu-item <?= Yii::$app->controller->route =='pages/index'?'active':''?>">
+                                <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Pages'), ['pages/index'])?>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </li>
+
+
+
+
 
             </ul>
         </div>
