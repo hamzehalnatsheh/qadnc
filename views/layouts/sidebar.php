@@ -43,11 +43,17 @@ use app\models\User;use yii\helpers\Html;
                             <li  class="menu-item <?= Yii::$app->controller->route =='slider/index'?'active':''?>">
                                 <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','سلايدر'), ['slider/index'])?>
                             </li>
-                            <li  class="menu-item <?= Yii::$app->controller->route =='about/index'?'active':''?>">
-                                <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','من نحن'), ['slider/index'])?>
+                            <li  class="menu-item <?= Yii::$app->controller->route =='aboutus/index'?'active':''?>">
+                                <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','من نحن'), ['aboutus/index'])?>
                             </li>
-                            <li  class="menu-item <?= Yii::$app->controller->route =='about/index'?'active':''?>">
-                                <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','معلومات التواصل'), ['slider/index'])?>
+
+                            <li  class="menu-item <?= Yii::$app->controller->route =='association-activities/index'?'active':''?>">
+                                <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','أنشطة الجمعية'), ['association-activities/index'])?>
+                            </li>
+
+
+                            <li  class="menu-item <?= Yii::$app->controller->route =='contactus/index'?'active':''?>">
+                                <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','اتصل بنا'), ['contactus/index'])?>
                             </li>
                         </ul>
                     </div>
