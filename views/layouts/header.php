@@ -1,7 +1,8 @@
 <?php
+
 use yii\helpers\Html;
 ?>
-<div id="header" >
+<div id="header">
     <div id="siteMobile" class="site-mobile-menu">
         <div class="site-mobile-menu-header">
             <a href="javascript:MyFunction();" class="site-mobile-menu-close menu-icon mt-3 text-dark" onclick="closeMobileMenu()">
@@ -10,25 +11,25 @@ use yii\helpers\Html;
         </div>
         <div class="site-mobile-menu-body">
             <ul class="site-nav-wrap">
-                <li class="active"><a href="<?= Yii::$app->request->baseUrl?>/"><span>الرئيسية</span></a></li>
+                <li class="active"><a href="<?= Yii::$app->request->baseUrl ?>/"><span>الرئيسية</span></a></li>
                 <li><a href="/#aboutUs"><span>من نحن</span></a></li>
                 <li><a href="/#activity"><span>أنشطة الجمعية</span></a></li>
                 <li><a href="/#contactUs"><span>اتصل بنا</span></a></li>
                 <li><a href="/site/board"><span>مجلس الادارة</span></a></li>
                 <li><a href="/site/courses"><span>الدورات</span></a></li>
                 <li><a href="/site/consulting"><span>الاستشارات</span></a></li>
-                <?php if (Yii::$app->user->isGuest) :?>
-                    <li><a href="<?= Yii::$app->request->baseUrl?>/site/login"><span>تسجيل دخول</span></a></li>
-                <?php else:?>
-                    <?php  echo '<li>'
+                <?php if (Yii::$app->user->isGuest) : ?>
+                    <li><a href="<?= Yii::$app->request->baseUrl ?>/site/login"><span>تسجيل دخول</span></a></li>
+                <?php else : ?>
+                    <?php echo '<li>'
                         . Html::beginForm(['/site/logout'], 'post')
                         . Html::submitButton(
                             ' تسجيل الخروج (' . Yii::$app->user->identity->username . ')',
                             ['class' => 'btn btn-link logout']
                         )
                         . \yii\helpers\Html::endForm()
-                        . '</li>';?>
-                <?php endif;?>
+                        . '</li>'; ?>
+                <?php endif; ?>
             </ul>
         </div>
     </div>
@@ -37,8 +38,8 @@ use yii\helpers\Html;
             <div class="row align-items-center">
                 <div class="col col-xl-2">
                     <h1 class="mb-0 site-logo">
-                        <a href="<?= Yii::$app->request->baseUrl?>/" class="text-black mb-0">
-                            <img src="<?= Yii::$app->request->baseUrl?>/images/dark-logo.png" alt="qadnc logo" class="site-logo" />
+                        <a href="<?= Yii::$app->request->baseUrl ?>/" class="text-black mb-0">
+                            <img src="<?= Yii::$app->request->baseUrl ?>/images/dark-logo.png" alt="qadnc logo" class="site-logo" />
                         </a>
                     </h1>
                 </div>
@@ -64,24 +65,31 @@ use yii\helpers\Html;
                             <li><a href="/site/courses"><span>الدورات</span></a></li>
                             <li><a href="/site/consulting"><span>الاستشارات</span></a></li>
 
-                            <?php if (Yii::$app->user->isGuest) :?>
-                                <li><a href="<?= Yii::$app->request->baseUrl?>/site/login"><span>تسجيل دخول</span></a></li>
-                            <?php else:?>
+                            <?php if (Yii::$app->user->isGuest) : ?>
+                                <li><a href="<?= Yii::$app->request->baseUrl ?>/site/login"><span>تسجيل دخول</span></a></li>
+                            <?php else : ?>
 
-                              <?php  echo '<li>'
-                                    . Html::beginForm(['/site/logout'], 'post')
-                                    . Html::submitButton(
-                                    ' تسجيل الخروج (' . Yii::$app->user->identity->username . ')',
-                                    ['class' => 'btn btn-link logout']
-                                    )
-                                    . \yii\helpers\Html::endForm()
-                                    . '</li>';?>
-
-
-
-
-                            <?php endif;?>
-
+                                <li class="has-children">
+                                    <a>
+                                        <span>
+                                        <img src="<?= Yii::$app->request->baseUrl ?>/images/default.png" alt="" class="header-profile-img">
+                                            <?= Yii::$app->user->identity->username ?>
+                                            <i class="fas fa-angle-down icon-down"></i>
+                                        </span>
+                                    </a>
+                                    <ul class="dropdown arrow-top">
+                                        <li><a href="/courses/index">الملف الشخصي</a></li>
+                                        <?php echo '<li>'
+                                            . Html::beginForm(['/site/logout'], 'post')
+                                            . Html::submitButton(
+                                                ' تسجيل الخروج ',
+                                                ['class' => 'btn btn-link logout']
+                                            )
+                                            . \yii\helpers\Html::endForm()
+                                            . '</li>'; ?>
+                                    </ul>
+                                </li>
+                            <?php endif; ?>
                         </ul>
                     </nav>
                 </div>

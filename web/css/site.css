@@ -65,8 +65,8 @@ a, a:hover {
 }
 
 .board-img {
-    width: 200px;
-    height: 200px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     border: 1px solid #000;
 }
@@ -196,4 +196,41 @@ a, a:hover {
 .consulting-image {
     width: 100%;
     height: 100%;
+}
+
+.logout {
+    padding: 9px 20px;
+    display: block;
+    color: #343a40 !important;
+    text-decoration: none;
+}
+
+.header-profile-img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid gray;
+    margin-left: 8px;
+    background: #fff;
+}
+
+.pl-2 {
+    padding-left: .5rem;
+}
+
+.course-title {
+    padding-bottom: 15px;
+    font-size: 1.625rem;
+    color: #005a8b;
+}
+
+.course-description {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.f-18 {
+    font-size: 18px;
 }

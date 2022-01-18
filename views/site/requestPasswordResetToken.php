@@ -21,6 +21,13 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="row">
             <div class="col-lg-6 login-right-side">
                 <div class="content">
+                    <div class="mb-5">
+                        <a href="/site/login" class="f-18">
+                            <i class="fas fa-arrow-right"></i>
+                            <span>تسجيل الدخول</span>
+                        </a>
+                    </div>
+
                     <h1><?= Html::encode($this->title) ?></h1>
 
                     <p>يرجى ادخال البريد الإلكتروني الخاص بك. سيتم إرسال رابط لإعادة تعيين كلمة المرور</p>

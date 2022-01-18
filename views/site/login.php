@@ -27,6 +27,12 @@ $this->params['breadcrumbs'][] = $this->title;
                             <img src="<?= Yii::$app->request->baseUrl ?>/images/dark-logo.png" alt="qadnc logo" class="site-logo" />
                         </a>
                     </div> -->
+                    <div class="mb-5">
+                        <a href="/" class="f-18">
+                            <i class="fas fa-arrow-right"></i>
+                            <span>الصفحة الرئيسة</span>
+                        </a>
+                    </div>
                     <h1><?= Html::encode($this->title) ?></h1>
                     <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 

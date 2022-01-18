@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="row mb-5">
-            <div class="col-6 text-center">
+            <div class="col-4 mb-5 text-center">
                 <div class="mb-3">
                     <img src="<?= Yii::$app->request->baseUrl ?>/images/default.png" alt="" class="board-img">
                 </div>
@@ -26,7 +26,7 @@
                     </button>
                 </div>
             </div>
-            <div class="col-6 text-center">
+            <div class="col-4 mb-5 text-center">
                 <div class="mb-3">
                     <img src="<?= Yii::$app->request->baseUrl ?>/images/default.png" alt="" class="board-img">
                 </div>
@@ -44,9 +44,7 @@
                     </button>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-4 text-center">
+            <div class="col-4 mb-5 text-center">
                 <div class="mb-3">
                     <img src="<?= Yii::$app->request->baseUrl ?>/images/default.png" alt="" class="board-img">
                 </div>
@@ -67,7 +65,7 @@
                     </button>
                 </div>
             </div>
-            <div class="col-4 text-center">
+            <div class="col-4 mb-5 text-center">
                 <div class="mb-3">
                     <img src="<?= Yii::$app->request->baseUrl ?>/images/default.png" alt="" class="board-img">
                 </div>
@@ -85,7 +83,7 @@
                     </button>
                 </div>
             </div>
-            <div class="col-4 text-center">
+            <div class="col-4 mb-5 text-center">
                 <div class="mb-3">
                     <img src="<?= Yii::$app->request->baseUrl ?>/images/default.png" alt="" class="board-img">
                 </div>
@@ -96,6 +94,132 @@
                 </div>
                 <div class="mb-4">
                     عضو مجلس إدارة
+                </div>
+                <div>
+                    <button class="btn btn-outline-primary btn-green">
+                        سيرته الذاتية
+                    </button>
+                </div>
+            </div>
+            <div class="col-4 mb-5 text-center">
+                <div class="mb-3">
+                    <img src="<?= Yii::$app->request->baseUrl ?>/images/default.png" alt="" class="board-img">
+                </div>
+                <div class="mb-2">
+                    <strong>
+                        حمد بن حمدان محمد البشري
+                    </strong>
+                </div>
+                <div class="mb-4">
+                    عضو مؤسس
+                </div>
+                <div>
+                    <button class="btn btn-outline-primary btn-green">
+                        سيرته الذاتية
+                    </button>
+                </div>
+            </div>
+            <div class="col-4 mb-5 text-center">
+                <div class="mb-3">
+                    <img src="<?= Yii::$app->request->baseUrl ?>/images/default.png" alt="" class="board-img">
+                </div>
+                <div class="mb-2">
+                    <strong>
+                        علي عبدالله موسى الحازمي
+                    </strong>
+                </div>
+                <div class="mb-4">
+                    عضو مؤسس
+                </div>
+                <div>
+                    <button class="btn btn-outline-primary btn-green">
+                        سيرته الذاتية
+                    </button>
+                </div>
+            </div>
+            <div class="col-4 mb-5 text-center">
+                <div class="mb-3">
+                    <img src="<?= Yii::$app->request->baseUrl ?>/images/default.png" alt="" class="board-img">
+                </div>
+                <div class="mb-2">
+                    <strong>
+                        خليل ابراهيم شوعي كعبي
+                    </strong>
+                </div>
+                <div class="mb-4">
+                    عضو مؤسس
+                </div>
+                <div>
+                    <button class="btn btn-outline-primary btn-green">
+                        سيرته الذاتية
+                    </button>
+                </div>
+            </div>
+            <div class="col-4 mb-5 text-center">
+                <div class="mb-3">
+                    <img src="<?= Yii::$app->request->baseUrl ?>/images/default.png" alt="" class="board-img">
+                </div>
+                <div class="mb-2">
+                    <strong>
+                        هشام على محمد الحفاف
+                    </strong>
+                </div>
+                <div class="mb-4">
+                    عضو مؤسس
+                </div>
+                <div>
+                    <button class="btn btn-outline-primary btn-green">
+                        سيرته الذاتية
+                    </button>
+                </div>
+            </div>
+            <div class="col-4 mb-5 text-center">
+                <div class="mb-3">
+                    <img src="<?= Yii::$app->request->baseUrl ?>/images/default.png" alt="" class="board-img">
+                </div>
+                <div class="mb-2">
+                    <strong>
+                        محمد صالح محمد الجعيلان
+                    </strong>
+                </div>
+                <div class="mb-4">
+                    عضو مؤسس
+                </div>
+                <div>
+                    <button class="btn btn-outline-primary btn-green">
+                        سيرته الذاتية
+                    </button>
+                </div>
+            </div>
+            <div class="col-4 mb-5 text-center">
+                <div class="mb-3">
+                    <img src="<?= Yii::$app->request->baseUrl ?>/images/default.png" alt="" class="board-img">
+                </div>
+                <div class="mb-2">
+                    <strong>
+                        عبدالله فايز عبدالله الشهري
+                    </strong>
+                </div>
+                <div class="mb-4">
+                    عضو مؤسس
+                </div>
+                <div>
+                    <button class="btn btn-outline-primary btn-green">
+                        سيرته الذاتية
+                    </button>
+                </div>
+            </div>
+            <div class="col-4 mb-5 text-center">
+                <div class="mb-3">
+                    <img src="<?= Yii::$app->request->baseUrl ?>/images/default.png" alt="" class="board-img">
+                </div>
+                <div class="mb-2">
+                    <strong>
+                        فواز علي محمد الغامدي
+                    </strong>
+                </div>
+                <div class="mb-4">
+                    عضو مؤسس
                 </div>
                 <div>
                     <button class="btn btn-outline-primary btn-green">
