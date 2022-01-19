@@ -68,8 +68,8 @@ use app\models\User;use yii\helpers\Html;
                     <div class="sidebar-submenu">
                         <ul>
 
-                            <li  class="menu-item <?= Yii::$app->controller->route =='members-counil/index'?'active':''?>">
-                                <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','مجلس الاداره'), ['members-counil/index'])?>
+                            <li  class="menu-item <?= Yii::$app->controller->route =='members-council/index'?'active':''?>">
+                                <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','مجلس الاداره'), ['members-council/index'])?>
                             </li>
 
 
@@ -118,29 +118,17 @@ use app\models\User;use yii\helpers\Html;
 
 
 
-                <li class="sidebar-dropdown">
-                    <a href="#">
-                        <i class="fas fa-chart-bar"></i>
-                        <span><?=Yii::t('app','المزيد')?></span>
-                    </a>
-                    <div class="sidebar-submenu">
-                        <ul>
 
-                            <li  class="menu-item <?= Yii::$app->controller->route =='achievements/index'?'active':''?>">
-                                <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Achievements'), ['achievements/index'])?>
-                            </li>
-                            <li  class="menu-item <?= Yii::$app->controller->route =='consultation/index'?'active':''?>">
-                                <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Consultation'), ['consultation/index'])?>
-                            </li>
-
-                            <li  class="menu-item <?= Yii::$app->controller->route =='pages/index'?'active':''?>">
-                                <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Pages'), ['pages/index'])?>
-                            </li>
-
-
-                        </ul>
-                    </div>
+                <li  class="<?= Yii::$app->controller->route =='achievements/index'?'active':''?>">
+                    <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Achievements'), ['achievements/index'])?>
                 </li>
+                <li  class=" <?= Yii::$app->controller->route =='consultation/index'?'active':''?>">
+                    <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Consultation'), ['consultation/index'])?>
+                </li>
+
+
+
+
 
 
 

@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'Application';
 ?>
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 <link rel="stylesheet" href="<?= Yii::$app->request->baseUrl ?>/css/home.css" />
@@ -56,12 +56,10 @@ $this->title = 'My Yii Application';
                     من نحن
                 </div>
                 <div class="about-us-orgname">
-                    الجمعية التعاونية لتأهيل وتطوير الكوادر الوطنية
+                  <?= $about_us->title ?>
                 </div>
                 <div class="about-us-desc">
-                    تعتبر الجمعية التعاونية إحدى المؤسسات التنموية التي تسهم في تحقيق التنمية المستدامة
-                    اقتصادياً واجتماعيا،
-                    على أساس تطوير وتنمية أفراد المجتمع المحلي في المجالات التقنية والمهنية والأغراض التنموية المتعددة.
+                    <?= $about_us->body ?>
                 </div>
                 <!-- <div class="about-us-desc">
                 • إقامة وتبني الدورات الفنية والمهنية والمحاضرات وورش العمل التعاونية والبرامج البحثية وتقديمها لأفراد
@@ -87,38 +85,19 @@ $this->title = 'My Yii Application';
                 </div>
             </div>
             <div class="row activity-body">
-                <div class="col-3">
-                    <div class="activity-icon">
-                        <img src="<?= Yii::$app->request->baseUrl ?>/images/icon.svg" width="100%" />
+                <?php foreach ($associations as $association):?>
+                    <div class="col-3">
+                        <div class="activity-icon">
+                            <img src="<?= Yii::$app->request->baseUrl ?>/images/icon.svg" width="100%" />
+                        </div>
+                        <div>
+                           <?=$association->name;?>
+                        </div>
                     </div>
-                    <div>
-                        الأبحاث والدراسات
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="activity-icon">
-                        <img src="<?= Yii::$app->request->baseUrl ?>/images/icon.svg" width="100%" />
-                    </div>
-                    <div>
-                        التوعية والتثقيف
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="activity-icon">
-                        <img src="<?= Yii::$app->request->baseUrl ?>/images/icon.svg" width="100%" />
-                    </div>
-                    <div>
-                        التأهيل والتدريب
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="activity-icon">
-                        <img src="<?= Yii::$app->request->baseUrl ?>/images/icon.svg" width="100%" />
-                    </div>
-                    <div>
-                        الفعاليات
-                    </div>
-                </div>
+
+                <?php endforeach;?>
+
+
 
             </div>
         </div>
@@ -179,10 +158,10 @@ $this->title = 'My Yii Application';
                     اتصل بنا
                 </div>
                 <div class="about-us-orgname">
-                    الجمعية التعاونية لتأهيل وتطوير الكوادر الوطنية
+                   <?= $connect_us->title ;?>
                 </div>
                 <div class="about-us-desc mb-4">
-                    الرياض - حي المربع - طريق الملك سعود
+                    <?= $connect_us->address ;?>
                 </div>
                 <div class="row">
                     <div class="col">
@@ -192,7 +171,7 @@ $this->title = 'My Yii Application';
                                 <div class="mb-1">
                                     <strong>البريد الإلكتروني</strong>
                                 </div>
-                                <a href="mailto:server@sds-sa.net">info@qadnc.org.sa</a>
+                                <a href="mailto:<?= $connect_us->email ;?>"><?= $connect_us->email ;?></a>
                             </div>
                         </div>
                     </div>
@@ -203,7 +182,7 @@ $this->title = 'My Yii Application';
                                 <div class="mb-1">
                                     <strong>الجوال</strong>
                                 </div>
-                                <a href="tel:0509117025" dir="ltr">00966 509117025</a>
+                                <a href="tel:<?= $connect_us->phone ;?>" dir="ltr"><?= $connect_us->phone ;?></a>
                             </div>
                         </div>
                     </div>
@@ -214,7 +193,7 @@ $this->title = 'My Yii Application';
                                 <div class="mb-1">
                                     <strong>الهاتف</strong>
                                 </div>
-                                <a href="tel:0112108640" dir="ltr">00966 112108640</a>
+                                <a href="tel:<?= $connect_us->phone_number ;?>" dir="ltr"><?= $connect_us->phone_number ;?></a>
                             </div>
                         </div>
                     </div>

@@ -2,13 +2,19 @@
 
 namespace app\controllers;
 
+use app\models\aboutus\Aboutus;
+use app\models\associationactivities\AssociationActivities;
 use app\models\consultation\Consultation;
 use app\models\Consulting;
+use app\models\contactus\Contactus;
 use app\models\courses\Courses;
+use app\models\memberscouncil\MembersCouncil;
 use app\models\PasswordResetRequestForm;
 use app\models\ResendVerificationEmailForm;
 use app\models\ResetPasswordForm;
 use app\models\SignupForm;
+use app\models\slider\Slider;
+use app\models\slider\SliderSearch;
 use frontend\models\VerifyEmailForm;
 use Yii;
 use yii\base\InvalidArgumentException;
@@ -71,7 +77,11 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $about_us=Aboutus::find()->one();
+        $connect_us=Contactus::find()->one();
+        $associations=AssociationActivities::find()->all();
+        $sliders=Slider::find()->all();
+        return $this->render('index',['about_us'=>$about_us,'connect_us'=>$connect_us,'associations'=>$associations,'sliders'=>$sliders]);
     }
 
     /**
@@ -312,7 +322,8 @@ class SiteController extends Controller
      */
     public function actionBoard()
     {
-        return $this->render('board');
+        $membersCouncil=MembersCouncil::find()->all();
+        return $this->render('board',['membersCouncil'=>$membersCouncil]);
     }
 
     /**
