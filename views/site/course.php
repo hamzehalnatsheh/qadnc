@@ -38,22 +38,22 @@ $this->params['breadcrumbs'][] = $course->title;
                 </div>
                 <hr>
                 <div class="mb-3">
-                    <i class="fas fa-bookmark pl-2"></i>
+                    <i class="far fa-bookmark pl-2"></i>
                     <strong>تصنيف الدورة: </strong>
                     <?= $course->category; ?>
                 </div>
                 <div class="mb-3">
-                    <i class="fas fa-bookmark pl-2"></i>
+                    <i class="far fa-lightbulb pl-2"></i>
                     <strong>حالة الدورة: </strong>
                     <?= $course->status; ?>
                 </div>
                 <div class="mb-3">
-                    <i class="fas fa-clock pl-2"></i>
+                    <i class="far fa-calendar-alt pl-2"></i>
                     <strong>بداية الدورة: </strong>
                     <span><?= Yii::$app->formatter->format($course->start_at, 'date') ?></span>
                 </div>
                 <div class="mb-3">
-                    <i class="fas fa-clock pl-2"></i>
+                    <i class="far fa-calendar-alt pl-2"></i>
                     <strong>نهاية الدورة: </strong>
                     <span><?= Yii::$app->formatter->format($course->end_at, 'date') ?></span>
                 </div>
