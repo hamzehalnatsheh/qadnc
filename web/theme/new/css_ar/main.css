@@ -235,7 +235,7 @@ body {
 
 .sidebar-wrapper .sidebar-menu ul li a i {
     margin-left: 10px;
-    font-size: 12px;
+    font-size: 18px;
     width: 30px;
     height: 30px;
     line-height: 30px;
@@ -467,7 +467,7 @@ body {
 .chiller-theme .sidebar-wrapper .sidebar-menu .sidebar-dropdown div,
 .chiller-theme .sidebar-wrapper .sidebar-search input.search-menu,
 .chiller-theme .sidebar-wrapper .sidebar-search .input-group-text {
-    background: #3a3f48;
+    /* background: #3a3f48; */
 }
 
 .chiller-theme .sidebar-wrapper .sidebar-menu .header-menu span {
