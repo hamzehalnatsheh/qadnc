@@ -36,7 +36,15 @@ $this->params['breadcrumbs'][] = $this->title;
                         <?php $form = ActiveForm::begin(['id' => 'form-memberSignup']); ?>
 
                         <?= $form->field($model, 'username')->textInput(['placeholder' => 'اسم المستخدم'])->label('') ?>
-                        <?= $form->field($model, 'dateofbirth')->textInput(['placeholder' => 'تاريخ الميلاد'])->label('') ?>
+                        <?= $form->field($model, 'dateofbirth')->textInput(['placeholder' => 'تاريخ الميلاد','id'=>''])->label('') ?>
+
+                        <?= $form->field($model, 'dateofbirth')->widget(\yii\jui\DatePicker::classname(), [
+                                'language' => 'ru',
+                                'dateFormat' => 'yyyy-MM-dd',
+                            'clientOptions'=>[
+                                'placeholder' => 'تاريخ الميلاد','id'=>''
+                            ]
+                        ]) ?>
 
                         <?= $form->field($model, 'email')->textInput(['placeholder' => 'اليريد الإلكتروني'])->label('') ?>
 

@@ -13,6 +13,7 @@ use app\models\PasswordResetRequestForm;
 use app\models\ResendVerificationEmailForm;
 use app\models\ResetPasswordForm;
 use app\models\SignupForm;
+use app\models\SignupFormMember;
 use app\models\slider\Slider;
 use app\models\slider\SliderSearch;
 use frontend\models\VerifyEmailForm;
@@ -158,7 +159,7 @@ class SiteController extends Controller
     }
     public function actionMembersignup()
     {
-        $model = new SignupForm();
+        $model = new SignupFormMember();
         if ($model->load(Yii::$app->request->post()) && $model->signup()) {
             Yii::$app->session->setFlash('success', 'Thank you for registration. Please check your inbox for verification email.');
             return $this->goHome();

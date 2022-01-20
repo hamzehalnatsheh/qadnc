@@ -10,7 +10,7 @@ use app\models\User;
 /**
  * Signup form
  */
-class SignupForm extends Model
+class SignupFormMember extends Model
 {
     public $username;
     public $dateofbirth;
@@ -58,7 +58,7 @@ class SignupForm extends Model
         $user->dateofbirth = $this->dateofbirth;
         $user->email = $this->email;
         $user->status=\app\models\User::STATUS_ACTIVE;
-        $user->type=\app\models\User::Student;
+        $user->type=\app\models\User::Memmber;
         $user->setPassword($this->password);
         $user->generateAuthKey();
         $user->generateEmailVerificationToken();
