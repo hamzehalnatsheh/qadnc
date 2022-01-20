@@ -9,14 +9,19 @@
         </div>
         <div class="row">
             <?php $is_loggedin = Yii::$app->user->isGuest ? false : true ?>
+            <?php if (empty($courses)) { ?>
+                <div class="alert alert-warning" role="alert">
+                    <strong>
+                        لا يوجد دورات
+                    </strong>
+                </div>
+            <?php } ?>
             <?php foreach ($courses as $course) : ?>
                 <?php
                 $is_regist_coures = false;
                 if ($is_loggedin) {
                     $coures_user = \app\models\User::find(\Yii::$app->user->identity->id);
                 }
-
-
                 ?>
 
                 <a href="<?= Yii::$app->request->baseUrl . "/site/courses/$course->id" ?>" class="col-3 mb-4">

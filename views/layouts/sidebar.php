@@ -44,7 +44,7 @@ use app\models\User;use yii\helpers\Html;
                                 <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','سلايدر'), ['slider/index'])?>
                             </li>
                             <li  class="menu-item <?= Yii::$app->controller->route =='aboutus/index'?'active':''?>">
-                                <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','من نحن'), ['aboutus/index'])?>
+                                <?= Html::a('<i class="fas fa-address-card"></i>'.Yii::t('app','من نحن'), ['aboutus/index'])?>
                             </li>
 
                             <li  class="menu-item <?= Yii::$app->controller->route =='association-activities/index'?'active':''?>">
@@ -53,7 +53,7 @@ use app\models\User;use yii\helpers\Html;
 
 
                             <li  class="menu-item <?= Yii::$app->controller->route =='contactus/index'?'active':''?>">
-                                <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','اتصل بنا'), ['contactus/index'])?>
+                                <?= Html::a('<i class="fas fa-phone"></i>'.Yii::t('app','اتصل بنا'), ['contactus/index'])?>
                             </li>
                         </ul>
                     </div>
@@ -99,14 +99,14 @@ use app\models\User;use yii\helpers\Html;
                         <ul>
 
                             <li  class="menu-item <?= Yii::$app->controller->route =='courses/index'?'active':''?>">
-                                <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Courses'), ['courses/index'])?>
+                                <?= Html::a('<i class="fas fa-book-reader"></i>'.Yii::t('app','Courses'), ['courses/index'])?>
                             </li>
                             <li  class="menu-item <?= Yii::$app->controller->route =='categories/index'?'active':''?>">
-                                <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Categories'), ['categories/index'])?>
+                                <?= Html::a('<i class="fas fa-bookmark"></i>'.Yii::t('app','Categories'), ['categories/index'])?>
                             </li>
 
                             <li  class="menu-item <?= Yii::$app->controller->route =='student-courses/index'?'active':''?>">
-                                <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Student_Courses'), ['student-courses/index'])?>
+                                <?= Html::a('<i class="fas fa-user-graduate"></i>'.Yii::t('app','Student_Courses'), ['student-courses/index'])?>
                             </li>
 
 
