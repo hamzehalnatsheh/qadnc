@@ -25,6 +25,9 @@ class m220118_231332_create_contactus_table extends Migration
             'email'=>$this->string(500)->notNull(),
             'phone'=>$this->string(200)->notNull(),
             'phone_number'=>$this->string(200)->notNull(),
+            'facebook'=>$this->string(200)->notNull(),
+            'instagram'=>$this->string(200)->notNull(),
+            'twitter'=>$this->string(200)->notNull(),
 
         ],$tableOptions);
 
@@ -34,7 +37,10 @@ class m220118_231332_create_contactus_table extends Migration
                 'address'=>'الرياض - حي المربع - طريق الملك سعود',
                 'email'=>'info@qadnc.org.sa',
                 'phone'=>'00966 509117025',
-                'phone_number'=>'00966 112108640'
+                'phone_number'=>'00966 112108640',
+                'facebook'=>'facebook',
+                'instagram'=>'instagram',
+                'twitter'=>'twitter',
             ]
         ];
 
@@ -46,7 +52,10 @@ class m220118_231332_create_contactus_table extends Migration
                     'address',
                     'email',
                     'phone',
-                    'phone_number'
+                    'phone_number',
+                    'facebook',
+                    'instagram',
+                    'twitter'
                 ], $data)
             ->execute();
 
