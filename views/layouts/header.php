@@ -79,6 +79,10 @@ use yii\helpers\Html;
                                     </a>
                                     <ul class="dropdown arrow-top">
                                         <li><a href="/courses/index">الملف الشخصي</a></li>
+                                        <?php if (Yii::$app->user->identity->type == \app\models\User::SUPER_ADMIN) : ?>
+                                            <li><a href="<?= \yii\helpers\Url::to(['/courses/index']) ?>"><?= Yii::t('app','Courses')?></a></li>
+                                        <?php endif;?>
+
                                         <?php echo '<li>'
                                             . Html::beginForm(['/site/logout'], 'post')
                                             . Html::submitButton(

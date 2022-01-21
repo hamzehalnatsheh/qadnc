@@ -68,8 +68,8 @@ use app\models\User;use yii\helpers\Html;
                     <div class="sidebar-submenu">
                         <ul>
 
-                            <li  class="menu-item <?= Yii::$app->controller->route =='members-counil/index'?'active':''?>">
-                                <?= Html::a('<i class="fas fa-user-secret"></i>'.Yii::t('app','مجلس الاداره'), ['members-counil/index'])?>
+                            <li  class="menu-item <?= Yii::$app->controller->route =='members-council/index'?'active':''?>">
+                                <?= Html::a('<i class="fas fa-user-secret"></i>'.Yii::t('app','مجلس الاداره'), ['members-council/index'])?>
                             </li>
 
 

@@ -11,7 +11,7 @@
             <?php foreach ($membersCouncil as $membersCou):?>
                 <div class="col-4 mb-5 text-center">
                     <div class="mb-3">
-                        <img src="<?= Yii::$app->request->baseUrl ?>/images/default.png" alt="" class="board-img">
+                        <?= \yii\helpers\Html::img( "/$membersCou->image" ,["alt"=>"", "class"=>"board-img"]);?>
                     </div>
                     <div class="mb-2">
                         <strong>
@@ -19,7 +19,7 @@
                         </strong>
                     </div>
                     <div class="mb-4">
-                        رئيس مجلس الإدارة
+                        <?= $membersCou->position?>
                     </div>
                     <div>
                         <button class="btn btn-outline-primary btn-green">
