@@ -85,18 +85,22 @@ class SliderController extends Controller
         $model = new Slider();
 
         if ($this->request->isPost) {
+            $model->scenario=Slider::Create;
             $newId = Slider::find()->max('id') + 1;
-            if ($model->load($this->request->post()) && $model->validate()) {
-                $file = UploadedFile::getInstance($model, 'file');
-                if (!is_null($file)) {
-                    FileHelper::createDirectory('uploads/sider');
-
-                    $path="uploads/sider/$newId" . "." . $file->extension;
-                    $file->saveAs($path);
-                    $model->image=$path;
+            if ($model->load($this->request->post()) ) {
+                $model->file = UploadedFile::getInstance($model, 'file');
+                if( $model->validate()){
+                    if (!is_null( $model->file)) {
+                        FileHelper::createDirectory('uploads/sider');
+                        $path="uploads/sider/$newId" . "." .  $model->file->extension;
+                        $model->file->saveAs($path);
+                        $model->image=$path;
+                    }
+                    $model->save(false);
+                    return $this->redirect(['view', 'id' => $model->id]);
+                }else{
+                    $model->loadDefaultValues();
                 }
-                $model->save();
-                return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
             $model->loadDefaultValues();
@@ -117,18 +121,20 @@ class SliderController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->validate()) {
-            $file = UploadedFile::getInstance($model, 'file');
-            if (!is_null($file)) {
-                FileHelper::createDirectory('uploads/sider');
-
-                $path="uploads/sider/$model->id" . "." . $file->extension;
-                $file->saveAs($path);
-                $model->image=$path;
+        if ($this->request->isPost && $model->load($this->request->post())) {
+            $model->scenario=Slider::Update ;
+            if( $model->validate()){
+                $file = UploadedFile::getInstance($model, 'file');
+                if (!is_null($file)) {
+                    FileHelper::createDirectory('uploads/sider');
+                    $path="uploads/sider/$model->id" . "." . $file->extension;
+                    $file->saveAs($path);
+                    $model->image=$path;
+                }
+                $model->save(false);
+                return $this->redirect(['view', 'id' => $model->id]);
             }
-            $model->save();
-            return $this->redirect(['view', 'id' => $model->id]);
+
         }
 
         return $this->render('update', [

@@ -3,7 +3,7 @@
 namespace app\controllers;
 
 use app\models\members\Members;
-use app\models\students\StudentSearch;
+use app\models\members\MembersSearch;
 use app\models\User;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;

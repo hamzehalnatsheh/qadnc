@@ -40,12 +40,12 @@ $this->params['breadcrumbs'][] = $course->title;
                 <div class="course-options">
                     <i class="far fa-bookmark pl-2"></i>
                     <strong>تصنيف الدورة: </strong>
-                    <?= $course->category; ?>
+                    <?= $course['categorytype']['name']; ?>
                 </div>
                 <div class="course-options">
                     <i class="far fa-lightbulb pl-2"></i>
                     <strong>حالة الدورة: </strong>
-                    <?= $course->status; ?>
+                    <?= $course->status == \app\models\courses\Courses::Active ? 'فعال' : 'غير فعال'; ?>
                 </div>
                 <div class="course-options">
                     <i class="far fa-calendar-alt pl-2"></i>

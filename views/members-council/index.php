@@ -34,14 +34,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'position',
             'image',
             'general_definition:ntext',
-            //'experiences:ntext',
-            //'courses:ntext',
-            [
-                'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, MembersCouncil $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'id' => $model->id]);
-                 }
-            ],
+            'experiences:ntext',
+            'courses:ntext',
+            ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
 

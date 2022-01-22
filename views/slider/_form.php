@@ -26,16 +26,22 @@ $dataImage = [
 
 <div class="slider-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]) ?>
 
-    <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+         <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
 
-    <?= $form->field($model, 'file')->widget(\kartik\file\FileInput::classname(), [
-        'options' => ['accept' => 'image/*','placeholder'=>Yii::t('app','Logo')],
-        'pluginOptions' => $dataImage
-    ])->label(Yii::t('app','Image'));
-    ?>
+        <?=
+        $form->field($model, 'file')->widget(\kartik\file\FileInput::classname(), [
+            'options' => ['accept' => 'image/*','placeholder'=>Yii::t('app','Logo')],
+            'pluginOptions' => $dataImage
+        ])->label(Yii::t('app','Image'));
+
+        ?>
+
+
+
+
 
 
 

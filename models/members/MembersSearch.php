@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models\students;
+namespace app\models\members;
 
 use app\models\User;
 use yii\base\Model;

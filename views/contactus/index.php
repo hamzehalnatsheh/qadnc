@@ -32,6 +32,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'email:email',
             'phone',
             'phone_number',
+            'facebook',
+            'instagram',
+            'twitter',
+
             [
                 'class' => 'yii\grid\ActionColumn',
                 'template' => '{view} {update}' ,

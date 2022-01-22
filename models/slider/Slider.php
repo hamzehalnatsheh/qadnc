@@ -15,6 +15,8 @@ use Yii;
 class Slider extends \yii\db\ActiveRecord
 {
     public $file;
+    const Create="create";
+    const Update='update';
     /**
      * {@inheritdoc}
      */
@@ -29,10 +31,11 @@ class Slider extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title','body'],'required'],
-            [['body'], 'string'],
-            [['title', 'image'], 'string', 'max' => 500],
-            [['file'], 'image', 'skipOnEmpty' => true, 'extensions' => 'png, jpg, jpeg'],
+            [['title','body'],'required','on'=>[self::Create ,self::Update ]],
+            [['body'], 'string','on'=>[self::Create ,self::Update ]],
+            [['title', 'image'], 'string', 'max' => 500,'on'=>[self::Create ,self::Update ]],
+            [['file'], 'image', 'skipOnEmpty' => false, 'extensions' => 'png, jpg, jpeg','on'=>[self::Create ,self::Update ]],
+            ['file','required','on'=>[self::Create]]
         ];
     }
 

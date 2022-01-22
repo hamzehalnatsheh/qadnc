@@ -4,13 +4,13 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\courses\CoursesSearch */
+/* @var $searchModel app\models\students\StudentSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Courses');
+$this->title = Yii::t('app', 'Students');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="courses-index">
+<div class="student-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -28,24 +28,18 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
 //            'id',
-            [
-                'attribute'=>'title',
-                'value'=>function($searchModel){
-                    return Html::a($searchModel->title,['student-courses/index' ,'course'=> $searchModel->id]);
-                },
-                'format'=>'html'
-
-            ],
-            'title',
-            'description:ntext',
-            'start_at',
-            'end_at',
-            //'image',
-            //'category',
-            //'status',
+            'username',
+            'first_name',
+            'last_name',
+//            'auth_key',
+            //'password_hash',
+            //'password_reset_token',
+            'email:email',
+            //'verification_token',
+            //'type',
+            'status',
             //'created_at',
-            //'update_at',
-            //'deleted_at',
+            //'updated_at',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

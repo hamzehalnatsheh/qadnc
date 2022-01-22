@@ -29,6 +29,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'email:email',
             'phone',
             'phone_number',
+            'facebook',
+            'instagram',
+            'twitter',
         ],
     ]) ?>
 

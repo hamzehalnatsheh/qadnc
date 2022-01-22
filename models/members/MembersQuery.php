@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models\students;
+namespace app\models\members;
 
 /**
  * This is the ActiveQuery class for [[Student]].
