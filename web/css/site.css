@@ -233,3 +233,16 @@ a, a:hover {
 .f-18 {
     font-size: 18px;
 }
+
+.course-options {
+    background: #eff2f8;
+    border-bottom: 1px solid #fff;
+    padding: 10px 15px 12px 10px;
+    color: #575757;
+    line-height: 1;
+    font-size: 1rem;
+}
+
+.twitter-icon {
+    color: rgb(29, 155, 240);
+}

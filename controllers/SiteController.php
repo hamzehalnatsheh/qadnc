@@ -306,13 +306,23 @@ class SiteController extends Controller
     }
 
     /**
-     * Displays consulting.
+     * Displays Board.
      *
      * @return string
      */
     public function actionBoard()
     {
         return $this->render('board');
+    }
+
+    /**
+     * Displays Achievements.
+     *
+     * @return string
+     */
+    public function actionAchievements()
+    {
+        return $this->render('achievements');
     }
 
     /**

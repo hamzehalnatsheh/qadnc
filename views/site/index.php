@@ -219,6 +219,41 @@ $this->title = 'My Yii Application';
                         </div>
                     </div>
                 </div>
+                <div class="row mt-4">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col-2"><i class="fab fa-twitter contact-us-icon twitter-icon"></i></div>
+                            <div class="col-10">
+                                <div class="mb-1">
+                                    <strong>تويتر</strong>
+                                </div>
+                                <a href="mailto:server@sds-sa.net">@jmTahyl</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col-2"><i class="fab fa-snapchat-ghost contact-us-icon"></i></div>
+                            <div class="col-10">
+                                <div class="mb-1">
+                                    <strong>سناب شات</strong>
+                                </div>
+                                <a href="tel:0509117025" dir="ltr">@nhcqd</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col-2"><i class="fab fa-instagram contact-us-icon"></i></div>
+                            <div class="col-10">
+                                <div class="mb-1">
+                                    <strong>انستغرام</strong>
+                                </div>
+                                <a href="tel:0112108640" dir="ltr">@nhcqd8</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col text-left">
                 <img src="<?= Yii::$app->request->baseUrl ?>/images/contact-us.png" />
