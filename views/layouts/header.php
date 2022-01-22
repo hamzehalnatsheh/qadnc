@@ -11,15 +11,34 @@ use yii\helpers\Html;
         </div>
         <div class="site-mobile-menu-body">
             <ul class="site-nav-wrap">
-                <li class="active"><a href="<?= Yii::$app->request->baseUrl ?>/"><span>الرئيسية</span></a></li>
+                <li class="<?= Yii::$app->controller->route =='site/index'?'active':''?>">
+                    <?=Html::a("<span>الرئيسية</span>",['site/index'])?>
+                </li>
+
+
                 <li><a href="/#aboutUs"><span>من نحن</span></a></li>
                 <li><a href="/#activity"><span>أنشطة الجمعية</span></a></li>
                 <li><a href="/#contactUs"><span>اتصل بنا</span></a></li>
-                <li><a href="/site/board"><span>مجلس الادارة</span></a></li>
-                <li><a href="/site/courses"><span>الدورات</span></a></li>
-                <li><a href="/site/consulting"><span>الاستشارات</span></a></li>
+
+
+
+                <li class="<?= Yii::$app->controller->route =='site/board'?'active':''?>">
+                    <?=Html::a("<span>مجلس الادارة</span>",['site/board'])?>
+                </li>
+
+                <li class="<?= Yii::$app->controller->route =='site/courses'?'active':''?>">
+                <?=Html::a("<span>الدورات</span>",['site/courses'])?>
+                </li>
+
+                <li class="<?= Yii::$app->controller->route =='site/consulting'?'active':''?>">
+                <?=Html::a("<span>الاستشارات</span>",['site/consulting'])?>
+                </li>
+
                 <?php if (Yii::$app->user->isGuest) : ?>
-                    <li><a href="<?= Yii::$app->request->baseUrl ?>/site/login"><span>تسجيل دخول</span></a></li>
+                    <li class="<?= Yii::$app->controller->route =='site/login'?'active':''?>">
+                         <?=Html::a("<span>تسجيل دخول</span>",['site/login'])?>
+                    </li>
+
                 <?php else : ?>
                     <?php echo '<li>'
                         . Html::beginForm(['/site/logout'], 'post')
@@ -47,7 +66,10 @@ use yii\helpers\Html;
                     <nav class="site-navigation position-relative text-right" role="navigation">
 
                         <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
-                            <li class="active"><a href="/"><span>الرئيسية</span></a></li>
+                            <li class="<?= Yii::$app->controller->route =='site/consulting'?'active':''?>">
+                                <?=Html::a("<span>الرئيسية</span>",['site/index'])?>
+                            </li>
+
                             <li class="has-children">
                                 <a>
                                     <span>
@@ -61,12 +83,26 @@ use yii\helpers\Html;
                                     <li><a href="/#contactUs">اتصل بنا</a></li>
                                 </ul>
                             </li>
-                            <li><a href="/site/board"><span>مجلس الادارة</span></a></li>
-                            <li><a href="/site/courses"><span>الدورات</span></a></li>
-                            <li><a href="/site/consulting"><span>الاستشارات</span></a></li>
+
+                            <li class="<?= Yii::$app->controller->route =='site/board'?'active':''?>">
+                               <?=Html::a("<span>مجلس الادارة</span>",['site/board'])?>
+                            </li>
+
+
+                            <li class="<?= Yii::$app->controller->route =='site/courses'?'courses':''?>">
+                                   <?=Html::a("<span>الدورات</span>",['site/courses'])?>
+                            </li>
+                            <li class="<?= Yii::$app->controller->route =='site/consulting'?'active':''?>">
+                                <?=Html::a("<span>الاستشارات</span>",['site/consulting'])?>
+                            </li>
+
 
                             <?php if (Yii::$app->user->isGuest) : ?>
-                                <li><a href="<?= Yii::$app->request->baseUrl ?>/site/login"><span>تسجيل دخول</span></a></li>
+
+                                <li class="<?= Yii::$app->controller->route =='site/login'?'active':''?>">
+                                     <?=Html::a("<span>تسجيل دخول</span>",['site/login'])?>
+                                </li>
+
                             <?php else : ?>
 
                                 <li class="has-children">
