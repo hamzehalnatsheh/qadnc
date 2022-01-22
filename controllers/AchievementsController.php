@@ -4,10 +4,13 @@ namespace app\controllers;
 
 use app\models\achievements\Achievements;
 use app\models\achievements\AchievementsSearch;
+use yii\helpers\FileHelper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use Yii;
+use yii\web\UploadedFile;
+
 /**
  * AchievementsController implements the CRUD actions for Achievements model.
  */
@@ -85,7 +88,7 @@ class AchievementsController extends Controller
                 if (!is_null($file)) {
                     $folder_path = "uploads/images/$model->id";
                     FileHelper::createDirectory($folder_path, $mode = 0775, $recursive = true);
-                    $image = "$folder_path/index" . "." . $file->extension;
+                    $image = $folder_path."index" . "." . $file->extension;
                     $model->image = $image;
                     $file->saveAs($image);
                 }

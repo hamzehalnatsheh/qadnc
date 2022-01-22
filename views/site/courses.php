@@ -8,7 +8,8 @@
             </div>
         </div>
         <div class="row">
-            <?php $is_loggedin = Yii::$app->user->isGuest ? false : true ?>
+            <?php $is_loggedin = Yii::$app->user->isGuest ? false : true ;?>
+
             <?php if (empty($courses)) { ?>
                 <div class="alert alert-warning" role="alert">
                     <strong>
@@ -18,9 +19,13 @@
             <?php } ?>
             <?php foreach ($courses as $course) : ?>
                 <?php
-                $is_regist_coures = false;
+                $coures_user = [];
                 if ($is_loggedin) {
-                    $coures_user = \app\models\User::find(\Yii::$app->user->identity->id);
+
+                    $coures_usermodel = \app\models\studentcourses\StudentCourses::find()
+                        ->where(['student_id'=>\Yii::$app->user->identity->id])->all();
+                    $coures_user= \yii\helpers\ArrayHelper::map($coures_usermodel, 'id', 'course_id');
+
                 }
                 ?>
 
@@ -49,7 +54,7 @@
                                 </strong>
                             </div>
                             <div>
-                                <?php if (!$is_regist_coures) : ?>
+                                <?php if ($is_loggedin && in_array($course->id ,$coures_user)) : ?>
                                     <button type="submit" class="btn btn-link register_coure" onclick="register_coure(<?= $course->id ?> ,  <?= $is_loggedin ?>)" course_id="<?= $course->id ?>" is_loggedin="<?= $is_loggedin ?>">
                                         <strong>
                                             تسجيل

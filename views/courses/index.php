@@ -28,6 +28,14 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
 //            'id',
+            [
+                'attribute'=>'title',
+                'value'=>function($searchModel){
+                    return Html::a($searchModel->title,['student-courses/index' ,'course'=> $searchModel->id]);
+                },
+                'format'=>'html'
+
+            ],
             'title',
             'description:ntext',
             'start_at',

@@ -89,8 +89,6 @@ class Courses extends \yii\db\ActiveRecord
                 $this->deleted_at = null;
 
 
-            } else {
-                $this->updated_at =$today;
             }
 
             return true;

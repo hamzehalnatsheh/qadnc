@@ -47,8 +47,17 @@ class StudentCoursesSearch extends StudentCourses
             'query' => $query,
         ]);
 
-        //        $query->joinWith('course');
-//        $query->joinWith('student');
+         $query->joinWith('course');
+        $query->joinWith('student');
+
+        if(isset($_GET['student']) && $_GET['student'] != ''){
+            $query->andWhere(['student_id'=>$_GET['student']]);
+        }
+
+        if(isset($_GET['course']) && $_GET['course'] != ''){
+            $query->andWhere(['course_id'=>$_GET['course']]);
+        }
+
         $this->load($params);
 
         if (!$this->validate()) {
