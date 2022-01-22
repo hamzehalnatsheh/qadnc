@@ -317,7 +317,7 @@ class SiteController extends Controller
     }
 
     /**
-     * Displays consulting.
+     * Displays Board.
      *
      * @return string
      */
@@ -325,6 +325,16 @@ class SiteController extends Controller
     {
         $membersCouncil=MembersCouncil::find()->all();
         return $this->render('board',['membersCouncil'=>$membersCouncil]);
+    }
+
+    /**
+     * Displays Achievements.
+     *
+     * @return string
+     */
+    public function actionAchievements()
+    {
+        return $this->render('achievements');
     }
 
     /**

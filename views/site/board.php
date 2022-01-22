@@ -3,7 +3,7 @@
         <div class="row text-center">
             <div class="col-12 ">
                 <div class="activity-title">
-                    أعضاء مجلس الإدارة
+                    أعضاء الجمعية المؤسسين
                 </div>
             </div>
         </div>
