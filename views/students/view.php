@@ -4,14 +4,14 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\students\Student */
+/* @var $model app\models\students\Students */
 
 $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Students'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="student-view">
+<div class="students-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -33,10 +33,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'username',
             'first_name',
             'last_name',
+            'born_date',
             'auth_key',
             'password_hash',
             'password_reset_token',
             'email:email',
+            'dateofbirth',
             'verification_token',
             'type',
             'status',
