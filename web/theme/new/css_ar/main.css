@@ -541,3 +541,7 @@ a svg {
     color: #fff;
     font-size: 17px;
 }
+
+.dropdown-menu {
+    right: auto;
+}

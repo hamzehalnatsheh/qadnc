@@ -1,4 +1,4 @@
-<div id="profile" class="board">
+<div id="profile" class="details">
     <div class="container">
         <div class="row">
             <div class="col-3">
