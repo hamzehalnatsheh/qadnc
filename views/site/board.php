@@ -22,9 +22,9 @@
                         <?= $membersCou->position?>
                     </div>
                     <div>
-                        <button class="btn btn-outline-primary btn-green">
+                        <a href="/site/board-profile" class="btn btn-outline-primary btn-green">
                             سيرته الذاتية
-                        </button>
+                        </a>
                     </div>
                 </div>
             <?php endforeach;?>
