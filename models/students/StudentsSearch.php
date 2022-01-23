@@ -2,15 +2,14 @@
 
 namespace app\models\students;
 
-use app\models\User;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\students\Student;
+use app\models\students\Students;
 
 /**
- * StudentSearch represents the model behind the search form of `app\models\students\Student`.
+ * StudentsSearch represents the model behind the search form of `app\models\students\Students`.
  */
-class StudentSearch extends Student
+class StudentsSearch extends Students
 {
     /**
      * {@inheritdoc}
@@ -19,7 +18,7 @@ class StudentSearch extends Student
     {
         return [
             [['id', 'type', 'status', 'created_at', 'updated_at'], 'integer'],
-            [['username', 'first_name', 'last_name', 'auth_key', 'password_hash', 'password_reset_token', 'email', 'verification_token','born_date'], 'safe'],
+            [['username', 'first_name', 'last_name', 'born_date', 'auth_key', 'password_hash', 'password_reset_token', 'email', 'dateofbirth', 'verification_token'], 'safe'],
         ];
     }
 
@@ -41,9 +40,7 @@ class StudentSearch extends Student
      */
     public function search($params)
     {
-        $query = Student::find();
-
-        $query->where(['type'=>User::Student]);
+        $query = Students::find();
 
         // add conditions that should always apply here
 
@@ -62,9 +59,10 @@ class StudentSearch extends Student
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'born_date' => $this->born_date,
+            'dateofbirth' => $this->dateofbirth,
             'type' => $this->type,
             'status' => $this->status,
-            'born_date'=>$this->born_date,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ]);

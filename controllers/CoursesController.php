@@ -78,22 +78,27 @@ class CoursesController extends Controller
      */
     public function actionCreate()
     {
+
+
         $model = new Courses();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->validate()) {
-                $file = UploadedFile::getInstance($model, 'file');
-
-                if (!is_null($file)) {
-                    $folder_path = "uploads/avatar/$model->id";
-                    FileHelper::createDirectory($folder_path, $mode = 0775, $recursive = true);
-                    $imge = "$folder_path/index" . "." . $file->extension;
-                    $model->image = $imge;
-                    $file->saveAs($imge);
+            $model->scenario=Courses::Create;
+            $newId = Courses::find()->max('id') + 1;
+            if ($model->load($this->request->post()) ) {
+                $model->file = UploadedFile::getInstance($model, 'file');
+                if( $model->validate()){
+                    if (!is_null( $model->file)) {
+                        FileHelper::createDirectory('uploads/coures');
+                        $path="uploads/coures/$newId" . "." .  $model->file->extension;
+                        $model->file->saveAs($path);
+                        $model->image=$path;
+                    }
+                    $model->save(false);
+                    return $this->redirect(['view', 'id' => $model->id]);
+                }else{
+                    $model->loadDefaultValues();
                 }
-                $model->save(false);
-
-                return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
             $model->loadDefaultValues();
@@ -102,6 +107,9 @@ class CoursesController extends Controller
         return $this->render('create', [
             'model' => $model,
         ]);
+
+
+
     }
 
     /**
@@ -114,16 +122,16 @@ class CoursesController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
+        $model->scenario=Courses::Update;
         if ($this->request->isPost && $model->load($this->request->post()) && $model->validate()) {
-            $file = UploadedFile::getInstance($model, 'file');
+            $model->file = UploadedFile::getInstance($model, 'file');
 
-            if (!is_null($file)) {
-                $folder_path = "uploads/avatar/$model->id";
+            if (!is_null( $model->file )) {
+                $folder_path = "uploads/coures/$model->id";
                 FileHelper::createDirectory($folder_path, $mode = 0775, $recursive = true);
-                $imge = "$folder_path/index" . "." . $file->extension;
+                $imge = "$folder_path/index" . "." .  $model->file ->extension;
                 $model->image = $imge;
-                $file->saveAs($imge);
+                $model->file ->saveAs($imge);
             }
             $model->save(false);
             return $this->redirect(['view', 'id' => $model->id]);
@@ -133,6 +141,7 @@ class CoursesController extends Controller
             'model' => $model,
         ]);
     }
+
 
     /**
      * Deletes an existing Courses model.

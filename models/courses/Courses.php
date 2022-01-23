@@ -26,6 +26,8 @@ class Courses extends \yii\db\ActiveRecord
     public $file;
     const Active=1;
     const  DisActive=2;
+    const Create="create";
+    const Update='update';
     /**
      * {@inheritdoc}
      */
@@ -40,14 +42,14 @@ class Courses extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [[ 'title','description','start_at','end_at','category','status'], 'required'],
-            [['description'], 'string'],
-            [['start_at', 'end_at'], 'safe'],
-            [['category', 'status'], 'integer'],
-            [['title'], 'string', 'max' => 1000],
-            [['image'], 'string', 'max' => 256],
-            [['file'], 'image', 'skipOnEmpty' => true, 'extensions' => 'png,jpg,jpeg,gif'],
-
+            [[ 'title','description','start_at','end_at','category','status'], 'required','on'=>[self::Create ,self::Update ]],
+            [['description'], 'string','on'=>[self::Create ,self::Update ]],
+            [['start_at', 'end_at'], 'safe','on'=>[self::Create ,self::Update ]],
+            [['category', 'status'], 'integer','on'=>[self::Create ,self::Update ]],
+            [['title'], 'string', 'max' => 1000,'on'=>[self::Create ,self::Update ]],
+            [['image'], 'string', 'max' => 256,'on'=>[self::Create ,self::Update ]],
+            ['file','required','on'=>[self::Create ]],
+            [['file'], 'image', 'skipOnEmpty' => true, 'extensions' => 'png,jpg,jpeg,gif','on'=>[self::Create ,self::Update ]],
         ];
     }
 
@@ -87,8 +89,6 @@ class Courses extends \yii\db\ActiveRecord
                 $this->created_at = $today;
                 $this->update_at = $today;
                 $this->deleted_at = null;
-
-
             }
 
             return true;
