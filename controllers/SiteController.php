@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\aboutus\Aboutus;
+use app\models\achievements\Achievements;
 use app\models\associationactivities\AssociationActivities;
 use app\models\consultation\Consultation;
 use app\models\Consulting;
@@ -82,8 +83,9 @@ class SiteController extends Controller
         $connect_us=Contactus::find()->one();
         $associations=AssociationActivities::find()->all();
         $sliders=Slider::find()->all();
+        $achievements=Achievements::find()->all();
      
-        return $this->render('index',['about_us'=>$about_us,'connect_us'=>$connect_us,'associations'=>$associations,'sliders'=>$sliders]);
+        return $this->render('index',['about_us'=>$about_us,'connect_us'=>$connect_us,'associations'=>$associations,'sliders'=>$sliders,'achievements'=>$achievements]);
     }
 
     /**

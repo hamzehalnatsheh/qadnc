@@ -108,43 +108,19 @@ $this->title = 'Application';
                     </div>
                 </div>
             </div>
+             
             <div class="center">
+            <?php foreach($achievements as $achievement):?>
                 <div>
-                    <img src="https://picsum.photos/300/200?random=1">
+                    <img src="<?=Yii::$app->request->baseUrl .'/'.$achievement->image?>">
                     <div class="achievements-title">
-                        دوره انجليزية لتأهيل الشباب السعودي
+                       <?= $achievement->title?>
                     </div>
                 </div>
                 <div>
-                    <img src="https://picsum.photos/300/200?random=2">
-                    <div class="achievements-title">
-                        دوره انجليزية لتأهيل الشباب السعودي
-                    </div>
-                </div>
-                <div>
-                    <img src="https://picsum.photos/300/200?random=3">
-                    <div class="achievements-title">
-                        دوره انجليزية لتأهيل الشباب السعودي
-                    </div>
-                </div>
-                <div>
-                    <img src="https://picsum.photos/300/200?random=4">
-                    <div class="achievements-title">
-                        دوره انجليزية لتأهيل الشباب السعودي
-                    </div>
-                </div>
-                <div>
-                    <img src="https://picsum.photos/300/200?random=5">
-                    <div class="achievements-title">
-                        دوره انجليزية لتأهيل الشباب السعودي
-                    </div>
-                </div>
-                <div>
-                    <img src="https://picsum.photos/300/200?random=6">
-                    <div class="achievements-title">
-                        دوره انجليزية لتأهيل الشباب السعودي
-                    </div>
-                </div>
+
+             <?php endforeach;?>  
+              
             </div>
         </div>
     </div>
