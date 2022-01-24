@@ -1,4 +1,4 @@
-<div id="board" class="board">
+<div id="board" class="details">
     <div class="container">
         <div class="row text-center">
             <div class="col-12 ">
@@ -22,9 +22,9 @@
                         <?= $membersCou->position?>
                     </div>
                     <div>
-                        <button class="btn btn-outline-primary btn-green">
+                        <a href="/site/board-profile" class="btn btn-outline-primary btn-green">
                             سيرته الذاتية
-                        </button>
+                        </a>
                     </div>
                 </div>
             <?php endforeach;?>

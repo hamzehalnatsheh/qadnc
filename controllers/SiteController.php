@@ -339,6 +339,26 @@ class SiteController extends Controller
     }
 
     /**
+     * Displays Board Profile.
+     *
+     * @return string
+     */
+    public function actionBoardProfile()
+    {
+        return $this->render('boardprofile');
+    }
+    
+    /**
+     * Displays Profile.
+     *
+     * @return string
+     */
+    public function actionProfile()
+    {
+        return $this->render('profile');
+    }
+
+    /**
      * @param $id
      * @return View
      */

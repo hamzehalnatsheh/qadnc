@@ -246,3 +246,15 @@ a, a:hover {
 .twitter-icon {
     color: rgb(29, 155, 240);
 }
+
+.board-profile-picture {
+    width: 100%;
+    border-radius: 50%;
+    border: 1px solid gray;
+    margin-left: 8px;
+    background: #fff;
+}
+
+.details {
+    padding: 80px 0;
+}
