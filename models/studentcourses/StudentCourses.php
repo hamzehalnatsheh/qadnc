@@ -3,8 +3,7 @@
 namespace app\models\studentcourses;
 
 use app\models\courses\Courses;
-use app\models\students\Student;
-use app\models\User;
+use app\models\students\Students;
 use Yii;
 
 /**
@@ -55,7 +54,7 @@ class StudentCourses extends \yii\db\ActiveRecord
 
     public function getStudent()
     {
-        return $this->hasOne(Student::className(), ['id' => 'student_id']);
+        return $this->hasOne(Students::className(), ['id' => 'student_id']);
     }
 
 

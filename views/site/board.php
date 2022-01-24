@@ -8,7 +8,10 @@
             </div>
         </div>
         <div class="row mb-5">
-            <?php foreach ($membersCouncil as $membersCou):?>
+            <?php
+
+        use yii\helpers\Html;
+        foreach ($membersCouncil as $membersCou):?>
                 <div class="col-4 mb-5 text-center">
                     <div class="mb-3">
                         <?= \yii\helpers\Html::img( "/$membersCou->image" ,["alt"=>"", "class"=>"board-img"]);?>
@@ -22,9 +25,8 @@
                         <?= $membersCou->position?>
                     </div>
                     <div>
-                        <a href="/site/board-profile" class="btn btn-outline-primary btn-green">
-                            سيرته الذاتية
-                        </a>
+                        <?= Html::a(' سيرته الذاتية',['site/board-profile','id'=>$membersCou->id],['class'=>'btn btn-outline-primary btn-green'])?>
+                        
                     </div>
                 </div>
             <?php endforeach;?>

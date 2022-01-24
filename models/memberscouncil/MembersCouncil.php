@@ -18,6 +18,12 @@ use Yii;
 class MembersCouncil extends \yii\db\ActiveRecord
 {
     public  $file;
+
+    const Create="create";
+    const Update='update';
+
+
+
     /**
      * {@inheritdoc}
      */
@@ -32,12 +38,13 @@ class MembersCouncil extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'position'], 'required'],
-            [['general_definition', 'experiences', 'courses'], 'string'],
-            [['name'], 'string', 'max' => 256],
-            [['position'], 'string', 'max' => 500],
+            [['name', 'position','certificates'], 'required','on'=>[self::Create ,self::Update ]],
+            [['general_definition', 'experiences', 'courses'], 'string','on'=>[self::Create ,self::Update ]],
+            [['name'], 'string', 'max' => 256,'on'=>[self::Create ,self::Update ]],
+            [['position'], 'string', 'max' => 500,'on'=>[self::Create ,self::Update ]],
             [['image'], 'string', 'max' => 255],
-            [['file'], 'image', 'skipOnEmpty' => true, 'extensions' => 'png, jpg, jpeg'],
+            ['file', 'required','on'=>[self::Create ,self::Update ]],
+            [['file'], 'image', 'skipOnEmpty' => true, 'extensions' => 'png, jpg, jpeg','on'=>[self::Create ,self::Update  ]],
         ];
     }
 

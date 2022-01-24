@@ -4,8 +4,10 @@
 /* @var $form yii\bootstrap4\ActiveForm */
 /* @var $model \frontend\models\SignupForm */
 
+use dosamigos\datepicker\DatePicker;
 use yii\bootstrap4\Html;
 use yii\bootstrap4\ActiveForm;
+
 
 $this->title = 'تسجيل الأعضاء';
 $this->params['breadcrumbs'][] = $this->title;
@@ -36,15 +38,20 @@ $this->params['breadcrumbs'][] = $this->title;
                         <?php $form = ActiveForm::begin(['id' => 'form-memberSignup']); ?>
 
                         <?= $form->field($model, 'username')->textInput(['placeholder' => 'اسم المستخدم'])->label('') ?>
-                        <?= $form->field($model, 'dateofbirth')->textInput(['placeholder' => 'تاريخ الميلاد','id'=>''])->label('') ?>
+     
 
-                        <?= $form->field($model, 'dateofbirth')->widget(\yii\jui\DatePicker::classname(), [
-                                'language' => 'ru',
-                                'dateFormat' => 'yyyy-MM-dd',
-                            'clientOptions'=>[
-                                'placeholder' => 'تاريخ الميلاد','id'=>''
-                            ]
-                        ]) ?>
+                        <?= $form->field($model, 'dateofbirth')->widget(
+                                    DatePicker::className(), [
+                                    // inline too, not bad
+                                    'inline' => false,
+
+                                    'clientOptions' => [
+                                        'autoclose' => true,
+                                        'format' => 'yyyy-mm-dd',
+                                        'placeholder' => 'تاريخ الميلاد'
+                                    ]
+                                ])->label('') ;?>
+
 
                         <?= $form->field($model, 'email')->textInput(['placeholder' => 'اليريد الإلكتروني'])->label('') ?>
 

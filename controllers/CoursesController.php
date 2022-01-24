@@ -89,8 +89,8 @@ class CoursesController extends Controller
                 $model->file = UploadedFile::getInstance($model, 'file');
                 if( $model->validate()){
                     if (!is_null( $model->file)) {
-                        FileHelper::createDirectory('uploads/coures');
-                        $path="uploads/coures/$newId" . "." .  $model->file->extension;
+                        FileHelper::createDirectory("uploads/coures/$newId");
+                        $path="uploads/coures/$newId/" . "index." .  $model->file->extension;
                         $model->file->saveAs($path);
                         $model->image=$path;
                     }

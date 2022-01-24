@@ -82,23 +82,26 @@ class MembersCouncilController extends Controller
      */
     public function actionCreate()
     {
+
         $model = new MembersCouncil();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->validate()) {
-                $newId = MembersCouncil::find()->max('id') + 1;
-                $file = UploadedFile::getInstance($model, 'file');
-                if (!is_null($file)) {
-                    FileHelper::createDirectory('uploads/memberscouncil');
-
-                    $path="uploads/memberscouncil/$newId" . "." . $file->extension;
-                    $file->saveAs($path);
-                    $model->image=$path;
+            $model->scenario=MembersCouncil::Create;
+            $newId = MembersCouncil::find()->max('id') + 1;
+            if ($model->load($this->request->post()) ) {
+                $model->file = UploadedFile::getInstance($model, 'file');
+                if( $model->validate()){
+                    if (!is_null( $model->file)) {
+                        FileHelper::createDirectory("uploads/memberscouncil/$newId");
+                        $path="uploads/memberscouncil/$newId/" . "index." .  $model->file->extension;
+                        $model->file->saveAs($path);
+                        $model->image=$path;
+                    }
+                    $model->save(false);
+                    return $this->redirect(['view', 'id' => $model->id]);
+                }else{
+                    $model->loadDefaultValues();
                 }
-                $model->save();
-
-
-                return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
             $model->loadDefaultValues();
@@ -107,6 +110,8 @@ class MembersCouncilController extends Controller
         return $this->render('create', [
             'model' => $model,
         ]);
+
+
     }
 
     /**
@@ -118,27 +123,28 @@ class MembersCouncilController extends Controller
      */
     public function actionUpdate($id)
     {
+
         $model = $this->findModel($id);
-
+        $model->scenario=MembersCouncil::Update;
         if ($this->request->isPost && $model->load($this->request->post()) && $model->validate()) {
+            $model->file = UploadedFile::getInstance($model, 'file');
 
-            $file = UploadedFile::getInstance($model, 'file');
-            if (!is_null($file)) {
-                FileHelper::createDirectory('uploads/memberscouncil');
-
-                $path="uploads/memberscouncil/$model->id" . "." . $file->extension;
-                $file->saveAs($path);
-                $model->image=$path;
+            if (!is_null( $model->file )) {
+                $folder_path = "uploads/memberscouncil/$model->id";
+                FileHelper::createDirectory($folder_path, $mode = 0775, $recursive = true);
+                $imge = "$folder_path/index" . "." .  $model->file ->extension;
+                $model->image = $imge;
+                $model->file ->saveAs($imge);
             }
-            $model->save();
-
-
+            $model->save(false);
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('update', [
             'model' => $model,
         ]);
+        
+       
     }
 
     /**

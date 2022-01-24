@@ -1,17 +1,22 @@
+<?php
+
+use yii\helpers\Html;
+?>
 <div id="profile" class="details">
     <div class="container">
         <div class="row">
             <div class="col-3">
-                <img src="/images/default.png" alt="" class="board-profile-picture" />
+                <?= Html::img('/'. $membersCouncil->image ,['class'=>"board-profile-picture" ])?>
+                 
             </div>
             <div class="col-9">
                 <div>
                     <strong>
-                        عبدالله بن عبدالعزيز بن ابراهيم الهدلق
+                        <?= $membersCouncil->name ;?>
                     </strong>
                 </div>
                 <div class="mb-4">
-                    رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة	
+                    <?= $membersCouncil->general_definition ;?>
                 </div>
                 <div>
                     <strong>
@@ -19,7 +24,7 @@
                     </strong>
                 </div>
                 <div class="mb-4">
-                     يحمل درجة الماجستير في الاتصالات و التسويق من جامعة ويبستر الأمريكية    
+                    <?= $membersCouncil->certificates ;?>   
                 </div>
                 <div>
                     <strong>
@@ -27,7 +32,7 @@
                     </strong>
                 </div>
                 <div class="mb-4">
-                     يحمل درجة الماجستير في الاتصالات و التسويق من جامعة ويبستر الأمريكية    
+                    <?= $membersCouncil->courses ;?>     
                 </div>
                 <div>
                     <strong>
@@ -35,7 +40,7 @@
                     </strong>
                 </div>
                 <div class="mb-4">
-                     يحمل درجة الماجستير في الاتصالات و التسويق من جامعة ويبستر الأمريكية    
+                     <?= $membersCouncil->experiences ;?>        
                 </div>
             </div>
         </div>

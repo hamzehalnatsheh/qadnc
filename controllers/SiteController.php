@@ -345,9 +345,12 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionBoardProfile()
+    public function actionBoardProfile($id)
     {
-        return $this->render('boardprofile');
+
+        $membersCouncil=MembersCouncil::findOne($id);
+
+        return $this->render('boardprofile',['membersCouncil'=>$membersCouncil]);
     }
     
     /**

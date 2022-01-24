@@ -13,8 +13,7 @@ $this->title = 'Application';
             <?php foreach( $sliders as $key=> $slider):?>
                 <?php $key ++ ;?>
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="<?=$key?>" class="<?= ($key==1)?'active':''?>" aria-current="true" aria-label="Slide <?=$key?>"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="<?=$key?>" aria-label="Slide <?=$key?>"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="<?=$key?>" aria-label="Slide <?=$key?>"></button>
+               
             <?php endforeach;?>
 
         </div>
@@ -179,7 +178,7 @@ $this->title = 'Application';
                                 <div class="mb-1">
                                     <strong>تويتر</strong>
                                 </div>
-                                <a href="mailto:server@sds-sa.net">@jmTahyl</a>
+                                <a href="<?= $connect_us->twitter ;?>"><?= $connect_us->twitter ;?></a>
                             </div>
                         </div>
                     </div>
@@ -190,7 +189,7 @@ $this->title = 'Application';
                                 <div class="mb-1">
                                     <strong>سناب شات</strong>
                                 </div>
-                                <a href="tel:0509117025" dir="ltr">@nhcqd</a>
+                                <a href="<?= $connect_us->snap ;?>" dir="ltr"><?= $connect_us->snap ;?></a>
                             </div>
                         </div>
                     </div>
@@ -201,7 +200,7 @@ $this->title = 'Application';
                                 <div class="mb-1">
                                     <strong>انستغرام</strong>
                                 </div>
-                                <a href="tel:0112108640" dir="ltr">@nhcqd8</a>
+                                <a href="<?= $connect_us->instagram ;?>" dir="ltr"><?= $connect_us->instagram ;?></a>
                             </div>
                         </div>
                     </div>

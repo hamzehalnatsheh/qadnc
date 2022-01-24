@@ -41,6 +41,9 @@ $dataImage = [
     <?= $form->field($model, 'general_definition')->textarea(['rows' => 6]) ?>
 
     <?= $form->field($model, 'experiences')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'certificates')->textarea(['rows' => 6]) ?>
+
+    
 
     <?= $form->field($model, 'courses')->textarea(['rows' => 6]) ?>
 

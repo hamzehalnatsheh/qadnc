@@ -30,15 +30,17 @@ class SignupFormMember extends Model
             ['username', 'unique', 'targetClass' => '\app\models\User', 'message' => 'This username has already been taken.'],
             ['username', 'string', 'min' => 2, 'max' => 255],
             ['dateofbirth', 'trim'],
-
+            [['dateofbirth','password_repeat'],'required'],
+            ['password', 'required'],
+            ['password', 'string', 'min' => Yii::$app->params['user.passwordMinLength']],
             ['email', 'trim'],
             ['email', 'required'],
             ['email', 'email'],
             ['email', 'string', 'max' => 255],
             ['email', 'unique', 'targetClass' => '\app\models\User', 'message' => 'This email address has already been taken.'],
             ['password_repeat', 'compare', 'compareAttribute'=>'password', 'message'=>"Passwords don't match" ],
-            ['password', 'required'],
-            ['password', 'string', 'min' => Yii::$app->params['user.passwordMinLength']],
+        
+            
         ];
     }
 
@@ -63,7 +65,7 @@ class SignupFormMember extends Model
         $user->generateAuthKey();
         $user->generateEmailVerificationToken();
 
-        return $user->save() && $this->sendEmail($user);
+        return ($user->save() && $this->sendEmail($user))? Yii::$app->user->login($user, false ? 3600 * 24 * 30 : 0):false;
     }
 
     /**

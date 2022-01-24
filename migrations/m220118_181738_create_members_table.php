@@ -27,6 +27,7 @@ class m220118_181738_create_members_table extends Migration
             'general_definition'=>$this->text(),
             'experiences'=>$this->text(),
             'courses'=>$this->text(255),
+            'certificates'=>$this->text(255),
         ],$tableOptions);
     }
 
