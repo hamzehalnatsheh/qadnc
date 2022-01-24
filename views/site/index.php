@@ -8,33 +8,30 @@ $this->title = 'Application';
 <link rel="stylesheet" href="<?= Yii::$app->request->baseUrl ?>/css/home.css" />
 <div>
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <?php foreach( $sliders as $key=> $slider):?>
+                <?php $key ++ ;?>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="<?=$key?>" class="<?= ($key==1)?'active':''?>" aria-current="true" aria-label="Slide <?=$key?>"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="<?=$key?>" aria-label="Slide <?=$key?>"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="<?=$key?>" aria-label="Slide <?=$key?>"></button>
+            <?php endforeach;?>
+
         </div>
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="slider-image" style="background-image: url(<?= Yii::$app->request->baseUrl ?>/images/Roadmap-1.jpg);"></div>
-                <div class="carousel-caption d-none d-md-block">
-                    <h2 class="carousel-title">نقدم الإستشارات التسويقية</h2>
-                    <p class="carousel-desc">الدراسات - البحوث - الإحصاءات</p>
+            <?php foreach( $sliders as $key=> $slider):?>
+                <?php $key ++ ;?>
+                <div class="carousel-item <?= ($key==1)? 'active':''?>">
+                    <div class="slider-image" style="background-image: url(<?= Yii::$app->request->baseUrl .'/'.$slider->image ?>);"></div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2 class="carousel-title"><?= $slider->title?></h2>
+                        <p class="carousel-desc"> <?= $slider->body?> </p>
+                    </div>
                 </div>
-            </div>
-            <div class="carousel-item">
-                <div class="slider-image" style="background-image: url(<?= Yii::$app->request->baseUrl ?>/images/Roadmap.jpg);"></div>
-                <div class="carousel-caption">
-                    <h2 class="carousel-title">نقدم الإستشارات التسويقية</h2>
-                    <p class="carousel-desc">الدراسات - البحوث - الإحصاءات</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="slider-image" style="background-image: url(<?= Yii::$app->request->baseUrl ?>/images/teamwork.jpg);"></div>
-                <div class="carousel-caption d-none d-md-block">
-                    <h2 class="carousel-title">نقدم الإستشارات التسويقية</h2>
-                    <p class="carousel-desc">الدراسات - البحوث - الإحصاءات</p>
-                </div>
-            </div>
+                
+            <?php endforeach;?>
+           
+        
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

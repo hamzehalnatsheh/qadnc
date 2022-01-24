@@ -28,6 +28,7 @@ class m220118_231332_create_contactus_table extends Migration
             'facebook'=>$this->string(200)->notNull(),
             'instagram'=>$this->string(200)->notNull(),
             'twitter'=>$this->string(200)->notNull(),
+            'snap'=>$this->string(200)->notNull(),
 
         ],$tableOptions);
 
@@ -41,6 +42,7 @@ class m220118_231332_create_contactus_table extends Migration
                 'facebook'=>'facebook',
                 'instagram'=>'instagram',
                 'twitter'=>'twitter',
+                'snap'=>'snap',
             ]
         ];
 
@@ -55,7 +57,8 @@ class m220118_231332_create_contactus_table extends Migration
                     'phone_number',
                     'facebook',
                     'instagram',
-                    'twitter'
+                    'twitter',
+                    'snap'
                 ], $data)
             ->execute();
 

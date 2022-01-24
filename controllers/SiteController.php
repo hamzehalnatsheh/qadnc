@@ -82,6 +82,7 @@ class SiteController extends Controller
         $connect_us=Contactus::find()->one();
         $associations=AssociationActivities::find()->all();
         $sliders=Slider::find()->all();
+     
         return $this->render('index',['about_us'=>$about_us,'connect_us'=>$connect_us,'associations'=>$associations,'sliders'=>$sliders]);
     }
 

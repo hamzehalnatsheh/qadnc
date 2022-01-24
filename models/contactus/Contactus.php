@@ -31,7 +31,7 @@ class Contactus extends \yii\db\ActiveRecord
     {
         return [
             [['title', 'address', 'email', 'phone', 'phone_number'], 'required'],
-            [['title', 'address', 'email'], 'string', 'max' => 500],
+            [['title', 'address', 'email','snap','facebook','instagram','twitter'], 'string', 'max' => 500],
             [['phone', 'phone_number'], 'string', 'max' => 200],
         ];
     }

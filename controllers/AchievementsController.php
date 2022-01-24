@@ -79,29 +79,40 @@ class AchievementsController extends Controller
      */
     public function actionCreate()
     {
+
         $model = new Achievements();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->validate()) {
-                $file = UploadedFile::getInstance($model, 'file');
-                $vedio_file = UploadedFile::getInstance($model, 'vedio_file');
-                if (!is_null($file)) {
-                    $folder_path = "uploads/images/$model->id";
-                    FileHelper::createDirectory($folder_path, $mode = 0775, $recursive = true);
-                    $image = $folder_path."index" . "." . $file->extension;
-                    $model->image = $image;
-                    $file->saveAs($image);
-                }
-                if (!is_null($vedio_file)) {
-                    $folder_path = "uploads/vedios/$model->id";
-                    FileHelper::createDirectory($folder_path, $mode = 0775, $recursive = true);
-                    $vedio_path = "$folder_path/index" . "." . $file->extension;
-                    $model->vedio = $vedio_path;
-                    $file->saveAs($vedio_path);
-                }
-                $model->save(false);
+            $model->scenario=Achievements::Create;
+            $newId = Achievements::find()->max('id') + 1;
+            if ($model->load($this->request->post()) ) {
 
-                return $this->redirect(['view', 'id' => $model->id]);
+
+                $model->file = UploadedFile::getInstance($model, 'file');
+                $model->vedio_file = UploadedFile::getInstance($model, 'vedio_file');
+
+                if( $model->validate()){
+                    if (!is_null( $model->file)) {
+                        FileHelper::createDirectory('uploads/achievements');
+
+                        $folder_path = "uploads/achievements/$model->id";
+                        $path="uploads/achievements/$newId" . "." .  $model->file->extension;
+                        $model->file->saveAs($path);
+                        $model->image=$path;
+                    }
+                    if (!is_null($model->vedio_file)) {
+                        $folder_path = "uploads/achievements/$model->id";
+                        FileHelper::createDirectory($folder_path, $mode = 0775, $recursive = true);
+                        $vedio_path = "$folder_path/index" . "." .  $model->vedio_file->extension;
+                        $model->vedio = $vedio_path;
+                        $model->vedio_file->saveAs($vedio_path);
+                    }
+
+                    $model->save(false);
+                    return $this->redirect(['view', 'id' => $model->id]);
+                }else{
+                    $model->loadDefaultValues();
+                }
             }
         } else {
             $model->loadDefaultValues();
@@ -110,6 +121,44 @@ class AchievementsController extends Controller
         return $this->render('create', [
             'model' => $model,
         ]);
+
+
+
+
+        // $model = new Achievements();
+
+        // if ($this->request->isPost) {
+        //     if ($model->load($this->request->post()) && $model->validate()) {
+        //         $model->scenario=Achievements::Create;
+        //         $newId = Achievements::find()->max('id') + 1;
+
+        //         $file = UploadedFile::getInstance($model, 'file');
+        //         $vedio_file = UploadedFile::getInstance($model, 'vedio_file');
+        //         if (!is_null($file)) {
+        //             $folder_path = "uploads/images/$model->id";
+        //             FileHelper::createDirectory($folder_path, $mode = 0775, $recursive = true);
+        //             $image = $folder_path."index" . "." . $file->extension;
+        //             $model->image = $image;
+        //             $file->saveAs($image);
+        //         }
+        //         if (!is_null($vedio_file)) {
+        //             $folder_path = "uploads/vedios/$model->id";
+        //             FileHelper::createDirectory($folder_path, $mode = 0775, $recursive = true);
+        //             $vedio_path = "$folder_path/index" . "." . $file->extension;
+        //             $model->vedio = $vedio_path;
+        //             $file->saveAs($vedio_path);
+        //         }
+        //         $model->save(false);
+
+        //         return $this->redirect(['view', 'id' => $model->id]);
+        //     }
+        // } else {
+        //     $model->loadDefaultValues();
+        // }
+
+        // return $this->render('create', [
+        //     'model' => $model,
+        // ]);
     }
 
     /**
@@ -127,14 +176,14 @@ class AchievementsController extends Controller
             $file = UploadedFile::getInstance($model, 'file');
             $vedio_file = UploadedFile::getInstance($model, 'vedio_file');
             if (!is_null($file)) {
-                $folder_path = "uploads/images/$model->id";
+                $folder_path = "uploads/achievements/$model->id";
                 FileHelper::createDirectory($folder_path, $mode = 0775, $recursive = true);
                 $image = "$folder_path/index" . "." . $file->extension;
                 $model->image = $image;
                 $file->saveAs($image);
             }
             if (!is_null($vedio_file)) {
-                $folder_path = "uploads/vedios/$model->id";
+                $folder_path = "uploads/achievements/$model->id";
                 FileHelper::createDirectory($folder_path, $mode = 0775, $recursive = true);
                 $vedio_path = "$folder_path/index" . "." . $file->extension;
                 $model->vedio = $vedio_path;
