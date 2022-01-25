@@ -2,8 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-3">
-                <img src="/images/default.png" alt="" class="board-profile-picture" />
-
+                <img src="<?= Yii::$app->request->baseUrl ?>/images/default.png" alt="" class="board-profile-picture">
                 <div class="mt-3">
                     <strong>
                         عبدالله بن عبدالعزيز بن ابراهيم الهدلق
@@ -38,7 +37,7 @@
                 </div>
             </div>
             <div class="col-9">
-                <ul class="nav nav-pills nav-justified" id="myTab" role="tablist">
+                <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
                             الدورات الحالية
@@ -50,10 +49,93 @@
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        aaaa
+                        <div class="row mt-4">
+                            <a href="/web/site/courses/1" class="col-4 mb-4">
+                                <div class="card">
+                                    <div>
+                                        <img src="<?= Yii::$app->request->baseUrl ?>/images/consulting.jpeg" alt="" width="100%" height="135px"">
+                                    </div>
+                                    <div class=" card-body">
+                                        <div class="mb-3">
+                                            <strong>
+                                                اساسيات استخدام الحاسوب
+                                            </strong>
+                                        </div>
+                                        <div class="category mb-3">
+                                            <strong>
+                                                <i class="fas fa-bookmark pl-2"></i>
+                                                حاسب الي </strong>
+                                        </div>
+                                        <div class="category mb-2">
+                                            <strong>
+                                                <i class="fas fa-clock pl-2"></i>
+                                                ٠٥&rlm;/٠١&rlm;/٢٠٢٢ </strong>
+                                        </div>
+                                        <div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="/web/site/courses/1" class="col-4 mb-4">
+                                <div class="card">
+                                    <div>
+                                        <img src="<?= Yii::$app->request->baseUrl ?>/images/consulting.jpeg" alt="" width="100%" height="135px"">
+                                    </div>
+                                    <div class=" card-body">
+                                        <div class="mb-3">
+                                            <strong>
+                                                اساسيات استخدام الحاسوب
+                                            </strong>
+                                        </div>
+                                        <div class="category mb-3">
+                                            <strong>
+                                                <i class="fas fa-bookmark pl-2"></i>
+                                                حاسب الي </strong>
+                                        </div>
+                                        <div class="category mb-2">
+                                            <strong>
+                                                <i class="fas fa-clock pl-2"></i>
+                                                ٠٥&rlm;/٠١&rlm;/٢٠٢٢ </strong>
+                                        </div>
+                                        <div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="/web/site/courses/1" class="col-4 mb-4">
+                                <div class="card">
+                                    <div>
+                                        <img src="<?= Yii::$app->request->baseUrl ?>/images/consulting.jpeg" alt="" width="100%" height="135px"">
+                                    </div>
+                                    <div class=" card-body">
+                                        <div class="mb-3">
+                                            <strong>
+                                                اساسيات استخدام الحاسوب
+                                            </strong>
+                                        </div>
+                                        <div class="category mb-3">
+                                            <strong>
+                                                <i class="fas fa-bookmark pl-2"></i>
+                                                حاسب الي </strong>
+                                        </div>
+                                        <div class="category mb-2">
+                                            <strong>
+                                                <i class="fas fa-clock pl-2"></i>
+                                                ٠٥&rlm;/٠١&rlm;/٢٠٢٢ </strong>
+                                        </div>
+                                        <div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                        cccc
+                        <div class="alert alert-warning mt-4" role="alert">
+                            <strong>
+                                لا يوجد دورات
+                            </strong>
+                        </div>
                     </div>
                 </div>
             </div>

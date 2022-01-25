@@ -114,9 +114,9 @@ use yii\helpers\Html;
                                         </span>
                                     </a>
                                     <ul class="dropdown arrow-top">
-                                        <li><a href="/courses/index">الملف الشخصي</a></li>
+                                        <li><a href="/site/profile">الملف الشخصي</a></li>
                                         <?php if (Yii::$app->user->identity->type == \app\models\User::SUPER_ADMIN) : ?>
-                                            <li><a href="<?= \yii\helpers\Url::to(['/courses/index']) ?>"><?= Yii::t('app','Courses')?></a></li>
+                                            <li><a href="<?= \yii\helpers\Url::to(['/courses/index']) ?>"><?= Yii::t('app','Dashboard')?></a></li>
                                         <?php endif;?>
 
                                         <?php echo '<li>'
