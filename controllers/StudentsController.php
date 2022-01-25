@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\models\students\Students;
 use app\models\students\StudentsSearch;
 use app\models\User;
+use Yii;
 use yii\helpers\FileHelper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -81,6 +82,7 @@ class StudentsController extends Controller
     {
 
 
+
         $model = new Students();
 
         if ($this->request->isPost) {
@@ -88,19 +90,19 @@ class StudentsController extends Controller
             $newId = Students::find()->max('id') + 1;
             if ($model->load($this->request->post()) ) {
 
-                $model->status=User::STATUS_ACTIVE;
-                $model->type=User::Student;
-                $model->password_hash=\Yii::$app->security->generatePasswordHash("123456");
-                $model->auth_key = \Yii::$app->security->generateRandomString();
-                $model->verification_token = \Yii::$app->security->generateRandomString() . '_' . time();
-
                 $model->file = UploadedFile::getInstance($model, 'file');
                 if( $model->validate()){
+                    $model->status=User::STATUS_ACTIVE;
+                    $model->type=User::Student;
+                    $model->password_hash=\Yii::$app->security->generatePasswordHash("123456");
+                    $model->auth_key = \Yii::$app->security->generateRandomString();
+                    $model->verification_token = \Yii::$app->security->generateRandomString() . '_' . time();                 
+                    $model->file = UploadedFile::getInstance($model, 'file');
                     if (!is_null( $model->file)) {
-                        FileHelper::createDirectory('uploads/avatar');
-                        $path="uploads/avatar/$newId" . "." .  $model->file->extension;
+                          FileHelper::createDirectory("uploads/avatar/$newId");
+                        $path="uploads/avatar/$newId/index" . "." .  $model->file->extension;
                         $model->file->saveAs($path);
-                        $model->image=$path;
+                        $model->avatar=$path;
                     }
                     $model->save(false);
                     return $this->redirect(['view', 'id' => $model->id]);
@@ -137,7 +139,7 @@ class StudentsController extends Controller
                 $folder_path = "uploads/avatar/$model->id";
                 FileHelper::createDirectory($folder_path, $mode = 0775, $recursive = true);
                 $imge = "$folder_path/index" . "." .  $model->file ->extension;
-                $model->image = $imge;
+                $model->avatar = $imge;
                 $model->file ->saveAs($imge);
             }
             $model->save(false);

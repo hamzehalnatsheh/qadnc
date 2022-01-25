@@ -36,7 +36,25 @@ use dosamigos\datepicker\DatePicker;
     ]);?>
 
 
+     <?= $form->field($model, 'file')->widget(\kartik\file\FileInput::classname(), [
+                'options' => ['accept' => 'image/*'],
+                'pluginOptions' => [
+                    'showCaption' => true,
+//                        'showRemove' => true,
+                    'showUpload' => false,
+                    'initialPreview' => [
+                        Yii::getAlias('@web')
+                    ],
+                    'initialPreviewAsData' => true,
+                    'initialCaption' => Yii::getAlias('@web'),
+                    'initialPreviewConfig' => [
 
+                    ],
+                    'overwriteInitial'=>true
+                ]
+            ]);
+
+            ?>
 
 
 

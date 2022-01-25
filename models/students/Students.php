@@ -20,6 +20,7 @@ use Yii;
  * @property string|null $verification_token
  * @property int|null $type
  * @property int $status
+ * @property string|null $avatar
  * @property int $created_at
  * @property int $updated_at
  */
@@ -42,11 +43,12 @@ class Students extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['username', 'auth_key', 'password_hash', 'email'], 'required','on'=>[self::Create ,self::Update ]],
+            [['username', 'dateofbirth', 'email','first_name','last_name'], 'required','on'=>[self::Create ,self::Update ]],
             [['born_date', 'dateofbirth'], 'safe','on'=>[self::Create ,self::Update ]],
-            [['first_name', 'last_name'], 'string', 'max' => 100],'on'=>[self::Create ,self::Update ],
-            [['username'], 'unique'],
-            [['email'], 'unique'],
+            [['first_name', 'last_name'], 'string', 'max' => 100 ,'on'=>[self::Create ,self::Update ]],
+            [['username'], 'unique','on'=>[self::Create ,self::Update ]],
+            [['email'], 'unique','on'=>[self::Create ,self::Update ]],
+            ['avatar','safe','on'=>[self::Create ,self::Update ]],
             ['file','required','on'=>[self::Create ]],
             [['file'], 'image', 'skipOnEmpty' => true, 'extensions' => 'png,jpg,jpeg,gif','on'=>[self::Create ,self::Update ]],
         ];
