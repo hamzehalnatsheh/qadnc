@@ -184,7 +184,7 @@ $this->title = 'Application';
                     </div>
                     <div class="col">
                         <div class="row">
-                            <div class="col-2"><i class="fab fa-snapchat-ghost contact-us-icon"></i></div>
+                            <div class="col-2"><img src="<?= Yii::$app->request->baseUrl ?>/images/snap.png" /></div>
                             <div class="col-10">
                                 <div class="mb-1">
                                     <strong>سناب شات</strong>
@@ -195,7 +195,7 @@ $this->title = 'Application';
                     </div>
                     <div class="col">
                         <div class="row">
-                            <div class="col-2"><i class="fab fa-instagram contact-us-icon"></i></div>
+                            <div class="col-2"><img src="<?= Yii::$app->request->baseUrl ?>/images/instagram.png" /></div>
                             <div class="col-10">
                                 <div class="mb-1">
                                     <strong>انستغرام</strong>
