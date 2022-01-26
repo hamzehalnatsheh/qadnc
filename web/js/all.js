@@ -16,6 +16,16 @@ $(document).ready(function () {
         rtl: true,
         autoplaySpeed: 2000,
         centerPadding: '60px',
+        responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                arrows: false,
+                centerMode: true,
+                slidesToShow: 1
+              }
+            }
+          ]
       });
 });
 
