@@ -126,6 +126,7 @@
     color: #fff !important;
 }
 
+
 .achievements {
     background: #f8f9fa;
     /* direction: ltr; */
@@ -253,4 +254,12 @@
     padding: 20px;
     text-align: center;
     z-index: 233333333333333;
+}
+
+.site-navbar .site-logo {
+    display: none;
+}
+
+.site-navbar .home-logo {
+    display: block;
 }

@@ -65,10 +65,10 @@ a, a:hover {
 }
 
 .board-img {
-    width: 120px;
-    height: 120px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
-    border: 1px solid #000;
+    border: 2px solid #00d0c5;
 }
 
 .activity-title {

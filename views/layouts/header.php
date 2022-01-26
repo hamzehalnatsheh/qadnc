@@ -56,9 +56,10 @@ use yii\helpers\Html;
         <div class="container">
             <div class="row align-items-center">
                 <div class="col col-xl-2">
-                    <h1 class="mb-0 site-logo">
+                    <h1 class="mb-0">
                         <a href="<?= Yii::$app->request->baseUrl ?>/" class="text-black mb-0">
-                            <img src="<?= Yii::$app->request->baseUrl ?>/images/ligth-logo.png" alt="qadnc logo" class="site-logo" />
+                            <img src="<?= Yii::$app->request->baseUrl ?>/images/dark-logo.png" alt="qadnc logo" class="site-logo" />
+                            <img src="<?= Yii::$app->request->baseUrl ?>/images/ligth-logo.png" alt="qadnc logo" class="home-logo" />
                         </a>
                     </h1>
                 </div>

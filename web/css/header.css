@@ -6,10 +6,6 @@
     background-repeat: no-repeat;
 } */
 
-.site-logo {
-    max-width: 250px;
-}
-
 .site-navbar {
     -webkit-box-shadow: 0 3px 9px rgb(0 0 0 / 5%);
     box-shadow: 0 3px 9px rgb(0 0 0 / 5%);
@@ -34,9 +30,13 @@
 }
 
 .site-navbar .site-logo {
+    max-width: 250px;
+}
+
+.home-logo {
+    max-width: 250px;
     position: relative;
-    left: 0;
-    font-size: 24px !important;
+    display: none;
 }
 
 .site-navbar .site-navigation .site-menu {
@@ -415,3 +415,4 @@
 .menu-icon {
     font-size: 30px;
 }
+
