@@ -103,6 +103,12 @@
     margin-bottom: 22px;
 }
 
+@media only screen and (max-width: 767px) {
+    .carousel-title {
+        font-size: 40px;
+    }
+}
+
 .carousel-desc {
     font-size: 24px;
     line-height: 35px;
@@ -210,8 +216,13 @@
 }
 [dir='rtl'] .slick-next
 {
-    right: auto;
     left: -25px;
+}
+@media only screen and (min-width: 767px) {
+    [dir='rtl'] .slick-next
+    {
+        right: auto;
+    }
 }
 .slick-next:before
 {
