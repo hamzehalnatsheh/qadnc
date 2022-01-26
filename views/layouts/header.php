@@ -58,7 +58,7 @@ use yii\helpers\Html;
                 <div class="col col-xl-2">
                     <h1 class="mb-0 site-logo">
                         <a href="<?= Yii::$app->request->baseUrl ?>/" class="text-black mb-0">
-                            <img src="<?= Yii::$app->request->baseUrl ?>/images/dark-logo.png" alt="qadnc logo" class="site-logo" />
+                            <img src="<?= Yii::$app->request->baseUrl ?>/images/ligth-logo.png" alt="qadnc logo" class="site-logo" />
                         </a>
                     </h1>
                 </div>
