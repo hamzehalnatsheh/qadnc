@@ -116,8 +116,6 @@ $this->title = 'Application';
                        <?= $achievement->title?>
                     </div>
                 </div>
-                <div>
-
              <?php endforeach;?>  
               
             </div>
