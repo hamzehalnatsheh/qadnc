@@ -5,6 +5,7 @@ namespace app\models\students;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use app\models\students\Students;
+use app\models\User;
 
 /**
  * StudentsSearch represents the model behind the search form of `app\models\students\Students`.
@@ -41,7 +42,7 @@ class StudentsSearch extends Students
     public function search($params)
     {
         $query = Students::find();
-
+        $query->andWhere(['type'=>User::Student]);
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([

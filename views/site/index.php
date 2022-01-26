@@ -14,9 +14,9 @@ $this->title = 'Application';
         <?php endforeach; ?>
     </div>
     <div class="carousel-inner">
-        <?php foreach ($sliders as $key => $slider) : ?>
-            <?php $key++; ?>
-            <div class="carousel-item <?= ($key == 1) ? 'active' : '' ?>">
+        <?php foreach ($sliders as $key2 => $slider) : ?>
+            <?php $key2++; ?>
+            <div class="carousel-item <?= ($key2 == 1) ? 'active' : '' ?>">
                 <div class="slider-image" style="background-image: url(<?= Yii::$app->request->baseUrl . '/' . $slider->image ?>);"></div>
                 <div class="carousel-caption">
                     <h2 class="carousel-title"><?= $slider->title ?></h2>

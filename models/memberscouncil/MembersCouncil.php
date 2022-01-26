@@ -62,6 +62,9 @@ class MembersCouncil extends \yii\db\ActiveRecord
             'experiences' => Yii::t('app', 'Experiences'),
             'courses' => Yii::t('app', 'Courses'),
             'file'=>Yii::t('app','File'),
+            'certificates'=>Yii::t('app','Certificates'),
+
+            
         ];
     }
 

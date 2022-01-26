@@ -23,7 +23,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'phone_number')->textInput(['maxlength' => true]) ?>
 
 
-    <?= $form->field($model, 'facebook')->textInput(['maxlength' => true]) ?>
+    <?php /// $form->field($model, 'facebook')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'instagram')->textInput(['maxlength' => true]) ?>
     <?= $form->field($model, 'snap')->textInput(['maxlength' => true]) ?>

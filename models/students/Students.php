@@ -3,6 +3,7 @@
 namespace app\models\students;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "{{%user}}".
@@ -73,6 +74,7 @@ class Students extends \yii\db\ActiveRecord
             'verification_token' => Yii::t('app', 'Verification_Token'),
             'type' => Yii::t('app', 'Type'),
             'status' => Yii::t('app', 'Status'),
+            'file' => Yii::t('app', 'Image'),
             'created_at' => Yii::t('app', 'Created_At'),
             'updated_at' => Yii::t('app', 'Updated_At'),
         ];
@@ -86,4 +88,12 @@ class Students extends \yii\db\ActiveRecord
     {
         return new UserQuery(get_called_class());
     }
+
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::class
+        ];
+    }
+
 }

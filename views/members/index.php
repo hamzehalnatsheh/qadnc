@@ -1,21 +1,23 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
+use yii\grid\ActionColumn;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\students\StudentSearch */
+/* @var $searchModel app\models\students\StudentsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Students');
+$this->title = Yii::t('app', 'Members');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="student-index">
+<div class="students-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Create Member'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -27,20 +29,25 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-//            'id',
+            'id',
             'username',
             'first_name',
             'last_name',
-//            'auth_key',
+            'born_date',
+            'qualifications',
+            'experience',
+            'activities',
+            
+            //'auth_key',
             //'password_hash',
             //'password_reset_token',
-            'email:email',
+            //'email:email',
+            //'dateofbirth',
             //'verification_token',
             //'type',
-            'status',
+            //'status',
             //'created_at',
             //'updated_at',
-
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

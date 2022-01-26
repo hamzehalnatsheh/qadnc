@@ -3,9 +3,9 @@
 namespace app\models\members;
 
 /**
- * This is the ActiveQuery class for [[Student]].
+ * This is the ActiveQuery class for [[Members]].
  *
- * @see Student
+ * @see Members
  */
 class MembersQuery extends \yii\db\ActiveQuery
 {
@@ -16,7 +16,7 @@ class MembersQuery extends \yii\db\ActiveQuery
 
     /**
      * {@inheritdoc}
-     * @return Student[]|array
+     * @return Members[]|array
      */
     public function all($db = null)
     {
@@ -25,7 +25,7 @@ class MembersQuery extends \yii\db\ActiveQuery
 
     /**
      * {@inheritdoc}
-     * @return Student|array|null
+     * @return Members|array|null
      */
     public function one($db = null)
     {
