@@ -40,7 +40,7 @@ class Achievements extends \yii\db\ActiveRecord
             [['vedio'], 'string', 'max' => 265,'on'=>[self::Create ,self::Update ]],
             [['file'], 'image', 'skipOnEmpty' => true, 'extensions' => 'png,jpg,jpeg,gif','on'=>[self::Create  ,self::Update]],
             [['file'], 'required','on'=>[self::Create  ]],
-            ['vedio_file', 'file', 'extensions' => $this->ext , 'maxSize' => 1024 * 1024 * 350 , 'tooBig' => 'Limit is 350MB'],
+          //  ['vedio_file', 'file', 'extensions' => $this->ext , 'maxSize' => 1024 * 1024 * 350 , 'tooBig' => 'Limit is 350MB'],
         ];
     }
 

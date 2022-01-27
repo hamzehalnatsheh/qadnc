@@ -38,25 +38,7 @@ use yii\widgets\ActiveForm;
 
         ?>
 
-    <?= $form->field($model, 'vedio_file')->widget(\kartik\file\FileInput::classname(), [
-        'options' => ['accept' => 'vedio/*'],
-        'pluginOptions' => [
-            'showCaption' => true,
-//                        'showRemove' => true,
-            'showUpload' => false,
-            'initialPreview' => [
-                Yii::getAlias('@web')
-            ],
-            'initialPreviewAsData' => true,
-            'initialCaption' => Yii::getAlias('@web'),
-            'initialPreviewConfig' => [
-
-            ],
-            'overwriteInitial'=>true
-        ]
-    ]);
-
-    ?>
+    <?= $form->field($model, 'vedio_file')->textInput();?>
 
     
 

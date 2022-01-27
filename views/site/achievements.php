@@ -10,7 +10,7 @@
                 <div>
                     <h1 class="course-title">
                         <strong>
-                            <?= $$achievement->title ?>
+                            <?= $achievement->title ?>
                         </strong>
                     </h1>
                 </div>
@@ -19,7 +19,7 @@
                     تفاصيل الانجاز
                 </div>
                 <div>
-                    <?= $$achievement->body ?>
+                    <?= $achievement->body ?>
                 </div>
             </div>
         </div>

@@ -330,16 +330,7 @@ class SiteController extends Controller
         return $this->render('board',['membersCouncil'=>$membersCouncil]);
     }
 
-    /**
-     * Displays Achievements.
-     *
-     * @return string
-     */
-    public function actionAchievements($id)
-    {
-        $achievement=Achievements::findOne($id);
-        return $this->render('achievements',['achievement'=>$achievement]);
-    }
+  
 
     /**
      * Displays Board Profile.
@@ -372,4 +363,18 @@ class SiteController extends Controller
         $course=Courses::findOne($id);
         return $this->render('course',['course'=>$course]);
     }
+
+
+
+       /**
+     * @param $id
+     * @return View
+     */
+    public function actionAchievements($id){
+        $achievement=Achievements::findOne($id);
+        return $this->render('achievements',['achievement'=>$achievement]);
+    }
+
+
+
 }

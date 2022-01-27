@@ -69,6 +69,7 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 'site/courses/<id:\d+>' => 'site/course',
+                'site/achievements/<id:\d+>' => 'site/achievements',
             ],
         ],
 
