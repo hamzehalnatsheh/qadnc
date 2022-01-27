@@ -335,9 +335,10 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionAchievements()
+    public function actionAchievements($id)
     {
-        return $this->render('achievements');
+        $achievement=Achievements::findOne($id);
+        return $this->render('achievements',['achievement'=>$achievement]);
     }
 
     /**

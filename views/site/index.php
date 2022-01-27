@@ -103,12 +103,12 @@ $this->title = 'Application';
 
         <div class="center">
             <?php foreach ($achievements as $achievement) : ?>
-                <div>
+                <a href="<?= Yii::$app->request->baseUrl . "/site/achievements/$achievement->id" ?>">
                     <img src="<?= Yii::$app->request->baseUrl . '/' . $achievement->image ?>">
                     <div class="achievements-title">
                         <?= $achievement->title ?>
                     </div>
-                </div>
+                </a>
             <?php endforeach; ?>
 
         </div>
