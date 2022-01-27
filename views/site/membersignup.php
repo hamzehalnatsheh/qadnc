@@ -40,17 +40,20 @@ $this->params['breadcrumbs'][] = $this->title;
                         <?= $form->field($model, 'username')->textInput(['placeholder' => 'اسم المستخدم'])->label('') ?>
      
 
-                        <?= $form->field($model, 'dateofbirth')->widget(
-                                    DatePicker::className(), [
-                                    // inline too, not bad
-                                    'inline' => false,
+                        
 
-                                    'clientOptions' => [
-                                        'autoclose' => true,
-                                        'format' => 'yyyy-mm-dd',
-                                        'placeholder' => 'تاريخ الميلاد'
-                                    ]
-                                ])->label('') ;?>
+
+
+                        <div class="form-group field-signupformmember-username required">
+                            <label for="signupformmember-username"></label>
+                            <input type="date" id="signupformmember-dateofbirth"  onchange="changeDate(this)" value class="form-control <?= $model->hasErrors('dateofbirth')?'is-invalid':'is-valid' ?> " name="SignupFormMember[dateofbirth]" placeholder="تاريخ الميلاد" aria-required="true" aria-invalid="false" require>
+                              <?php if($model->hasErrors('dateofbirth')):?>
+                                     <div class="invalid-feedback"><?=  $model->getErrors('dateofbirth')[0]?></div>
+                                <?php endif;?>
+                          
+                        </div>
+                       
+
 
 
                         <?= $form->field($model, 'email')->textInput(['placeholder' => 'اليريد الإلكتروني'])->label('') ?>
@@ -73,3 +76,10 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 </div>
+
+<script>
+
+function changeDate(_this){
+    document.getElementById("signupformmember-dateofbirth").value = document.getElementById("signupformmember-dateofbirth").value;
+}
+</script>
