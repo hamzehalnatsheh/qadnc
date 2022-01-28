@@ -29,18 +29,31 @@ $(document).ready(function () {
       });
 });
 
-function register_coure(course_id, is_logddin){
+function register_coure(event,course_id, is_logddin){
     // check is_logddin
-    const Http = new XMLHttpRequest();
-    const url=`${SITE_URL}/student-courses/register?course_id=${course_id}`;
-    Http.open("GET", url);
-    Http.send();
+    event.preventDefault(); 
+    if(is_logddin){
 
-    Http.onreadystatechange = (e) => {
-        console.log(Http.responseText)
+        const Http = new XMLHttpRequest();
+        const url=`${SITE_URL}/student-courses/register?course_id=${course_id}`;
+        Http.open("GET", url);
+        Http.send();
+        Http.onreadystatechange = (e) => {
+            alert('تم تسجيلك بنجاح');
+            document.getElementById(`st_${course_id}`).textContent='مسجل'
+        }
+    
+    }else{
+        alert('قم بتسجيل')
+        window.location.href = `${SITE_URL}/site/login`;   
+
     }
-    alert('تم تسجيلك بنجاح')
-    console.log(course_id , is_logddin)
+
+
+
+
+
+
 }
 
 
@@ -54,23 +67,23 @@ function getSiteUrl() {
 
 
 $(document).on('click','.register_coure',function (e) {
-    e.preventDefault();
-    // check is_logddin
-    var course_id = $(this).attr('course_id');
-    var is_logddin = $(this).attr('is_logddin');
-    if(is_logddin){
-        const Http = new XMLHttpRequest();
-        const url=`${SITE_URL}/student-courses/register?course_id=${course_id}`;
-        Http.open("GET", url);
-        Http.send();
+    // e.preventDefault();
+    // // check is_logddin
+    // var course_id = $(this).attr('course_id');
+    // var is_logddin = $(this).attr('is_logddin');
+    // if(is_logddin){
+    //     const Http = new XMLHttpRequest();
+    //     const url=`${SITE_URL}/student-courses/register?course_id=${course_id}`;
+    //     Http.open("GET", url);
+    //     Http.send();
 
-        Http.onreadystatechange = (e) => {
-            console.log(Http.responseText)
-            alert('تم تسجيلك بنجاح')
-        }
-    }else {
-        alert( 'go to login')
-    }
+    //     Http.onreadystatechange = (e) => {
+    //         console.log(Http.responseText)
+    //         alert('تم تسجيلك بنجاح')
+    //     }
+    // }else {
+    //     window.location.href = `${SITE_URL}/site/login`;
+    // }
 
 
 });

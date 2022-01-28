@@ -130,10 +130,17 @@ class StudentCoursesController extends Controller
 
     public function actionRegister(){
         $course_id = isset($_GET['course_id']) ? $_GET['course_id'] : -1;
-        $model = new StudentCourses();
-        $model->course_id= $course_id;
-        $model->student_id = \Yii::$app->user->identity->id;
-        $model->save();
+        $studentCourses=StudentCourses::find()
+                ->andwhere(['course_id'=> $course_id])
+                ->andwhere(['student_id'=>\Yii::$app->user->identity->id])
+                ->all();
+        if(empty($studentCourses)){
+            $model = new StudentCourses();
+            $model->course_id= $course_id;
+            $model->student_id = \Yii::$app->user->identity->id;
+            $model->save();
+        }
+       
         exit();
 
     }

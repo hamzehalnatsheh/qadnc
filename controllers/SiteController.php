@@ -27,6 +27,7 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\studentcourses\StudentCourses;
 
 class SiteController extends Controller
 {
@@ -352,7 +353,16 @@ class SiteController extends Controller
      */
     public function actionProfile()
     {
-        return $this->render('profile');
+        $lastsubQuer=StudentCourses::find()->select('course_id')
+            ->andWhere(['student_id'=>\Yii::$app->user->identity->id]);
+        $currentsubQuer=StudentCourses::find()->select('course_id')->andWhere(['student_id'=>\Yii::$app->user->identity->id]);
+
+        $lastcouress=Courses::find()->andWhere(['in', 'id', $lastsubQuer])->andWhere('end_at  >= '.date('y-m-d'))->all();
+        $currentcouress=Courses::find()->andWhere(['in', 'id', $currentsubQuer])->andWhere('end_at  <= '.date('y-m-d'))->all();
+        return $this->render('profile',[
+            'lastcouress'=>$lastcouress,
+            'currentcouress'=>$currentcouress,
+        ]);
     }
 
     /**

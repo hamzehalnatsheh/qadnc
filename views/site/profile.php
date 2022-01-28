@@ -2,14 +2,14 @@
     <div class="container">
         <div class="row">
             <div class="col-3">
-                <img src="<?= Yii::$app->request->baseUrl ?>/images/default.png" alt="" class="board-profile-picture">
+                <img src="<?= Yii::$app->request->baseUrl .'/'.\Yii::$app->user->identity->avatar ?>" alt="" class="board-profile-picture">
                 <div class="mt-3">
                     <strong>
-                        عبدالله بن عبدالعزيز بن ابراهيم الهدلق
+                        <?=\Yii::$app->user->identity->first_name . " ". \Yii::$app->user->identity->last_name ?>
                     </strong>
                 </div>
                 <div class="mb-4">
-                    رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة رئيس مجلس الإدارة
+                    <?=\Yii::$app->user->identity->qualifications ?>
                 </div>
                 <div>
                     <strong>
@@ -17,7 +17,7 @@
                     </strong>
                 </div>
                 <div class="mb-4">
-                    يحمل درجة الماجستير في الاتصالات و التسويق من جامعة ويبستر الأمريكية
+                    <?=\Yii::$app->user->identity->activities ?>
                 </div>
                 <div>
                     <strong>
@@ -25,7 +25,7 @@
                     </strong>
                 </div>
                 <div class="mb-4">
-                    يحمل درجة الماجستير في الاتصالات و التسويق من جامعة ويبستر الأمريكية
+                    <?=\Yii::$app->user->identity->courses ?>
                 </div>
                 <div>
                     <strong>
@@ -33,7 +33,7 @@
                     </strong>
                 </div>
                 <div class="mb-4">
-                    يحمل درجة الماجستير في الاتصالات و التسويق من جامعة ويبستر الأمريكية
+                    <?=\Yii::$app->user->identity->experience ?>
                 </div>
             </div>
             <div class="col-9">
@@ -50,91 +50,86 @@
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <div class="row mt-4">
-                            <a href="/web/site/courses/1" class="col-4 mb-4">
-                                <div class="card">
-                                    <div>
-                                        <img src="<?= Yii::$app->request->baseUrl ?>/images/consulting.jpeg" alt="" width="100%" height="135px"">
-                                    </div>
-                                    <div class=" card-body">
-                                        <div class="mb-3">
-                                            <strong>
-                                                اساسيات استخدام الحاسوب
-                                            </strong>
+
+                        <?php if(empty($currentcouress)):?>
+                                <strong>
+                                لا يوجد دورات
+                            </strong>
+                            <?php endif;?>
+
+                            <?php foreach($currentcouress as $ccouress):?>
+                                    <a href="<?= Yii::$app->request->baseUrl . "/site/courses/$ccouress->id"?>" class="col-4 mb-4">
+                                        <div class="card">
+                                            <div>
+                                                <img src="<?= Yii::$app->request->baseUrl  . '/' . $ccouress->image  ?>" alt="" width="100%" height="135px"">
+                                            </div>
+                                            <div class=" card-body">
+                                                <div class="mb-3">
+                                                    <strong>
+                                                        <?=$ccouress->title?>
+                                                    </strong>
+                                                </div>
+                                                <div class="category mb-3">
+                                                    <strong>
+                                                        <i class="fas fa-bookmark pl-2"></i>
+                                                        <?= $ccouress['categorytype']['name'] ?>
+                                                          </strong>
+                                                </div>
+                                                <div class="category mb-2">
+                                                    <strong>
+                                                        <i class="fas fa-clock pl-2"></i>
+
+                                                        <?= Yii::$app->formatter->format($ccouress->start_at, 'date') ?></strong>
+                                                </div>
+                                                <div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="category mb-3">
-                                            <strong>
-                                                <i class="fas fa-bookmark pl-2"></i>
-                                                حاسب الي </strong>
-                                        </div>
-                                        <div class="category mb-2">
-                                            <strong>
-                                                <i class="fas fa-clock pl-2"></i>
-                                                ٠٥&rlm;/٠١&rlm;/٢٠٢٢ </strong>
-                                        </div>
-                                        <div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="/web/site/courses/1" class="col-4 mb-4">
-                                <div class="card">
-                                    <div>
-                                        <img src="<?= Yii::$app->request->baseUrl ?>/images/consulting.jpeg" alt="" width="100%" height="135px"">
-                                    </div>
-                                    <div class=" card-body">
-                                        <div class="mb-3">
-                                            <strong>
-                                                اساسيات استخدام الحاسوب
-                                            </strong>
-                                        </div>
-                                        <div class="category mb-3">
-                                            <strong>
-                                                <i class="fas fa-bookmark pl-2"></i>
-                                                حاسب الي </strong>
-                                        </div>
-                                        <div class="category mb-2">
-                                            <strong>
-                                                <i class="fas fa-clock pl-2"></i>
-                                                ٠٥&rlm;/٠١&rlm;/٢٠٢٢ </strong>
-                                        </div>
-                                        <div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="/web/site/courses/1" class="col-4 mb-4">
-                                <div class="card">
-                                    <div>
-                                        <img src="<?= Yii::$app->request->baseUrl ?>/images/consulting.jpeg" alt="" width="100%" height="135px"">
-                                    </div>
-                                    <div class=" card-body">
-                                        <div class="mb-3">
-                                            <strong>
-                                                اساسيات استخدام الحاسوب
-                                            </strong>
-                                        </div>
-                                        <div class="category mb-3">
-                                            <strong>
-                                                <i class="fas fa-bookmark pl-2"></i>
-                                                حاسب الي </strong>
-                                        </div>
-                                        <div class="category mb-2">
-                                            <strong>
-                                                <i class="fas fa-clock pl-2"></i>
-                                                ٠٥&rlm;/٠١&rlm;/٢٠٢٢ </strong>
-                                        </div>
-                                        <div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
+                             <?php endforeach;?>   
+                           
+                           
                         </div>
                     </div>
                     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                         <div class="alert alert-warning mt-4" role="alert">
-                            <strong>
+                            <?php if(empty($lastcouress)):?>
+                                <strong>
                                 لا يوجد دورات
                             </strong>
+                            <?php endif;?>
+                        <?php foreach($lastcouress as $lcouress):?>
+                                    <a href="<?= Yii::$app->request->baseUrl . "/site/courses/$lcouress->id" ?>" class="col-4 mb-4">
+                                        <div class="card">
+                                            <div>
+                                                <img src="<?= Yii::$app->request->baseUrl. '/' . $lcouress->image  ?> " alt="" width="100%" height="135px"">
+                                            </div>
+                                            <div class=" card-body">
+                                                <div class="mb-3">
+                                                    <strong>
+                                                        <?=$lcouress->title?>
+                                                    </strong>
+                                                </div>
+                                                <div class="category mb-3">
+                                                    <strong>
+                                                        <i class="fas fa-bookmark pl-2"></i>
+                                                        <?= $lcouress['categorytype']['name'] ?>
+                                                    </strong>
+                                                </div>
+                                                <div class="category mb-2">
+                                                    <strong>
+                                                        <i class="fas fa-clock pl-2"></i>
+                                                        
+                                                        <?= Yii::$app->formatter->format($lcouress->start_at, 'date') ?> </strong>
+                                                </div>
+                                                <div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </a>
+                             <?php endforeach;?>   
+
+                          
                         </div>
                     </div>
                 </div>
