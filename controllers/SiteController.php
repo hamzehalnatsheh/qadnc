@@ -16,7 +16,6 @@ use app\models\ResetPasswordForm;
 use app\models\SignupForm;
 use app\models\SignupFormMember;
 use app\models\slider\Slider;
-use app\models\slider\SliderSearch;
 use frontend\models\VerifyEmailForm;
 use Yii;
 use yii\base\InvalidArgumentException;
@@ -31,18 +30,20 @@ use app\models\studentcourses\StudentCourses;
 
 class SiteController extends Controller
 {
-    /**
-     * {@inheritdoc}
-     */
     public function behaviors()
     {
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout'],
+                'only' => ['logout', 'signup','membersignup','profile'],
                 'rules' => [
                     [
-                        'actions' => ['logout'],
+                        'actions' => ['signup','membersignup'],
+                        'allow' => true,
+                        'roles' => ['?'],
+                    ],
+                    [
+                        'actions' => ['logout','profile'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],

@@ -38,11 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <?php $form = ActiveForm::begin(['id' => 'form-memberSignup']); ?>
 
                         <?= $form->field($model, 'username')->textInput(['placeholder' => 'اسم المستخدم'])->label('') ?>
-     
-
-                        
-
-
+                        <?= $form->field($model, 'phone')->textInput(['placeholder' => 'رقم الجوال'])->label('') ?>
 
                         <div class="form-group field-signupformmember-username required">
                             <label for="signupformmember-username"></label>
@@ -52,15 +48,19 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <?php endif;?>
                           
                         </div>
-                       
-
-
-
+            
                         <?= $form->field($model, 'email')->textInput(['placeholder' => 'اليريد الإلكتروني'])->label('') ?>
 
                         <?= $form->field($model, 'password')->passwordInput(['placeholder' => 'كلمة المرور'])->label('') ?>
 
                         <?= $form->field($model, 'password_repeat')->passwordInput(['placeholder' => 'إعادة كلمة المرور'])->label('') ?>
+
+                        <?= $form->field($model, 'qualifications')->textarea(['rows' => 6,'placeholder' => Yii::t('app','Qualifications')])->label('') ?>
+
+                        <?= $form->field($model, 'experience')->textarea(['rows' => 6,'placeholder' => Yii::t('app','Experience')])->label('') ?>
+
+                        <?= $form->field($model, 'activities')->textarea(['rows' => 6,'placeholder' => Yii::t('app','Activities')])->label('') ?>
+
 
                         <div class="form-group">
                             <?= Html::submitButton('إرسال', ['class' => 'btn btn-primary pull-left mt-3', 'name' => 'signup-button']) ?>

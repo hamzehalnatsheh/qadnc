@@ -17,7 +17,10 @@ class SignupFormMember extends Model
     public $email;
     public $password;
     public $password_repeat;
-
+    public $activities;
+    public $qualifications;
+    public $experience;
+    public $phone;
 
     /**
      * {@inheritdoc}
@@ -37,6 +40,7 @@ class SignupFormMember extends Model
             ['email', 'required'],
             ['email', 'email'],
             ['email', 'string', 'max' => 255],
+            [['activities','qualifications','experience','phone'],'string'],
             ['email', 'unique', 'targetClass' => '\app\models\User', 'message' => 'This email address has already been taken.'],
             ['password_repeat', 'compare', 'compareAttribute'=>'password', 'message'=>"Passwords don't match" ],
         
@@ -61,6 +65,10 @@ class SignupFormMember extends Model
         $user->email = $this->email;
         $user->status=\app\models\User::STATUS_ACTIVE;
         $user->type=\app\models\User::Memmber;
+        $user->experience = $this->experience;
+        $user->activities = $this->activities;
+        $user->qualifications = $this->qualifications;   
+        $user->phone= $this->phone;   
         $user->setPassword($this->password);
         $user->generateAuthKey();
         $user->generateEmailVerificationToken();
