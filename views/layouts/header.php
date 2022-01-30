@@ -109,7 +109,7 @@ use yii\helpers\Html;
                                 <li class="has-children">
                                     <a>
                                         <span>
-                                        <img src="<?= Yii::$app->request->baseUrl ?>/images/default.png" alt="" class="header-profile-img">
+                                        <img src="<?= Yii::$app->request->baseUrl. '/'.Yii::$app->user->identity->avatar ?>" alt="" class="header-profile-img">
                                             <?= Yii::$app->user->identity->username ?>
                                             <i class="fas fa-angle-down icon-down"></i>
                                         </span>

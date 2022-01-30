@@ -14,7 +14,7 @@ use app\models\User;use yii\helpers\Html;
         <div class="sidebar-header profile">
             <div class="user-pic">
 
-                <?= Html::img('https://image.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg', ['class' => 'img-responsive img-rounded']) ?>
+                <?= Html::img( '/'.Yii::$app->user->identity->avatar , ['class' => 'img-responsive img-rounded']) ?>
             </div>
             <div class="user-info">
           <span class="user-name">
