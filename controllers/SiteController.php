@@ -356,10 +356,16 @@ class SiteController extends Controller
     {
         $lastsubQuer=StudentCourses::find()->select('course_id')
             ->andWhere(['student_id'=>\Yii::$app->user->identity->id]);
-        $currentsubQuer=StudentCourses::find()->select('course_id')->andWhere(['student_id'=>\Yii::$app->user->identity->id]);
+        $currentsubQuer=StudentCourses::find()->select('course_id')
+                ->andWhere(['student_id'=>\Yii::$app->user->identity->id]);
 
-        $lastcouress=Courses::find()->andWhere(['in', 'id', $lastsubQuer])->andWhere('end_at  >= '.date('y-m-d'))->all();
-        $currentcouress=Courses::find()->andWhere(['in', 'id', $currentsubQuer])->andWhere('end_at  <= '.date('y-m-d'))->all();
+        $lastcouress=Courses::find()->andWhere(['in', 'id', $lastsubQuer])
+                ->andWhere('date(end_at) >= :date', [':date' => date('y-m-d')])
+                ->all();
+        $currentcouress=Courses::find()->andWhere(['in', 'id', $currentsubQuer])
+                ->andWhere('date(end_at) <=:date', [':date' => date('y-m-d')])
+                ->all();
+                
         return $this->render('profile',[
             'lastcouress'=>$lastcouress,
             'currentcouress'=>$currentcouress,
