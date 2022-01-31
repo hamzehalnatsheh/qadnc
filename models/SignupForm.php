@@ -6,6 +6,8 @@ use PHPUnit\Framework\Error\Error;
 use Yii;
 use yii\base\Model;
 use app\models\User;
+use yii\helpers\FileHelper;
+use yii\web\UploadedFile;
 
 /**
  * Signup form
@@ -17,18 +19,17 @@ class SignupForm extends Model
     public $email;
     public $password;
     public $password_repeat;
-
-
+    public $file;
     /**
      * {@inheritdoc}
      */
     public function rules()
     {
         return [
-            ['username', 'trim'],
-            ['username', 'required'],
-            ['username', 'unique', 'targetClass' => '\app\models\User', 'message' => 'This username has already been taken.'],
-            ['username', 'string', 'min' => 2, 'max' => 255],
+            // ['username', 'trim'],
+            // ['username', 'required'],
+            // ['username', 'unique', 'targetClass' => '\app\models\User', 'message' => 'This username has already been taken.'],
+            // ['username', 'string', 'min' => 2, 'max' => 255],
             ['dateofbirth', 'trim'],
             [['dateofbirth','password_repeat'],'required'],
             ['password', 'required'],
@@ -39,8 +40,10 @@ class SignupForm extends Model
             ['email', 'string', 'max' => 255],
             ['email', 'unique', 'targetClass' => '\app\models\User', 'message' => 'This email address has already been taken.'],
             ['password_repeat', 'compare', 'compareAttribute'=>'password', 'message'=>"Passwords don't match" ],
+            [['file'], 'image', 'skipOnEmpty' => true, 'extensions' => 'png,jpg,jpeg,gif'],
         ];
     }
+
 
     /**
      * Signs user up.
@@ -51,6 +54,15 @@ class SignupForm extends Model
     {
         if (!$this->validate()) {
             return null;
+        }
+        $newId = User::find()->max('id') + 1;
+        $this->file = UploadedFile::getInstance($this, 'file');
+
+        if (!is_null( $this->file)) {
+            FileHelper::createDirectory("uploads/avatar/$newId");
+          $path="uploads/avatar/$newId/index" . "." .  $this->file->extension;
+          $this->file->saveAs($path);
+          $this->avatar=$path;
         }
 
         $user = new User();

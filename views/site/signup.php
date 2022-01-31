@@ -36,8 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
                         <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
 
-                        <?= $form->field($model, 'username')->textInput(['placeholder' => 'اسم المستخدم'])->label('') ?>
-                        
+                        <?= $form->field($model, 'email')->textInput(['placeholder' => 'اليريد الإلكتروني'])->label('') ?>
 
                         <div class="form-group field-signupformmember-username required">
                             <label for="signupform-dateofbirth"></label>
@@ -48,14 +47,11 @@ $this->params['breadcrumbs'][] = $this->title;
                           
                         </div>
 
-
-                        <?= $form->field($model, 'email')->textInput(['placeholder' => 'اليريد الإلكتروني'])->label('') ?>
-
                         <?= $form->field($model, 'password')->passwordInput(['placeholder' => 'كلمة المرور'])->label('') ?>
 
                         <?= $form->field($model, 'password_repeat')->passwordInput(['placeholder' => 'إعادة كلمة المرور'])->label('') ?>
 
-
+                        <?= $form->field($model, 'file')->fileInput()->label(Yii::t('app','Image')) ?>
 
                         <div class="form-group">
                             <?= Html::submitButton('إرسال', ['class' => 'btn btn-primary pull-left mt-3', 'name' => 'signup-button']) ?>

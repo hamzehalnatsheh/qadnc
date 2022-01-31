@@ -36,9 +36,31 @@ $this->params['breadcrumbs'][] = $this->title;
                             </h1>
                         </div>
                         <?php $form = ActiveForm::begin(['id' => 'form-memberSignup']); ?>
+                        <div class="row">
+                             <div class="col-lg-6">
+                             <?= $form->field($model, 'phone')->textInput(['placeholder' => 'رقم الجوال'])->label('') ?>
+                             </div>
 
-                        <?= $form->field($model, 'username')->textInput(['placeholder' => 'اسم المستخدم'])->label('') ?>
-                        <?= $form->field($model, 'phone')->textInput(['placeholder' => 'رقم الجوال'])->label('') ?>
+                             <div class="col-lg-6">
+                             <?= $form->field($model, 'email')->textInput(['placeholder' => 'اليريد الإلكتروني'])->label('') ?>
+                                 </div>
+
+                        </div>
+
+
+                        <div class="row">
+                             <div class="col-lg-6">
+                             <?= $form->field($model, 'password')->passwordInput(['placeholder' => 'كلمة المرور'])->label('') ?>
+                             </div>
+
+                             <div class="col-lg-6">
+                             <?= $form->field($model, 'password_repeat')->passwordInput(['placeholder' => 'إعادة كلمة المرور'])->label('') ?>
+                             </div>
+
+                        </div>
+
+
+                      
 
                         <div class="form-group field-signupformmember-username required">
                             <label for="signupformmember-username"></label>
@@ -49,17 +71,14 @@ $this->params['breadcrumbs'][] = $this->title;
                           
                         </div>
             
-                        <?= $form->field($model, 'email')->textInput(['placeholder' => 'اليريد الإلكتروني'])->label('') ?>
-
-                        <?= $form->field($model, 'password')->passwordInput(['placeholder' => 'كلمة المرور'])->label('') ?>
-
-                        <?= $form->field($model, 'password_repeat')->passwordInput(['placeholder' => 'إعادة كلمة المرور'])->label('') ?>
 
                         <?= $form->field($model, 'qualifications')->textarea(['rows' => 6,'placeholder' => Yii::t('app','Qualifications')])->label('') ?>
 
                         <?= $form->field($model, 'experience')->textarea(['rows' => 6,'placeholder' => Yii::t('app','Experience')])->label('') ?>
 
                         <?= $form->field($model, 'activities')->textarea(['rows' => 6,'placeholder' => Yii::t('app','Activities')])->label('') ?>
+
+                        <?= $form->field($model, 'file')->fileInput()->label(Yii::t('app','Image')) ?>
 
 
                         <div class="form-group">
