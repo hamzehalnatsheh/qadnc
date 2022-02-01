@@ -8,19 +8,17 @@
             </div>
         </div>
         <div class="row">
-            <?php 
-                $is_loggedin = Yii::$app->user->isGuest ? false : true ;
-                $coures_user = [];
-                $is_loggedin_str = Yii::$app->user->isGuest ? "false" : "true" ;
-                if ($is_loggedin) {
-                    $coures_usermodel = \app\models\studentcourses\StudentCourses::find()
-                        ->where(['student_id'=>\Yii::$app->user->identity->id])->all();
-                    $coures_user= \yii\helpers\ArrayHelper::map($coures_usermodel, 'id', 'course_id');
-                   
+            <?php
+            $is_loggedin = Yii::$app->user->isGuest ? false : true;
+            $coures_user = [];
+            $is_loggedin_str = Yii::$app->user->isGuest ? "false" : "true";
+            if ($is_loggedin) {
+                $coures_usermodel = \app\models\studentcourses\StudentCourses::find()
+                    ->where(['student_id' => \Yii::$app->user->identity->id])->all();
+                $coures_user = \yii\helpers\ArrayHelper::map($coures_usermodel, 'id', 'course_id');
+            }
 
-                }
-               
-            
+
             ?>
 
             <?php if (empty($courses)) { ?>
@@ -31,7 +29,7 @@
                 </div>
             <?php } ?>
             <?php foreach ($courses as $course) : ?>
-            
+
                 <a href="<?= Yii::$app->request->baseUrl . "/site/courses/$course->id" ?>" class="col-3 mb-4">
                     <div class="card">
                         <div>
@@ -57,14 +55,14 @@
                                 </strong>
                             </div>
                             <div>
-                              
-                             <button type="submit" class="btn btn-link register_coure" onclick="register_coure(event,<?= $course->id ?>,<?= $is_loggedin_str ?>)" course_id="<?= $course->id ?>" is_loggedin="<?= $is_loggedin_str ?>">
-                                        <strong id="st_<?= $course->id ?>" >
-                                            <?= ($is_loggedin== false || ( $is_loggedin == true && in_array($course->id ,$coures_user) )  )? ' مسجل':'تسجيل في الدورة'?>
-                                        </strong>
-                                </button>     
-                                   
-                                
+
+                                <button type="submit" class="btn btn-link register_coure" onclick="register_coure(event,<?= $course->id ?>,<?= $is_loggedin_str ?>)" course_id="<?= $course->id ?>" is_loggedin="<?= $is_loggedin_str ?>">
+                                    <strong id="st_<?= $course->id ?>">
+                                        <?= ($is_loggedin == false || ($is_loggedin == true && in_array($course->id, $coures_user))) ? ' مسجل' : 'تسجيل في الدورة' ?>
+                                    </strong>
+                                </button>
+
+
                             </div>
                         </div>
                     </div>

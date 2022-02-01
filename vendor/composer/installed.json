@@ -384,17 +384,17 @@
     },
     {
         "name": "codeception/codeception",
-        "version": "4.1.28",
-        "version_normalized": "4.1.28.0",
+        "version": "4.1.29",
+        "version_normalized": "4.1.29.0",
         "source": {
             "type": "git",
             "url": "https://github.com/Codeception/Codeception.git",
-            "reference": "e9bc22a3819f9d356068c0e372193ebcc9b06014"
+            "reference": "f8dec8f2bf5347cc596aaf141753f4fb2504c17c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Codeception/Codeception/zipball/e9bc22a3819f9d356068c0e372193ebcc9b06014",
-            "reference": "e9bc22a3819f9d356068c0e372193ebcc9b06014",
+            "url": "https://api.github.com/repos/Codeception/Codeception/zipball/f8dec8f2bf5347cc596aaf141753f4fb2504c17c",
+            "reference": "f8dec8f2bf5347cc596aaf141753f4fb2504c17c",
             "shasum": ""
         },
         "require": {
@@ -433,7 +433,7 @@
             "stecman/symfony-console-completion": "For BASH autocompletion",
             "symfony/phpunit-bridge": "For phpunit-bridge support"
         },
-        "time": "2022-01-05T16:41:25+00:00",
+        "time": "2022-01-29T16:56:03+00:00",
         "bin": [
             "codecept"
         ],
@@ -835,27 +835,27 @@
     },
     {
         "name": "codeception/stub",
-        "version": "4.0.1",
-        "version_normalized": "4.0.1.0",
+        "version": "4.0.2",
+        "version_normalized": "4.0.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/Codeception/Stub.git",
-            "reference": "ce0a9e418c775ca8b737d50c2b4ac1132f3990d8"
+            "reference": "18a148dacd293fc7b044042f5aa63a82b08bff5d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Codeception/Stub/zipball/ce0a9e418c775ca8b737d50c2b4ac1132f3990d8",
-            "reference": "ce0a9e418c775ca8b737d50c2b4ac1132f3990d8",
+            "url": "https://api.github.com/repos/Codeception/Stub/zipball/18a148dacd293fc7b044042f5aa63a82b08bff5d",
+            "reference": "18a148dacd293fc7b044042f5aa63a82b08bff5d",
             "shasum": ""
         },
         "require": {
             "php": "^7.4 | ^8.0",
-            "phpunit/phpunit": "^8.4 | ^9.0"
+            "phpunit/phpunit": "^8.4 | ^9.0 | ^10.0 | 10.0.x-dev"
         },
         "require-dev": {
             "consolidation/robo": "^3.0"
         },
-        "time": "2022-01-08T09:35:36+00:00",
+        "time": "2022-01-31T19:25:15+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1724,17 +1724,17 @@
     },
     {
         "name": "opis/closure",
-        "version": "3.6.2",
-        "version_normalized": "3.6.2.0",
+        "version": "3.6.3",
+        "version_normalized": "3.6.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/opis/closure.git",
-            "reference": "06e2ebd25f2869e54a306dda991f7db58066f7f6"
+            "reference": "3d81e4309d2a927abbe66df935f4bb60082805ad"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/opis/closure/zipball/06e2ebd25f2869e54a306dda991f7db58066f7f6",
-            "reference": "06e2ebd25f2869e54a306dda991f7db58066f7f6",
+            "url": "https://api.github.com/repos/opis/closure/zipball/3d81e4309d2a927abbe66df935f4bb60082805ad",
+            "reference": "3d81e4309d2a927abbe66df935f4bb60082805ad",
             "shasum": ""
         },
         "require": {
@@ -1744,7 +1744,7 @@
             "jeremeamia/superclosure": "^2.0",
             "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0 || ^8.0 || ^9.0"
         },
-        "time": "2021-04-09T13:42:10+00:00",
+        "time": "2022-01-27T09:35:39+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3592,17 +3592,17 @@
     },
     {
         "name": "symfony/console",
-        "version": "v5.4.2",
-        "version_normalized": "5.4.2.0",
+        "version": "v5.4.3",
+        "version_normalized": "5.4.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/console.git",
-            "reference": "a2c6b7ced2eb7799a35375fb9022519282b5405e"
+            "reference": "a2a86ec353d825c75856c6fd14fac416a7bdb6b8"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/console/zipball/a2c6b7ced2eb7799a35375fb9022519282b5405e",
-            "reference": "a2c6b7ced2eb7799a35375fb9022519282b5405e",
+            "url": "https://api.github.com/repos/symfony/console/zipball/a2a86ec353d825c75856c6fd14fac416a7bdb6b8",
+            "reference": "a2a86ec353d825c75856c6fd14fac416a7bdb6b8",
             "shasum": ""
         },
         "require": {
@@ -3640,7 +3640,7 @@
             "symfony/lock": "",
             "symfony/process": ""
         },
-        "time": "2021-12-20T16:11:12+00:00",
+        "time": "2022-01-26T16:28:35+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -3676,24 +3676,24 @@
     },
     {
         "name": "symfony/css-selector",
-        "version": "v5.4.2",
-        "version_normalized": "5.4.2.0",
+        "version": "v5.4.3",
+        "version_normalized": "5.4.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/css-selector.git",
-            "reference": "cfcbee910e159df402603502fe387e8b677c22fd"
+            "reference": "b0a190285cd95cb019237851205b8140ef6e368e"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/css-selector/zipball/cfcbee910e159df402603502fe387e8b677c22fd",
-            "reference": "cfcbee910e159df402603502fe387e8b677c22fd",
+            "url": "https://api.github.com/repos/symfony/css-selector/zipball/b0a190285cd95cb019237851205b8140ef6e368e",
+            "reference": "b0a190285cd95cb019237851205b8140ef6e368e",
             "shasum": ""
         },
         "require": {
             "php": ">=7.2.5",
             "symfony/polyfill-php80": "^1.16"
         },
-        "time": "2021-12-16T21:58:21+00:00",
+        "time": "2022-01-02T09:53:40+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -3779,17 +3779,17 @@
     },
     {
         "name": "symfony/dom-crawler",
-        "version": "v4.4.36",
-        "version_normalized": "4.4.36.0",
+        "version": "v4.4.37",
+        "version_normalized": "4.4.37.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/dom-crawler.git",
-            "reference": "42de12bee3b5e594977209bcdf58ec4fef8dde39"
+            "reference": "60d36408a3a48500bcc6e30d9f831e51d04d7fa4"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/42de12bee3b5e594977209bcdf58ec4fef8dde39",
-            "reference": "42de12bee3b5e594977209bcdf58ec4fef8dde39",
+            "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/60d36408a3a48500bcc6e30d9f831e51d04d7fa4",
+            "reference": "60d36408a3a48500bcc6e30d9f831e51d04d7fa4",
             "shasum": ""
         },
         "require": {
@@ -3808,7 +3808,7 @@
         "suggest": {
             "symfony/css-selector": ""
         },
-        "time": "2021-12-28T14:48:02+00:00",
+        "time": "2022-01-02T09:41:36+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -3838,17 +3838,17 @@
     },
     {
         "name": "symfony/event-dispatcher",
-        "version": "v5.4.0",
-        "version_normalized": "5.4.0.0",
+        "version": "v5.4.3",
+        "version_normalized": "5.4.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/event-dispatcher.git",
-            "reference": "27d39ae126352b9fa3be5e196ccf4617897be3eb"
+            "reference": "dec8a9f58d20df252b9cd89f1c6c1530f747685d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/27d39ae126352b9fa3be5e196ccf4617897be3eb",
-            "reference": "27d39ae126352b9fa3be5e196ccf4617897be3eb",
+            "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/dec8a9f58d20df252b9cd89f1c6c1530f747685d",
+            "reference": "dec8a9f58d20df252b9cd89f1c6c1530f747685d",
             "shasum": ""
         },
         "require": {
@@ -3878,7 +3878,7 @@
             "symfony/dependency-injection": "",
             "symfony/http-kernel": ""
         },
-        "time": "2021-11-23T10:19:22+00:00",
+        "time": "2022-01-02T09:53:40+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -3972,17 +3972,17 @@
     },
     {
         "name": "symfony/finder",
-        "version": "v5.4.2",
-        "version_normalized": "5.4.2.0",
+        "version": "v5.4.3",
+        "version_normalized": "5.4.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/finder.git",
-            "reference": "e77046c252be48c48a40816187ed527703c8f76c"
+            "reference": "231313534dded84c7ecaa79d14bc5da4ccb69b7d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/finder/zipball/e77046c252be48c48a40816187ed527703c8f76c",
-            "reference": "e77046c252be48c48a40816187ed527703c8f76c",
+            "url": "https://api.github.com/repos/symfony/finder/zipball/231313534dded84c7ecaa79d14bc5da4ccb69b7d",
+            "reference": "231313534dded84c7ecaa79d14bc5da4ccb69b7d",
             "shasum": ""
         },
         "require": {
@@ -3990,7 +3990,7 @@
             "symfony/deprecation-contracts": "^2.1|^3",
             "symfony/polyfill-php80": "^1.16"
         },
-        "time": "2021-12-15T11:06:13+00:00",
+        "time": "2022-01-26T16:34:36+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -4691,17 +4691,17 @@
     },
     {
         "name": "symfony/string",
-        "version": "v5.4.2",
-        "version_normalized": "5.4.2.0",
+        "version": "v5.4.3",
+        "version_normalized": "5.4.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/string.git",
-            "reference": "e6a5d5ecf6589c5247d18e0e74e30b11dfd51a3d"
+            "reference": "92043b7d8383e48104e411bc9434b260dbeb5a10"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/string/zipball/e6a5d5ecf6589c5247d18e0e74e30b11dfd51a3d",
-            "reference": "e6a5d5ecf6589c5247d18e0e74e30b11dfd51a3d",
+            "url": "https://api.github.com/repos/symfony/string/zipball/92043b7d8383e48104e411bc9434b260dbeb5a10",
+            "reference": "92043b7d8383e48104e411bc9434b260dbeb5a10",
             "shasum": ""
         },
         "require": {
@@ -4721,7 +4721,7 @@
             "symfony/translation-contracts": "^1.1|^2",
             "symfony/var-exporter": "^4.4|^5.0|^6.0"
         },
-        "time": "2021-12-16T21:52:00+00:00",
+        "time": "2022-01-02T09:53:40+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -4762,17 +4762,17 @@
     },
     {
         "name": "symfony/translation",
-        "version": "v5.4.2",
-        "version_normalized": "5.4.2.0",
+        "version": "v5.4.3",
+        "version_normalized": "5.4.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/translation.git",
-            "reference": "ff8bb2107b6a549dc3c5dd9c498dcc82c9c098ca"
+            "reference": "a9dd7403232c61e87e27fb306bbcd1627f245d70"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/translation/zipball/ff8bb2107b6a549dc3c5dd9c498dcc82c9c098ca",
-            "reference": "ff8bb2107b6a549dc3c5dd9c498dcc82c9c098ca",
+            "url": "https://api.github.com/repos/symfony/translation/zipball/a9dd7403232c61e87e27fb306bbcd1627f245d70",
+            "reference": "a9dd7403232c61e87e27fb306bbcd1627f245d70",
             "shasum": ""
         },
         "require": {
@@ -4811,7 +4811,7 @@
             "symfony/config": "",
             "symfony/yaml": ""
         },
-        "time": "2021-12-25T19:45:36+00:00",
+        "time": "2022-01-07T00:28:17+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -4907,17 +4907,17 @@
     },
     {
         "name": "symfony/yaml",
-        "version": "v5.4.2",
-        "version_normalized": "5.4.2.0",
+        "version": "v5.4.3",
+        "version_normalized": "5.4.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/yaml.git",
-            "reference": "b9eb163846a61bb32dfc147f7859e274fab38b58"
+            "reference": "e80f87d2c9495966768310fc531b487ce64237a2"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/yaml/zipball/b9eb163846a61bb32dfc147f7859e274fab38b58",
-            "reference": "b9eb163846a61bb32dfc147f7859e274fab38b58",
+            "url": "https://api.github.com/repos/symfony/yaml/zipball/e80f87d2c9495966768310fc531b487ce64237a2",
+            "reference": "e80f87d2c9495966768310fc531b487ce64237a2",
             "shasum": ""
         },
         "require": {
@@ -4934,7 +4934,7 @@
         "suggest": {
             "symfony/console": "For validating YAML files using the lint command"
         },
-        "time": "2021-12-16T21:58:21+00:00",
+        "time": "2022-01-26T16:32:32+00:00",
         "bin": [
             "Resources/bin/yaml-lint"
         ],

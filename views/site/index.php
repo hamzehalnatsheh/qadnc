@@ -7,12 +7,6 @@ $this->title = 'Application';
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 <link rel="stylesheet" href="<?= Yii::$app->request->baseUrl ?>/css/home.css" />
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-        <?php foreach ($sliders as $key => $slider) : ?>
-            <?php $key++; ?>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="<?= $key ?>" class="<?= ($key == 1) ? 'active' : '' ?>" aria-current="true" aria-label="Slide <?= $key ?>"></button>
-        <?php endforeach; ?>
-    </div>
     <div class="carousel-inner">
         <?php foreach ($sliders as $key2 => $slider) : ?>
             <?php $key2++; ?>
@@ -100,7 +94,6 @@ $this->title = 'Application';
                 </div>
             </div>
         </div>
-
         <div class="center">
             <?php foreach ($achievements as $achievement) : ?>
                 <a href="<?= Yii::$app->request->baseUrl . "/site/achievements/$achievement->id" ?>">
@@ -110,7 +103,6 @@ $this->title = 'Application';
                     </div>
                 </a>
             <?php endforeach; ?>
-
         </div>
     </div>
 </div>
@@ -127,7 +119,7 @@ $this->title = 'Application';
                 <?= $connect_us->address; ?>
             </div>
             <div class="row">
-                <div class="col">
+                <div class="col-12 col-lg-4  mt-4">
                     <div class="row">
                         <div class="col-2"><i class="fas fa-envelope contact-us-icon"></i></div>
                         <div class="col-10">
@@ -138,7 +130,7 @@ $this->title = 'Application';
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-12 col-lg-4  mt-4">
                     <div class="row">
                         <div class="col-2"><i class="fas fa-mobile-alt contact-us-icon"></i></div>
                         <div class="col-10">
@@ -149,7 +141,7 @@ $this->title = 'Application';
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-12 col-lg-4  mt-4">
                     <div class="row">
                         <div class="col-2"><i class="fas fa-phone-alt contact-us-icon"></i></div>
                         <div class="col-10">
@@ -161,8 +153,8 @@ $this->title = 'Application';
                     </div>
                 </div>
             </div>
-            <div class="row mt-4">
-                <div class="col">
+            <div class="row">
+                <div class="col-12 col-lg-4  mt-4">
                     <div class="row">
                         <div class="col-2"><i class="fab fa-twitter contact-us-icon twitter-icon"></i></div>
                         <div class="col-10">
@@ -173,7 +165,7 @@ $this->title = 'Application';
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-12 col-lg-4  mt-4">
                     <div class="row">
                         <div class="col-2"><img src="<?= Yii::$app->request->baseUrl ?>/images/snap.png" /></div>
                         <div class="col-10">
@@ -184,7 +176,7 @@ $this->title = 'Application';
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-12 col-lg-4  mt-4">
                     <div class="row">
                         <div class="col-2"><img src="<?= Yii::$app->request->baseUrl ?>/images/instagram.png" /></div>
                         <div class="col-10">
