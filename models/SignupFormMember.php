@@ -23,7 +23,9 @@ class SignupFormMember extends Model
     public $qualifications;
     public $experience;
     public $phone;
-    public $file;
+    public $file; 
+    public $first_name;
+    public $last_name;
 
     /**
      * {@inheritdoc}
@@ -35,6 +37,8 @@ class SignupFormMember extends Model
             // ['username', 'required'],
             // ['username', 'unique', 'targetClass' => '\app\models\User', 'message' => 'This username has already been taken.'],
             // ['username', 'string', 'min' => 2, 'max' => 255],
+
+            [['first_name','last_name'], 'required'],
             ['dateofbirth', 'trim'],
             [['dateofbirth','password_repeat'],'required'],
             ['password', 'required'],
@@ -63,20 +67,22 @@ class SignupFormMember extends Model
 
         $newId = User::find()->max('id') + 1;
         $this->file = UploadedFile::getInstance($this, 'file');
-
+        $user = new User();
         if (!is_null( $this->file)) {
             FileHelper::createDirectory("uploads/avatar/$newId");
           $path="uploads/avatar/$newId/index" . "." .  $this->file->extension;
           $this->file->saveAs($path);
-          $this->avatar=$path;
+          $user->avatar=$path;
         }
       
-        $user = new User();
+       
         $user->username = $this->username;
         $user->dateofbirth = $this->dateofbirth;
         $user->email = $this->email;
         $user->status=\app\models\User::STATUS_ACTIVE;
         $user->type=\app\models\User::Memmber;
+        $user->first_name=$this->first_name;
+        $user->last_name=$this->last_name;
         $user->experience = $this->experience;
         $user->activities = $this->activities;
         $user->qualifications = $this->qualifications;   

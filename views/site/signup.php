@@ -35,6 +35,8 @@ $this->params['breadcrumbs'][] = $this->title;
                             </h1>
                         </div>
                         <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
+                        <?= $form->field($model, 'first_name')->textInput(['placeholder' => 'الأسم الاول'])->label('') ?>
+                        <?= $form->field($model, 'last_name')->textInput(['placeholder' => 'الأسم الاخير'])->label('') ?>
 
                         <?= $form->field($model, 'email')->textInput(['placeholder' => 'اليريد الإلكتروني'])->label('') ?>
 
