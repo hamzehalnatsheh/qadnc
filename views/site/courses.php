@@ -33,7 +33,7 @@ $this->title = 'الدورات' ;
             <?php } ?>
             <?php foreach ($courses as $course) : ?>
 
-                <a href="<?= Yii::$app->request->baseUrl . "/site/courses/$course->id" ?>" class="col-3 mb-4">
+                <a href="<?= Yii::$app->request->baseUrl . "/site/courses/$course->id" ?>" class="col-12 col-sm-6 col-lg-3 mb-4">
                     <div class="card">
                         <div>
                             <img src="<?= Yii::$app->request->baseUrl . '/' . $course->image  ?>" width="100%" height="135px" />
