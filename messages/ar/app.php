@@ -65,7 +65,10 @@ return [
     'Course ID'=>'ID الدورة',
     'Student ID'=>'ID الطالب',
     'Create Achievements'=>'إضافة انجاز',
-
+    'Qualifications'=>'الشهادات العلمية',
+    'Experience'=>'الدورات التدريبية',
+    'Activities'=>'الخبرات العملية',
+    
 
 
 

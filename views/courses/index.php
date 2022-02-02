@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format'=>'html'
 
             ],
-            'title',
+          
             'description:ntext',
             'start_at',
             'end_at',
