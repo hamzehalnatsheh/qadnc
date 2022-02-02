@@ -1,3 +1,6 @@
+<?php 
+$this->title = 'الدورات' ;
+?>
 <div class="courses-body">
     <div class="container">
         <div class="row text-center">

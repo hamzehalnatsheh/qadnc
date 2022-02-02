@@ -1,3 +1,6 @@
+<?php
+$this->title = $achievement->title ;
+?>
 <div id="achievements" class="board">
     <div class="container">
         <div class="row">

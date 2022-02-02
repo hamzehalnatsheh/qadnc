@@ -1,3 +1,6 @@
+<?php 
+$this->title = \Yii::$app->user->identity->first_name ;
+?>
 <div id="profile" class="board">
     <div class="container">
         <div class="row">
