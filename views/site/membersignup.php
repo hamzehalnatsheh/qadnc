@@ -36,6 +36,18 @@ $this->params['breadcrumbs'][] = $this->title;
                             </h1>
                         </div>
                         <?php $form = ActiveForm::begin(['id' => 'form-memberSignup']); ?>
+
+
+                        <div class="row">
+                             <div class="col-lg-6">
+                             <?= $form->field($model, 'first_name')->textInput(['placeholder' => 'الأسم الاول'])->label('') ?>
+                             </div>
+                             <div class="col-lg-6">
+                               <?= $form->field($model, 'last_name')->textInput(['placeholder' => 'الأسم الاخير'])->label('') ?>
+                             </div>
+                        </div>
+                      
+                       
                         <div class="row">
                              <div class="col-lg-6">
                              <?= $form->field($model, 'phone')->textInput(['placeholder' => 'رقم الجوال'])->label('') ?>
@@ -78,7 +90,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
                         <?= $form->field($model, 'activities')->textarea(['rows' => 6,'placeholder' => Yii::t('app','Activities')])->label('') ?>
 
+                        <div class="mt-3">
                         <?= $form->field($model, 'file')->fileInput()->label(Yii::t('app','Image')) ?>
+                        </div>
 
 
                         <div class="form-group">

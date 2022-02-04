@@ -40,7 +40,7 @@ function register_coure(event,course_id, is_logddin){
         Http.send();
         Http.onreadystatechange = (e) => {
             alert('تم تسجيلك بنجاح');
-            document.getElementById(`st_${course_id}`).textContent='مسجل'
+            document.getElementById(`st_${course_id}`).textContent='ألغاء التسجيل'
         }
     
     }else{
@@ -48,11 +48,6 @@ function register_coure(event,course_id, is_logddin){
         window.location.href = `${SITE_URL}/site/login`;   
 
     }
-
-
-
-
-
 
 }
 

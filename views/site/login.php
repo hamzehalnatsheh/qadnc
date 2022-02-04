@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <h1><?= Html::encode($this->title) ?></h1>
                     <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
-                    <?= $form->field($model, 'username')->textInput(['autofocus' => true, 'placeholder' => Yii::t('app', 'Username')])->label('')  ?>
+                    <?= $form->field($model, 'email')->textInput(['autofocus' => true, 'placeholder' => Yii::t('app', 'Email')])->label('')  ?>
 
                     <?= $form->field($model, 'password')->passwordInput(['placeholder' => Yii::t('app', 'Password')])->label('') ?>
 

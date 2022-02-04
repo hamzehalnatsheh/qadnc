@@ -1,3 +1,7 @@
+<?php
+$this->title = ' أعضاء الجمعية المؤسسين' ;
+?>
+
 <div id="board" class="details">
     <div class="container">
         <div class="row text-center">

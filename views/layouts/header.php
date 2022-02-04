@@ -110,7 +110,7 @@ use yii\helpers\Html;
                                     <a>
                                         <span>
                                         <img src="<?= Yii::$app->request->baseUrl. '/'.Yii::$app->user->identity->avatar ?>" alt="" class="header-profile-img">
-                                            <?= Yii::$app->user->identity->username ?>
+                                            <?= Yii::$app->user->identity->first_name ?>
                                             <i class="fas fa-angle-down icon-down"></i>
                                         </span>
                                     </a>

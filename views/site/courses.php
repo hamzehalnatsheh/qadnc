@@ -1,3 +1,6 @@
+<?php 
+$this->title = 'الدورات' ;
+?>
 <div class="courses-body">
     <div class="container">
         <div class="row text-center">
@@ -58,7 +61,7 @@
 
                                 <button type="submit" class="btn btn-link register_coure" onclick="register_coure(event,<?= $course->id ?>,<?= $is_loggedin_str ?>)" course_id="<?= $course->id ?>" is_loggedin="<?= $is_loggedin_str ?>">
                                     <strong id="st_<?= $course->id ?>">
-                                        <?= ($is_loggedin == false || ($is_loggedin == true && in_array($course->id, $coures_user))) ? ' مسجل' : 'تسجيل في الدورة' ?>
+                                        <?= ($is_loggedin == false || ($is_loggedin == true && in_array($course->id, $coures_user))) ? ' الغاء التسجيل' : 'تسجيل في الدورة' ?>
                                     </strong>
                                 </button>
 

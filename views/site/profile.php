@@ -1,3 +1,6 @@
+<?php 
+$this->title = \Yii::$app->user->identity->first_name ;
+?>
 <div id="profile" class="board">
     <div class="container">
         <div class="row">
@@ -8,25 +11,17 @@
                         <?=\Yii::$app->user->identity->first_name . " ". \Yii::$app->user->identity->last_name ?>
                     </strong>
                 </div>
-                <div class="mb-4">
-                    <?=\Yii::$app->user->identity->qualifications ?>
-                </div>
-                <div>
-                    <strong>
-                        الشهادات العلمية
-                    </strong>
-                </div>
-                <div class="mb-4">
-                    <?=\Yii::$app->user->identity->activities ?>
-                </div>
-                <div>
-                    <strong>
-                        الدورات التدريبية
-                    </strong>
-                </div>
-                <div class="mb-4">
-                    <?=\Yii::$app->user->identity->courses ?>
-                </div>
+                <?php if(is_null(\Yii::$app->user->identity->qualifications) ): ?>
+                    <div>
+                        <strong>
+                            الشهادات العلمية
+                        </strong>
+                    </div>
+                    <div class="mb-4">
+                        <?=\Yii::$app->user->identity->qualifications ?>
+                    </div>
+                <?php endif;?>
+                <?php if(is_null(\Yii::$app->user->identity->experience) ): ?>
                 <div>
                     <strong>
                         الخبرات العملية
@@ -35,6 +30,21 @@
                 <div class="mb-4">
                     <?=\Yii::$app->user->identity->experience ?>
                 </div>
+                <?php endif;?>
+
+                <?php if(is_null(\Yii::$app->user->identity->activities) ): ?>
+                <div>
+                    <strong>
+                        الدورات التدريبية
+                    </strong>
+                </div>
+                <div class="mb-4">
+                    <?=\Yii::$app->user->identity->activities ?>
+                </div>
+                <?php endif;?>
+                
+              
+               
             </div>
             <div class="col-9">
                 <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
@@ -49,16 +59,21 @@
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <div class="row mt-4">
 
-                        <?php if(empty($currentcouress)):?>
-                                <strong>
-                                لا يوجد دورات
-                            </strong>
+                    <?php if(empty($currentcouress)):?>
+                                <div class="alert alert-warning mt-4" role="alert">
+                                        <strong>
+                                        لا يوجد دورات
+                                    </strong>
+                                </div>
                             <?php endif;?>
 
+                        <div class="row mt-4">
+
+                        
+
                             <?php foreach($currentcouress as $ccouress):?>
-                                    <a href="<?= Yii::$app->request->baseUrl . "/site/courses/$ccouress->id"?>" class="col-4 mb-4">
+                                    <a href="<?= Yii::$app->request->baseUrl . "/site/courses/$ccouress->id"?>" class="col-12 col-sm-6 col-lg-4 mb-4">
                                         <div class="card">
                                             <div>
                                                 <img src="<?= Yii::$app->request->baseUrl  . '/' . $ccouress->image  ?>" alt="" width="100%" height="135px"">
@@ -92,17 +107,22 @@
                         </div>
                     </div>
                     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                        <div class="alert alert-warning mt-4" role="alert">
+                       
                             <?php if(empty($lastcouress)):?>
-                                <strong>
-                                لا يوجد دورات
-                            </strong>
+                                <div class="alert alert-warning mt-4" role="alert">
+                                        <strong>
+                                        لا يوجد دورات
+                                    </strong>
+                                </div>
                             <?php endif;?>
+
+                        <div class="row mt-4">
                         <?php foreach($lastcouress as $lcouress):?>
-                                    <a href="<?= Yii::$app->request->baseUrl . "/site/courses/$lcouress->id" ?>" class="col-4 mb-4">
+
+                                    <a href="<?= Yii::$app->request->baseUrl . "/site/courses/$lcouress->id" ?>" class="col-12 col-sm-6 col-lg-4 mb-4">
                                         <div class="card">
                                             <div>
-                                                <img src="<?= Yii::$app->request->baseUrl. '/' . $lcouress->image  ?> " alt="" width="100%" height="135px"">
+                                                <img src="<?= Yii::$app->request->baseUrl. '/' . $lcouress->image  ?> " alt="" width="100%" height="135px">
                                             </div>
                                             <div class=" card-body">
                                                 <div class="mb-3">
@@ -128,6 +148,7 @@
                                         </div>
                                 </a>
                              <?php endforeach;?>   
+                             </div>
 
                           
                         </div>
