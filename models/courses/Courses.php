@@ -78,7 +78,15 @@ class Courses extends \yii\db\ActiveRecord
     }
 
 
-
+    public function beforeValidate()
+    {
+        if (parent::beforeValidate()) {
+            $this->start_time=str_replace(["PM", "AM"], "", $this->start_time);
+            $this->end_time=str_replace(["PM", "AM"], "", $this->end_time);
+            return true;
+        }
+        return false;
+    }
 
     /**
      * @inheritdoc
