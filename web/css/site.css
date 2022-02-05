@@ -16,7 +16,7 @@
 	src:url('/fonts/Monotype-SST-Arabic-Bold.otf');
 }
 
-body{
+html, body{
     font-family:'Monotype Light' !important;
     line-height: 1.4;
     overflow-x: hidden;
