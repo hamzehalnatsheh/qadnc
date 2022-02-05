@@ -7,8 +7,8 @@ return [
     'EMAIL'=>'الإيميل',
     'Title'=>'العنوان',
     'Description'=>'الوصف',
-    'Start_At'=>'وقت البداية',
-    'End_At'=>'وقت النهاية',
+    'Start_At'=>'تاربخ البداية',
+    'End_At'=>'تاريخ النهاية',
     'Image'=>'الصورة',
     'Category'=>'الصنف',
     'Status'=>'الحالة',
@@ -68,8 +68,9 @@ return [
     'Qualifications'=>'الشهادات العلمية',
     'Experience'=>'الدورات التدريبية',
     'Activities'=>'الخبرات العملية',
-    
-
+    'Start_Time'=>'وقت البداية',
+    'End_Time'=>'وقت النهاية' ,
+    'Sagisted_Courses'=>'الورات المقترحة'
 
 
 

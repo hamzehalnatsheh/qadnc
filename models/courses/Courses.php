@@ -42,9 +42,9 @@ class Courses extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [[ 'title','description','start_at','end_at','category','status'], 'required','on'=>[self::Create ,self::Update ]],
+            [[ 'title','description','start_at','end_at','category','start_time','end_time','status'], 'required','on'=>[self::Create ,self::Update ]],
             [['description'], 'string','on'=>[self::Create ,self::Update ]],
-            [['start_at', 'end_at'], 'safe','on'=>[self::Create ,self::Update ]],
+            [['start_at', 'end_at','start_time','end_time'], 'safe','on'=>[self::Create ,self::Update ]],
             [['category', 'status'], 'integer','on'=>[self::Create ,self::Update ]],
             [['title'], 'string', 'max' => 1000,'on'=>[self::Create ,self::Update ]],
             [['image'], 'string', 'max' => 256,'on'=>[self::Create ,self::Update ]],
@@ -71,6 +71,9 @@ class Courses extends \yii\db\ActiveRecord
             'update_at' => Yii::t('app', 'Update_At'),
             'deleted_at' => Yii::t('app', 'Deleted_At'),
             'file'=> Yii::t('app', 'File'),
+            'start_time' => Yii::t('app', 'Start_Time'),
+            'end_time' => Yii::t('app', 'End_Time'),
+           
         ];
     }
 

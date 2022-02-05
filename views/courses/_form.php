@@ -47,6 +47,25 @@ use dosamigos\datepicker\DatePicker;
 
     </div>
 
+
+
+
+
+    <div class="row">
+        <div class="col-md-4">
+            
+            <?= $form->field($model, 'start_time')->widget(TimePicker::classname(), []);?>
+        </div>
+        <div class="col-md-4">
+
+            <?= $form->field($model, 'end_time')->widget(TimePicker::classname(), []);?>
+
+        </div>
+            
+    </div>
+
+
+
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
 
