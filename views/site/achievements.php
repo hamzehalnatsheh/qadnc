@@ -22,7 +22,9 @@ $this->title = $achievement->title ;
                     تفاصيل الانجاز
                 </div>
                 <div>
-                    <?= $achievement->body ?>
+                    <pre>
+                        <?= $achievement->body ?>
+                    </pre>
                 </div>
             </div>
         </div>

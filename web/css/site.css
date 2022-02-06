@@ -260,3 +260,11 @@ a, a:hover {
 .details {
     padding: 80px 0;
 }
+
+pre {
+    direction: rtl;
+    overflow: hidden;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Monotype Light' !important;
+}
