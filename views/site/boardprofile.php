@@ -14,7 +14,7 @@ $this->title = $membersCouncil->name;
             <div class="col-9">
                 <div>
                     <strong>
-                        <h1>
+                        <h1 class="text-primary">
                             <?= $membersCouncil->name; ?>
                         </h1>
                     </strong>
