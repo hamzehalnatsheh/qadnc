@@ -264,7 +264,7 @@ a, a:hover {
 pre {
     direction: rtl;
     overflow: hidden;
-    white-space: pre-wrap;
+    white-space: pre-line;
     word-wrap: break-word;
     font-family: 'Monotype Light' !important;
 }
