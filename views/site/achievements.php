@@ -6,7 +6,7 @@ $this->title = $achievement->title ;
         <div class="row">
             <div class="col-12 col-lg-5">
                 <div>
-                    <img src="<?= Yii::$app->request->baseUrl . '/' . $achievement->image  ?>" width="100%" height="350px" />
+                    <img src="<?= Yii::$app->request->baseUrl . '/' . $achievement->image  ?>" width="100%" />
                 </div>
             </div>
             <div class="col-12 col-lg-7">
