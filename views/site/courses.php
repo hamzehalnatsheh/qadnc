@@ -10,6 +10,7 @@ $this->title = 'الدورات' ;
                 </div>
             </div>
         </div>
+        <button class="btn btn-primary mb-4">إقتراح دوره</button>
         <div class="row">
             <?php
             $is_loggedin = Yii::$app->user->isGuest ? false : true;
@@ -31,6 +32,7 @@ $this->title = 'الدورات' ;
                     </strong>
                 </div>
             <?php } ?>
+            
             <?php foreach ($courses as $course) : ?>
                 
                 <a href="<?= Yii::$app->request->baseUrl . "/site/courses/$course->id" ?>" class="col-12 col-sm-6 col-lg-3 mb-4">

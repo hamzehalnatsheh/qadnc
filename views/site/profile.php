@@ -4,9 +4,9 @@ $this->title = \Yii::$app->user->identity->first_name ;
 <div id="profile" class="board">
     <div class="container">
         <div class="row">
-            <div class="col-3">
+            <div class="col-3 text-center">
                 <img src="<?= Yii::$app->request->baseUrl .'/'.\Yii::$app->user->identity->avatar ?>" alt="" class="board-profile-picture">
-                <div class="mt-3">
+                <div class="mt-3 mb-4 text-primary">
                     <strong>
                         <?=\Yii::$app->user->identity->first_name . " ". \Yii::$app->user->identity->last_name ?>
                     </strong>

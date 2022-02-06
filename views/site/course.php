@@ -14,11 +14,11 @@ $this->params['breadcrumbs'][] = $course->title;
 
 $is_loggedin = Yii::$app->user->isGuest ? false : true;
 $is_loggedin_str = Yii::$app->user->isGuest ? "false" : "true";
-$coures_user= null;
+$coures_user = null;
 if ($is_loggedin) {
     $coures_user = \app\models\studentcourses\StudentCourses::find()
-        ->andWhere(['student_id' => \Yii::$app->user->identity->id ])
-        ->andWhere(['course_id'=> $course->id])
+        ->andWhere(['student_id' => \Yii::$app->user->identity->id])
+        ->andWhere(['course_id' => $course->id])
         ->one();
 }
 
@@ -27,11 +27,7 @@ if ($is_loggedin) {
 <div class="courses-body">
     <div class="container">
 
-        <button type="submit" class="btn btn-link register_coure" onclick="register_coure(event,<?= $course->id ?>,<?= $is_loggedin_str ?>,<?= ($is_loggedin == false || ($is_loggedin == true && !empty($coures_user))) ?'true':'false' ?>)" course_id="<?= $course->id ?>" is_loggedin="<?= $is_loggedin_str ?>">
-                                    <strong id="st_<?= $course->id ?>">
-                                        <?= ($is_loggedin == false || ($is_loggedin == true && !empty($coures_user))) ? ' الغاء التسجيل' : 'تسجيل في الدورة' ?>
-                                    </strong>
-                                </button>
+
         <div class="row">
             <div class="col-12 col-lg-5">
                 <div>
@@ -54,6 +50,11 @@ if ($is_loggedin) {
                     <?= $course->description; ?>
                 </div>
                 <hr>
+                <button type="submit" class="btn btn-primary register_coure" onclick="register_coure(event,<?= $course->id ?>,<?= $is_loggedin_str ?>,<?= ($is_loggedin == false || ($is_loggedin == true && !empty($coures_user))) ? 'true' : 'false' ?>)" course_id="<?= $course->id ?>" is_loggedin="<?= $is_loggedin_str ?>">
+                    <strong id="st_<?= $course->id ?>">
+                        <?= ($is_loggedin == false || ($is_loggedin == true && !empty($coures_user))) ? ' الغاء التسجيل' : 'تسجيل في الدورة' ?>
+                    </strong>
+                </button>
                 <div class="course-options">
                     <i class="far fa-bookmark pl-2"></i>
                     <strong>تصنيف الدورة: </strong>
