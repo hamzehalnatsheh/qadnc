@@ -1,23 +1,28 @@
 <?php
 
 use yii\helpers\Html;
-$this->title = $membersCouncil->name  ;
+
+$this->title = $membersCouncil->name;
 ?>
 <div id="profile" class="details">
     <div class="container">
         <div class="row">
             <div class="col-3">
-                <?= Html::img('/'. $membersCouncil->image ,['class'=>"board-profile-picture" ])?>
-                 
+                <?= Html::img('/' . $membersCouncil->image, ['class' => "board-profile-picture"]) ?>
+
             </div>
             <div class="col-9">
                 <div>
                     <strong>
-                        <?= $membersCouncil->name ;?>
+                        <h1>
+                            <?= $membersCouncil->name; ?>
+                        </h1>
                     </strong>
                 </div>
                 <div class="mb-4">
-                    <?= $membersCouncil->general_definition ;?>
+                    <pre>
+                        <?= $membersCouncil->general_definition; ?>
+                    </pre>
                 </div>
                 <div>
                     <strong>
@@ -25,15 +30,19 @@ $this->title = $membersCouncil->name  ;
                     </strong>
                 </div>
                 <div class="mb-4">
-                    <?= $membersCouncil->certificates ;?>   
+                    <pre>
+                    <?= $membersCouncil->certificates; ?>   
+                    </pre>
                 </div>
                 <div>
                     <strong>
-                       الدورات التدريبية   
+                        الدورات التدريبية
                     </strong>
                 </div>
                 <div class="mb-4">
-                    <?= $membersCouncil->courses ;?>     
+                    <pre>
+                    <?= $membersCouncil->courses; ?>
+                    </pre>
                 </div>
                 <div>
                     <strong>
@@ -41,7 +50,9 @@ $this->title = $membersCouncil->name  ;
                     </strong>
                 </div>
                 <div class="mb-4">
-                     <?= $membersCouncil->experiences ;?>        
+                    <pre>
+                    <?= $membersCouncil->experiences; ?>
+                    </pre>
                 </div>
             </div>
         </div>
