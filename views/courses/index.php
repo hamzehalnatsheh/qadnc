@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
@@ -38,10 +39,28 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
           
             'description:ntext',
-            'start_at',
-            'end_at',
+
+            [
+                'attribute'=>'start_at',
+                'value'=>function($searchModel){
+                    return Carbon::parse($searchModel->start_at)->toDateString();
+                },
+               
+
+            ],
+
+            [
+                'attribute'=>'end_at',
+                'value'=>function($searchModel){
+                    return Carbon::parse($searchModel->end_at)->toDateString();
+                },
+               
+            ],
+            'start_time',
+            'end_time',
+            
             //'image',
-            //'category',
+            'categorytype.name',
             //'status',
             //'created_at',
             //'update_at',

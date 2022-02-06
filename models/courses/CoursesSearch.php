@@ -18,7 +18,7 @@ class CoursesSearch extends Courses
     {
         return [
             [['id', 'category', 'status'], 'integer'],
-            [['title', 'description', 'start_at', 'end_at', 'image', 'created_at', 'update_at', 'deleted_at'], 'safe'],
+            [['title', 'description', 'start_at', 'end_at','start_time','end_time', 'image', 'created_at', 'update_at', 'deleted_at'], 'safe'],
         ];
     }
 
@@ -61,6 +61,8 @@ class CoursesSearch extends Courses
             'id' => $this->id,
             'start_at' => $this->start_at,
             'end_at' => $this->end_at,
+            'start_time'=> $this->start_time,
+            'end_time'=> $this->end_time,
             'category' => $this->category,
             'status' => $this->status,
             'created_at' => $this->created_at,

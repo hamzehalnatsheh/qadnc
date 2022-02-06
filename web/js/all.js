@@ -29,19 +29,30 @@ $(document).ready(function () {
       });
 });
 
-function register_coure(event,course_id, is_logddin){
+function register_coure(event,course_id, is_logddin,registed){
     // check is_logddin
     event.preventDefault(); 
     if(is_logddin){
 
         const Http = new XMLHttpRequest();
-        const url=`${SITE_URL}/student-courses/register?course_id=${course_id}`;
-        Http.open("GET", url);
-        Http.send();
-        Http.onreadystatechange = (e) => {
-            alert('تم تسجيلك بنجاح');
-            document.getElementById(`st_${course_id}`).textContent='ألغاء التسجيل'
+        if(registed){
+            const url=`${SITE_URL}/student-courses/unregister?id=${course_id}`;
+            Http.open("GET", url);
+            Http.send();
+            Http.onreadystatechange = (e) => {
+                alert('تم الغاء تسجيلك بنجاح');
+                document.getElementById(`st_${course_id}`).textContent='تسجيل في الدورة'
+            }
+        }else{
+            const url=`${SITE_URL}/student-courses/register?course_id=${course_id}`;
+            Http.open("GET", url);
+            Http.send();
+            Http.onreadystatechange = (e) => {
+                alert('تم تسجيلك بنجاح');
+                document.getElementById(`st_${course_id}`).textContent='ألغاء التسجيل'
+            }
         }
+       
     
     }else{
         alert('قم بتسجيل')

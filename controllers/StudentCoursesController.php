@@ -144,6 +144,18 @@ class StudentCoursesController extends Controller
         exit();
 
     }
+
+    public function actionUnregister($id){
+    
+        StudentCourses::find()
+                ->andwhere(['course_id'=> $id])
+                ->andwhere(['student_id'=>\Yii::$app->user->identity->id])
+                ->delete();
+       
+       
+        exit();
+
+    }
     /**
      * Finds the StudentCourses model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.

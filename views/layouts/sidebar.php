@@ -121,6 +121,11 @@ use app\models\User;use yii\helpers\Html;
                 <li  class=" <?= Yii::$app->controller->route =='consultation/index'?'active':''?>">
                     <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Consultation'), ['consultation/index'])?>
                 </li>
+                <li  class=" <?= Yii::$app->controller->route =='sagisted-courses/index'?'active':''?>">
+                    <?= Html::a('<i class="fab fa-product-hunt"></i>'.Yii::t('app','Sagisted_Courses'), ['sagisted-courses/index'])?>
+                </li>
+
+                
 
             </ul>
         </div>

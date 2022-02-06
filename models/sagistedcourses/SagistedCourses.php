@@ -27,6 +27,7 @@ class SagistedCourses extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['title','body'],'required'],
             [['body'], 'string'],
             [['title'], 'string', 'max' => 255],
         ];

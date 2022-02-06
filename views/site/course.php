@@ -27,7 +27,7 @@ if ($is_loggedin) {
 <div class="courses-body">
     <div class="container">
 
-        <button type="submit" class="btn btn-link register_coure" onclick="register_coure(event,<?= $course->id ?>,<?= $is_loggedin_str ?>)" course_id="<?= $course->id ?>" is_loggedin="<?= $is_loggedin_str ?>">
+        <button type="submit" class="btn btn-link register_coure" onclick="register_coure(event,<?= $course->id ?>,<?= $is_loggedin_str ?>,<?= ($is_loggedin == false || ($is_loggedin == true && !empty($coures_user))) ?'true':'false' ?>)" course_id="<?= $course->id ?>" is_loggedin="<?= $is_loggedin_str ?>">
                                     <strong id="st_<?= $course->id ?>">
                                         <?= ($is_loggedin == false || ($is_loggedin == true && !empty($coures_user))) ? ' الغاء التسجيل' : 'تسجيل في الدورة' ?>
                                     </strong>
@@ -73,6 +73,18 @@ if ($is_loggedin) {
                     <i class="far fa-calendar-alt pl-2"></i>
                     <strong>نهاية الدورة: </strong>
                     <span><?= Yii::$app->formatter->format($course->end_at, 'date') ?></span>
+                </div>
+
+                <div class="course-options">
+                    <i class="far fa-calendar-alt pl-2"></i>
+                    <strong>وقت بداية الدورة: </strong>
+                    <span><?= $course->start_time ?></span>
+                </div>
+
+                <div class="course-options">
+                    <i class="far fa-calendar-alt pl-2"></i>
+                    <strong>وقت نهاية الدورة: </strong>
+                    <span><?= $course->end_time ?></span>
                 </div>
             </div>
         </div>

@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use dosamigos\datepicker\DatePicker;
-
+use kartik\time\TimePicker;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\courses\Courses */
@@ -46,6 +46,43 @@ use dosamigos\datepicker\DatePicker;
         </div>
 
     </div>
+
+
+
+
+
+    <div class="row">
+        <div class="col-md-4">
+            
+            <?= $form->field($model, 'start_time')->widget(TimePicker::classname(), 
+            [
+
+                'pluginOptions' => [
+                    'showSeconds' => true,
+                    'showMeridian' => false,
+                    'minuteStep' => 1,
+                    'secondStep' => 5,
+                ]
+
+            ]);?>
+        </div>
+        <div class="col-md-4">
+
+            <?= $form->field($model, 'end_time')->widget(TimePicker::classname(), [
+
+'pluginOptions' => [
+    'showSeconds' => true,
+    'showMeridian' => false,
+    'minuteStep' => 1,
+    'secondStep' => 5,
+]
+            ]);?>
+
+        </div>
+            
+    </div>
+
+
 
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
