@@ -90,7 +90,7 @@ $this->title = 'Application';
         <div class="row text-center">
             <div class="col-12 ">
                 <div class="activity-title">
-                    إنجازات الجمعية
+                    الأخبار والإعلانات
                 </div>
             </div>
         </div>

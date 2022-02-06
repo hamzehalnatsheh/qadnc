@@ -381,6 +381,23 @@ class SiteController extends Controller
         return $this->render('course',['course'=>$course]);
     }
 
+    /**
+     * Displays Suggest Course.
+     *
+     * @return string
+     */
+    public function actionSuggestCourse(){
+        return $this->render('suggestCourse');
+    }
+    /**
+     * Displays Edit Profile.
+     *
+     * @return string
+     */
+    public function actionEditProfile(){
+        return $this->render('editProfile');
+    }
+
 
 
        /**
