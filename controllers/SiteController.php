@@ -35,15 +35,15 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout', 'signup','membersignup','profile'],
+                'only' => ['logout', 'signup', 'membersignup', 'profile'],
                 'rules' => [
                     [
-                        'actions' => ['signup','membersignup'],
+                        'actions' => ['signup', 'membersignup'],
                         'allow' => true,
                         'roles' => ['?'],
                     ],
                     [
-                        'actions' => ['logout','profile'],
+                        'actions' => ['logout', 'profile'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -81,13 +81,13 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $about_us=Aboutus::find()->one();
-        $connect_us=Contactus::find()->one();
-        $associations=AssociationActivities::find()->all();
-        $sliders=Slider::find()->all();
-        $achievements=Achievements::find()->all();
-     
-        return $this->render('index',['about_us'=>$about_us,'connect_us'=>$connect_us,'associations'=>$associations,'sliders'=>$sliders,'achievements'=>$achievements]);
+        $about_us = Aboutus::find()->one();
+        $connect_us = Contactus::find()->one();
+        $associations = AssociationActivities::find()->all();
+        $sliders = Slider::find()->all();
+        $achievements = Achievements::find()->all();
+
+        return $this->render('index', ['about_us' => $about_us, 'connect_us' => $connect_us, 'associations' => $associations, 'sliders' => $sliders, 'achievements' => $achievements]);
     }
 
     /**
@@ -307,7 +307,6 @@ class SiteController extends Controller
         return $this->render('consulting', [
             'model' => $model,
         ]);
-
     }
 
     /**
@@ -317,8 +316,8 @@ class SiteController extends Controller
      */
     public function actionCourses()
     {
-        $courses=Courses::find()->where(['deleted_at'=>null])->all();
-        return $this->render('courses',['courses'=>$courses]);
+        $courses = Courses::find()->where(['deleted_at' => null])->all();
+        return $this->render('courses', ['courses' => $courses]);
     }
 
     /**
@@ -328,11 +327,11 @@ class SiteController extends Controller
      */
     public function actionBoard()
     {
-        $membersCouncil=MembersCouncil::find()->all();
-        return $this->render('board',['membersCouncil'=>$membersCouncil]);
+        $membersCouncil = MembersCouncil::find()->all();
+        return $this->render('board', ['membersCouncil' => $membersCouncil]);
     }
 
-  
+
 
     /**
      * Displays Board Profile.
@@ -342,11 +341,11 @@ class SiteController extends Controller
     public function actionBoardProfile($id)
     {
 
-        $membersCouncil=MembersCouncil::findOne($id);
+        $membersCouncil = MembersCouncil::findOne($id);
 
-        return $this->render('boardprofile',['membersCouncil'=>$membersCouncil]);
+        return $this->render('boardprofile', ['membersCouncil' => $membersCouncil]);
     }
-    
+
     /**
      * Displays Profile.
      *
@@ -354,21 +353,21 @@ class SiteController extends Controller
      */
     public function actionProfile()
     {
-        $lastsubQuer=StudentCourses::find()->select('course_id')
-            ->andWhere(['student_id'=>\Yii::$app->user->identity->id]);
-        $currentsubQuer=StudentCourses::find()->select('course_id')
-                ->andWhere(['student_id'=>\Yii::$app->user->identity->id]);
+        $lastsubQuer = StudentCourses::find()->select('course_id')
+            ->andWhere(['student_id' => \Yii::$app->user->identity->id]);
+        $currentsubQuer = StudentCourses::find()->select('course_id')
+            ->andWhere(['student_id' => \Yii::$app->user->identity->id]);
 
-        $lastcouress=Courses::find()->andWhere(['in', 'id', $lastsubQuer])
-                ->andWhere('date(end_at) >= :date', [':date' => date('y-m-d')])
-                ->all();
-        $currentcouress=Courses::find()->andWhere(['in', 'id', $currentsubQuer])
-                ->andWhere('date(end_at) <=:date', [':date' => date('y-m-d')])
-                ->all();
-                
-        return $this->render('profile',[
-            'lastcouress'=>$lastcouress,
-            'currentcouress'=>$currentcouress,
+        $lastcouress = Courses::find()->andWhere(['in', 'id', $lastsubQuer])
+            ->andWhere('date(end_at) >= :date', [':date' => date('y-m-d')])
+            ->all();
+        $currentcouress = Courses::find()->andWhere(['in', 'id', $currentsubQuer])
+            ->andWhere('date(end_at) <=:date', [':date' => date('y-m-d')])
+            ->all();
+
+        return $this->render('profile', [
+            'lastcouress' => $lastcouress,
+            'currentcouress' => $currentcouress,
         ]);
     }
 
@@ -376,9 +375,10 @@ class SiteController extends Controller
      * @param $id
      * @return View
      */
-    public function actionCourse($id){
-        $course=Courses::findOne($id);
-        return $this->render('course',['course'=>$course]);
+    public function actionCourse($id)
+    {
+        $course = Courses::findOne($id);
+        return $this->render('course', ['course' => $course]);
     }
 
     /**
@@ -386,7 +386,8 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionSuggestCourse(){
+    public function actionSuggestCourse()
+    {
         return $this->render('suggestCourse');
     }
     /**
@@ -394,21 +395,18 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionEditProfile(){
+    public function actionEditProfile()
+    {
         return $this->render('editProfile');
     }
 
-
-
-       /**
+    /**
      * @param $id
      * @return View
      */
-    public function actionAchievements($id){
-        $achievement=Achievements::findOne($id);
-        return $this->render('achievements',['achievement'=>$achievement]);
+    public function actionAchievements($id)
+    {
+        $achievement = Achievements::findOne($id);
+        return $this->render('achievements', ['achievement' => $achievement]);
     }
-
-
-
 }
