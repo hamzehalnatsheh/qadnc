@@ -19,7 +19,7 @@ $this->title = $achievement->title ;
                 </div>
 
                 <div class="course-description">
-                    تفاصيل الانجاز
+                    التفاصيل
                 </div>
                 <div>
                     <pre>
