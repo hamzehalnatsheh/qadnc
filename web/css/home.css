@@ -114,6 +114,10 @@
     line-height: 35px;
 }
 
+#header {
+    position: relative;
+}
+
 .site-navbar {
     position: absolute;
     z-index: 3;
