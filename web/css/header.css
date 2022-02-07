@@ -205,6 +205,10 @@
     z-index: 1;
 }
 
+#header {
+    position: relative;
+}
+
 .site-mobile-menu {
     width: 300px;
     position: fixed;
