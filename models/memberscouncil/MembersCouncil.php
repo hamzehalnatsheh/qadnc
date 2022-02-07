@@ -43,7 +43,7 @@ class MembersCouncil extends \yii\db\ActiveRecord
             [['name'], 'string', 'max' => 256,'on'=>[self::Create ,self::Update ]],
             [['position'], 'string', 'max' => 500,'on'=>[self::Create ,self::Update ]],
             [['image'], 'string', 'max' => 255],
-            ['file', 'required','on'=>[self::Create ,self::Update ]],
+            ['file', 'required','on'=>[self::Create ]],
             [['file'], 'image', 'skipOnEmpty' => true, 'extensions' => 'png, jpg, jpeg','on'=>[self::Create ,self::Update  ]],
         ];
     }

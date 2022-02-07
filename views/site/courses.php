@@ -1,4 +1,7 @@
-<?php 
+<?php
+
+use yii\helpers\Html;
+
 $this->title = 'الدورات' ;
 ?>
 <div class="courses-body">
@@ -10,7 +13,8 @@ $this->title = 'الدورات' ;
                 </div>
             </div>
         </div>
-        <button class="btn btn-primary mb-4">إقتراح دوره</button>
+        <?= Html::a('إقتراح دوره',  ['site/sagisted-courses'],['class'=>'btn btn-primary mb-4']);?>
+        
         <div class="row">
             <?php
             $is_loggedin = Yii::$app->user->isGuest ? false : true;

@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="row text-center">
             <div class="col-12 ">
                 <div class="activity-title">
-                    الإستشارات
+                اقترح دوره
                 </div>
             </div>
         </div>
