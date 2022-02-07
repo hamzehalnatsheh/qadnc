@@ -31,25 +31,47 @@ $(document).ready(function () {
 
 function register_coure(event,course_id, is_logddin,registed){
     // check is_logddin
+   
     event.preventDefault(); 
     if(is_logddin){
-
         const Http = new XMLHttpRequest();
         if(registed){
             const url=`${SITE_URL}/student-courses/unregister?id=${course_id}`;
             Http.open("GET", url);
             Http.send();
             Http.onreadystatechange = (e) => {
-                alert('تم الغاء تسجيلك بنجاح');
-                document.getElementById(`st_${course_id}`).textContent='تسجيل في الدورة'
+                
+                document.getElementById(`st_${course_id}`).textContent='تسجيل في الدورة';
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'تم الغاء تسجيلك بنجاح',
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+                  setTimeout(function(){
+                    location.reload();
+                  },1000);
+                
             }
         }else{
             const url=`${SITE_URL}/student-courses/register?course_id=${course_id}`;
             Http.open("GET", url);
             Http.send();
             Http.onreadystatechange = (e) => {
-                alert('تم تسجيلك بنجاح');
-                document.getElementById(`st_${course_id}`).textContent='ألغاء التسجيل'
+              
+                document.getElementById(`st_${course_id}`).textContent='ألغاء التسجيل';
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'تم تسجيلك بنجاح',
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+                 
+                  setTimeout(function(){
+                    location.reload();
+                  },1000);
             }
         }
        

@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\studentcourses\StudentCourses;
 use app\models\studentcourses\StudentCoursesSearch;
+use Codeception\Platform\Extension;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -146,12 +147,18 @@ class StudentCoursesController extends Controller
     }
 
     public function actionUnregister($id){
+        try{
+
+            StudentCourses::find()
+            ->where(['course_id'=> $id])
+            ->andwhere(['student_id'=>\Yii::$app->user->identity->id])
+            ->one()
+            ->delete();
+        }catch(Extension $e){
+
+        }
+      
     
-        StudentCourses::find()
-                ->andwhere(['course_id'=> $id])
-                ->andwhere(['student_id'=>\Yii::$app->user->identity->id])
-                ->delete();
-       
        
         exit();
 

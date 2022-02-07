@@ -26,8 +26,12 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\EditProfile;
 use app\models\sagistedcourses\SagistedCourses;
 use app\models\studentcourses\StudentCourses;
+use app\models\User;
+use yii\helpers\FileHelper;
+use yii\web\UploadedFile;
 
 class SiteController extends Controller
 {
@@ -398,9 +402,48 @@ class SiteController extends Controller
      */
     public function actionEditProfile()
     {
-        return $this->render('editProfile');
+        
+        $model = new EditProfile();
+        
+
+        if ($this->request->isPost && $model->load($this->request->post()) && $model->validate()) {
+            $user=User::findOne(Yii::$app->user->identity->id);
+
+          
+            $user->dateofbirth = $model->dateofbirth;
+            $user->first_name=$model->first_name;
+            $user->last_name=$model->last_name;
+            $user->experience = $model->experience;
+            $user->activities = $model->activities;
+            $user->qualifications = $model->qualifications;   
+            $user->phone= $model->phone;   
+
+            $model->file = UploadedFile::getInstance($model, 'file');
+
+            
+            if (!is_null( $model->file) ) {
+            
+                FileHelper::createDirectory("uploads/avatar/$user->id");
+                $path="uploads/avatar/$user->id/index" . "." .  $model->file->extension;
+                $model->file->saveAs($path);
+                $user->avatar=$path;
+            }
+            $user->save(false);
+            
+            Yii::$app->session->setFlash('success-edit');
+        }
+
+        return $this->render('editProfile', [
+            'model' => $model,
+        ]);
+       
+
+       
     }
 
+        
+    
+    
     /**
      * @param $id
      * @return View

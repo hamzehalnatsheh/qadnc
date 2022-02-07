@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
 
-        <?php if (Yii::$app->session->hasFlash('success-consulting')) : ?>
+        <?php if (Yii::$app->session->hasFlash('success-edit')) : ?>
             <div class="alert alert-secondary" role="alert">
                 تم بنجاح
             </div>
@@ -30,30 +30,37 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="card-body mb-5">
                             <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
                             <div class="mb-3">
-                                <?= $form->field($model, 'project_name')->textInput(['placeholder' => 'الاسم الأول'])->label('')  ?>
+                                <?= $form->field($model, 'first_name')->textInput(['placeholder' => 'الاسم الأول', 'value'=>Yii::$app->user->identity->first_name])->label('')  ?>
                             </div>
                             <div class="mb-3">
-                                <?= $form->field($model, 'project_name')->textInput(['placeholder' => 'الاسم الأخير'])->label('')  ?>
+                                <?= $form->field($model, 'last_name')->textInput(['placeholder' => 'الاسم الأخير', 'value'=>Yii::$app->user->identity->last_name])->label('')  ?>
                             </div>
-                            <div class="mb-3">
-                                <?= $form->field($model, 'project_name')->textInput(['placeholder' => 'رقم الجوال'])->label('')  ?>
-                            </div>
-                            <div class="form-group field-signupformmember-username required">
+             
+                            <div class="form-group field-editprofile-dateofbirth required">
                                 <label for="signupform-dateofbirth"></label>
-                                <input type="date" id="signupform-dateofbirth" onchange="changeDate(this)" value class="form-control <?= $model->hasErrors('dateofbirth') ? 'is-invalid' : 'is-valid' ?> " name="SignupForm[dateofbirth]" placeholder="تاريخ الميلاد" aria-required="true" aria-invalid="false" require>
+                                <input type="date" id="editprofile-dateofbirth" onchange="changeDate(this)" value="<?=Yii::$app->user->identity->dateofbirth?>" class="form-control <?= $model->hasErrors('dateofbirth') ? 'is-invalid' : 'is-valid' ?> " name="EditProfile[dateofbirth]" placeholder="تاريخ الميلاد" aria-required="true" aria-invalid="false" require>
                                 <?php if ($model->hasErrors('dateofbirth')) : ?>
                                     <div class="invalid-feedback"><?= $model->getErrors('dateofbirth')[0] ?></div>
                                 <?php endif; ?>
                             </div>
-                            <div class="mb-3">
-                                <?= $form->field($model, 'about_project')->textarea(['placeholder' => 'الشهدات العلمية'])->label('') ?>
+
+                            <?php if(Yii::$app->user->identity->type == \app\models\User::Memmber ||Yii::$app->user->identity->type == \app\models\User::SUPER_ADMIN):?>
+                                <div class="mb-3">
+                                    <?= $form->field($model, 'experience')->textarea(['placeholder' => 'الشهدات العلمية' , 'value'=>Yii::$app->user->identity->experience])->label('') ?>
+                                </div>
+                                <div class="mb-3">
+                                    <?= $form->field($model, 'activities')->textarea(['placeholder' => 'الخبرات العملية','value'=>Yii::$app->user->identity->activities])->label('') ?>
+                                </div>
+                                <div class="mb-3">
+                                    <?= $form->field($model, 'qualifications')->textarea(['placeholder' => 'الدورات التدريبية','value'=>Yii::$app->user->identity->qualifications])->label('') ?>
+                                </div>
+                            <?php endif;?>
+
+                            <div class="mt-3">
+                                <?= $form->field($model, 'file')->fileInput()->label(Yii::t('app','Image')) ?>
                             </div>
-                            <div class="mb-3">
-                                <?= $form->field($model, 'about_project')->textarea(['placeholder' => 'الخبرات العملية'])->label('') ?>
-                            </div>
-                            <div class="mb-3">
-                                <?= $form->field($model, 'about_project')->textarea(['placeholder' => 'الدورات التدريبية'])->label('') ?>
-                            </div>
+                      
+
                             <div>
                                 <?= Html::submitButton('إرسال', ['class' => 'btn btn-primary pull-left']) ?>
                             </div>
@@ -68,3 +75,10 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php endif; ?>
     </div>
 </div>
+
+<script>
+
+function changeDate(_this){
+    document.getElementById("editprofile-dateofbirth").value = document.getElementById("signupformmember-dateofbirth").value;
+}
+</script>

@@ -1,4 +1,7 @@
-<?php 
+<?php
+
+use yii\helpers\Html;
+
 $this->title = \Yii::$app->user->identity->first_name ;
 ?>
 <div id="profile" class="board">
@@ -8,10 +11,10 @@ $this->title = \Yii::$app->user->identity->first_name ;
                 <img src="<?= Yii::$app->request->baseUrl .'/'.\Yii::$app->user->identity->avatar ?>" alt="" class="board-profile-picture">
                 <div class="mt-3 mb-4 text-primary">
                     <strong>
-                        <?=\Yii::$app->user->identity->first_name . " ". \Yii::$app->user->identity->last_name ?>
+                        <?=\Yii::$app->user->identity->first_name . " ". \Yii::$app->user->identity->last_name ?> <?= Html::a('<i class="fas fa-edit"></i>',['site/edit-profile']) ?>
                     </strong>
                 </div>
-                <?php if(is_null(\Yii::$app->user->identity->qualifications) ): ?>
+                <?php if(!is_null(\Yii::$app->user->identity->qualifications) ): ?>
                     <div>
                         <strong>
                             الشهادات العلمية
@@ -21,7 +24,7 @@ $this->title = \Yii::$app->user->identity->first_name ;
                         <?=\Yii::$app->user->identity->qualifications ?>
                     </div>
                 <?php endif;?>
-                <?php if(is_null(\Yii::$app->user->identity->experience) ): ?>
+                <?php if(!is_null(\Yii::$app->user->identity->experience) ): ?>
                 <div>
                     <strong>
                         الخبرات العملية
@@ -32,7 +35,7 @@ $this->title = \Yii::$app->user->identity->first_name ;
                 </div>
                 <?php endif;?>
 
-                <?php if(is_null(\Yii::$app->user->identity->activities) ): ?>
+                <?php if(!is_null(\Yii::$app->user->identity->activities) ): ?>
                 <div>
                     <strong>
                         الدورات التدريبية
