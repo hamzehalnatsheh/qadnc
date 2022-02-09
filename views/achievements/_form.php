@@ -16,13 +16,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
 
-
-
-        <?= $form->field($model, 'file')->widget(\kartik\file\FileInput::classname(), [
+    <?= $form->field($model, 'file')->widget(\kartik\file\FileInput::classname(), [
             'options' => ['accept' => 'image/*'],
             'pluginOptions' => [
                 'showCaption' => true,
-//                        'showRemove' => true,
+                'showRemove' => true,
                 'showUpload' => false,
                 'initialPreview' => [
                     Yii::getAlias('@web')
@@ -35,10 +33,9 @@ use yii\widgets\ActiveForm;
                 'overwriteInitial'=>true
             ]
         ]);
+    ?>
 
-        ?>
-
-    <?= $form->field($model, 'vedio_file')->textInput();?>
+    <?= $form->field($model, 'vedio')->textInput();?>
 
     
 

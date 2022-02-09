@@ -79,18 +79,11 @@ class AchievementsController extends Controller
      */
     public function actionCreate()
     {
-
         $model = new Achievements();
-
         if ($this->request->isPost) {
-            $model->scenario=Achievements::Create;
             $newId = Achievements::find()->max('id') + 1;
             if ($model->load($this->request->post()) ) {
-
-
                 $model->file = UploadedFile::getInstance($model, 'file');
-                $model->vedio_file = UploadedFile::getInstance($model, 'vedio_file');
-
                 if( $model->validate()){
                     if (!is_null( $model->file)) {
                         FileHelper::createDirectory("uploads/achievements/$newId");
@@ -98,11 +91,14 @@ class AchievementsController extends Controller
                         $model->file->saveAs($path);
                         $model->image=$path;
                     }
-        
-
+                    if(!is_null($model->vedio) && $model->vedio !=""){
+                        parse_str( parse_url( $model->vedio, PHP_URL_QUERY ), $my_array_of_vars );
+                         $model->image= 'https://img.youtube.com/vi/'.$my_array_of_vars['v'].'/hqdefault.jpg';
+                    }
                     $model->save(false);
                     return $this->redirect(['view', 'id' => $model->id]);
                 }else{
+                    
                     $model->loadDefaultValues();
                 }
             }
@@ -164,9 +160,9 @@ class AchievementsController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->validate()) {
-            $file = UploadedFile::getInstance($model, 'file');
+        if ( $model->load($this->request->post()) && $model->validate()) {
             
+            $file = UploadedFile::getInstance($model, 'file');
             if (!is_null($file)) {
                 $folder_path = "uploads/achievements/$model->id";
                 FileHelper::createDirectory($folder_path, $mode = 0775, $recursive = true);
@@ -174,6 +170,14 @@ class AchievementsController extends Controller
                 $model->image = $image;
                 $file->saveAs($image);
             }
+
+            if(!is_null($model->vedio) && $model->vedio!="" ){
+                
+                    parse_str( parse_url( $model->vedio, PHP_URL_QUERY ), $my_array_of_vars );
+    
+                    $model->image= 'https://img.youtube.com/vi/'.$my_array_of_vars['v'].'/hqdefault.jpg';
+            }
+
             $model->save(false);
             return $this->redirect(['view', 'id' => $model->id]);
         }

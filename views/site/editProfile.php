@@ -68,7 +68,9 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <img src="<?= Yii::$app->request->baseUrl ?>/images/suggest-course.jpeg" class="consulting-image" />
+                        
+                        <?= Html::img('/'.Yii::$app->user->identity->avatar, ['class' => 'consulting-image']) ?>
+                        
                     </div>
                 </div>
             </div>

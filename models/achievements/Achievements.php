@@ -16,10 +16,7 @@ use Yii;
 class Achievements extends \yii\db\ActiveRecord
 {
     public  $file;
-    public  $vedio_file;
-    public $ext="3g2,3gp,avi,flv,h264,m4v,webm,mkv,mov,mp4,mpg,mpeg,rm,swf,vob,wmv,qt,ogv,avchd,amv,m4p,MOV";
-    const Create="create";
-    const Update='update';
+ 
     /**
      * {@inheritdoc}
      */
@@ -33,16 +30,53 @@ class Achievements extends \yii\db\ActiveRecord
      */
     public function rules()
     {
+     
         return [
-            [['title', 'body'], 'required','on'=>[self::Create ,self::Update ]],
-            [['body'], 'string','on'=>[self::Create ,self::Update ]],
-            [['title'], 'string', 'max' => 1000,'on'=>[self::Create ,self::Update ]],
-            [['vedio'], 'string', 'max' => 265,'on'=>[self::Create ,self::Update ]],
-            [['file'], 'image', 'skipOnEmpty' => true, 'extensions' => 'png,jpg,jpeg,gif','on'=>[self::Create  ,self::Update]],
-            [['file'], 'required','on'=>[self::Create  ]],
-          //  ['vedio_file', 'file', 'extensions' => $this->ext , 'maxSize' => 1024 * 1024 * 350 , 'tooBig' => 'Limit is 350MB'],
+            [['title', 'body'], 'required'],
+            [['body'], 'string'],
+            [['title'], 'string', 'max' => 1000],
+            [['vedio'], 'string', 'max' => 265],
+            [['file'], 'image', 'skipOnEmpty' => true, 'extensions' => 'png,jpg,jpeg,gif'],        
+            // [['vedio'], 'one_input'],
+            // [['vedio'],'my_required'],
+            // ['vedio', function ($attribute,$model) {
+            //     dd('ddd');
+            //     if (empty($model->vedio)) {
+        
+            //         $this->addError($attribute, 'Form must contain a file or message.');
+        
+            //     }
+        
+            // }],
+        
         ];
     }
+
+
+
+    public function my_required($attribute_name, $params){
+
+        if (empty($this->vedio)) {
+            $this->addError($attribute_name, Yii::t('user', 'At least 1 of the field must be filled up properly'));
+            return false;
+        }
+        return true;
+    }
+
+
+    public function one_input($attribute, $params, $validator)
+    {
+        var_dump( isset($this->$attribute));
+        exit;
+        if (! isset($this->$attribute) &&  !isset($this->vedio) ) {
+            $this->addError($attribute, 'اضافة صوره او رابط يوتيوب');
+        }
+        if (isset($this->$attribute) && isset($this->vedio) ) {
+            $this->addError($attribute, 'اضافة صوره او رابط يوتيوب');
+        }
+    }
+
+
 
     /**
      * {@inheritdoc}
@@ -54,7 +88,8 @@ class Achievements extends \yii\db\ActiveRecord
             'title' => Yii::t('app', 'Title'),
             'body' => Yii::t('app', 'Body'),
             'image' => Yii::t('app', 'Image'),
-            'vedio' => Yii::t('app', 'Vedio'),
+            'vedio' => Yii::t('app', 'YouTube'),
+            'file'=>Yii::t('app','Image'),
         ];
     }
 

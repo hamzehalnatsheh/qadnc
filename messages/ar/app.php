@@ -70,7 +70,8 @@ return [
     'Activities'=>'الخبرات العملية',
     'Start_Time'=>'وقت البداية',
     'End_Time'=>'وقت النهاية' ,
-    'Sagisted_Courses'=>'الورات المقترحة'
+    'Sagisted_Courses'=>'الورات المقترحة',
+    'YouTube'=>'رابط اليوتيوب'
 
 
 

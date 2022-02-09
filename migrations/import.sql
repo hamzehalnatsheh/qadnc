@@ -10,3 +10,6 @@ ALTER TABLE `user` MODIFY COLUMN username varchar(255) CHARACTER SET utf8 COLLAT
 
 UPDATE `user`
 SET `user`.`avatar`=  'images/default.png';
+
+
+ALTER TABLE achievements MODIFY COLUMN vedio varchar(265) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT null NULL;
