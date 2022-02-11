@@ -2,7 +2,9 @@
 
 namespace app\models\achievements;
 
+use app\components\AchievementValidator;
 use Yii;
+use yii\web\UploadedFile;
 
 /**
  * This is the model class for table "{{%achievements}}".
@@ -36,45 +38,37 @@ class Achievements extends \yii\db\ActiveRecord
             [['body'], 'string'],
             [['title'], 'string', 'max' => 1000],
             [['vedio'], 'string', 'max' => 265],
-            [['file'], 'image', 'skipOnEmpty' => true, 'extensions' => 'png,jpg,jpeg,gif'],        
-            // [['vedio'], 'one_input'],
-            // [['vedio'],'my_required'],
-            // ['vedio', function ($attribute,$model) {
-            //     dd('ddd');
-            //     if (empty($model->vedio)) {
-        
-            //         $this->addError($attribute, 'Form must contain a file or message.');
-        
-            //     }
-        
-            // }],
-        
+            [['file'], 'image', 'skipOnEmpty' => true, 'extensions' => 'png,jpg,jpeg,gif']    
         ];
     }
 
 
 
-    public function my_required($attribute_name, $params){
-
-        if (empty($this->vedio)) {
-            $this->addError($attribute_name, Yii::t('user', 'At least 1 of the field must be filled up properly'));
-            return false;
-        }
-        return true;
-    }
-
-
-    public function one_input($attribute, $params, $validator)
+    public function beforeValidate()
     {
-        var_dump( isset($this->$attribute));
-        exit;
-        if (! isset($this->$attribute) &&  !isset($this->vedio) ) {
-            $this->addError($attribute, 'اضافة صوره او رابط يوتيوب');
+        if (parent::beforeValidate()) {
+            $this->file = UploadedFile::getInstance($this, 'file');
+            if(empty($this->vedio) &&  (empty($this->file) == true)){
+                $this->addError('file', 'يجب عليك اضافة رابط يوتيوب او صوره'); 
+                return false;
+            }elseif(isset($this->vedio) &&  (empty($this->file) == false)){
+                $this->addError('file', 'يجب عليك اضافة رابط يوتيوب او صوره'); 
+                return false;
+            }elseif(isset($this->vedio) &&  (empty($this->file) == true)){
+             
+                if (!preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/\s]{11})%i', $this->vedio, $match)) {
+                    $this->addError('vedio', 'الرابط غير صحيح'); 
+                    return false;
+                }
+            }
+
+            return true;
         }
-        if (isset($this->$attribute) && isset($this->vedio) ) {
-            $this->addError($attribute, 'اضافة صوره او رابط يوتيوب');
-        }
+
+        return false;
     }
+
+    
 
 
 
