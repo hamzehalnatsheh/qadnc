@@ -97,7 +97,7 @@ $this->title = 'Application';
         <div class="center">
             <?php foreach ($achievements as $achievement) : ?>
                 <a href="<?= Yii::$app->request->baseUrl . "/site/achievements/$achievement->id" ?>">
-                    <img src="<?= Yii::$app->request->baseUrl . '/' . $achievement->image ?>">
+                    <img src="<?= str_contains($achievement->image, 'youtube')?$achievement->image:Yii::$app->request->baseUrl . '/' . $achievement->image ?>">
                     <div class="achievements-title">
                         <?= $achievement->title ?>
                     </div>
