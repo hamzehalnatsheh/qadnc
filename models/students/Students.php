@@ -44,10 +44,10 @@ class Students extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['username', 'dateofbirth', 'email','first_name','last_name'], 'required','on'=>[self::Create ,self::Update ]],
+            [[ 'dateofbirth', 'email','first_name','last_name'], 'required','on'=>[self::Create ,self::Update ]],
             [['born_date', 'dateofbirth'], 'safe','on'=>[self::Create ,self::Update ]],
             [['first_name', 'last_name'], 'string', 'max' => 100 ,'on'=>[self::Create ,self::Update ]],
-            [['username'], 'unique','on'=>[self::Create ,self::Update ]],
+            //[['username'], 'unique','on'=>[self::Create ,self::Update ]],
             [['email'], 'unique','on'=>[self::Create ,self::Update ]],
             ['avatar','safe','on'=>[self::Create ,self::Update ]],
             ['file','required','on'=>[self::Create ]],

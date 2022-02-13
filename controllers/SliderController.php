@@ -21,12 +21,13 @@ class SliderController extends Controller
     public function init()
     {
         $this->layout = "admin";
-        if (!Yii::$app->user->isGuest) {
-            if (Yii::$app->user->identity->type != User::SUPER_ADMIN) {
-                throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
-            }
-        }
         parent::init();
+        if (\Yii::$app->user->isGuest) {
+            return $this->redirect('site/login');
+        }elseif (Yii::$app->user->identity->type != User::SUPER_ADMIN) {
+            throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
+        }
+
     }
     /**
      * @inheritDoc

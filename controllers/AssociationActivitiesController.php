@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\associationactivities\AssociationActivities;
 use app\models\associationactivities\AssociationActivitiesSearch;
+use app\models\User;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -19,8 +20,10 @@ class AssociationActivitiesController extends Controller
     {
         $this->layout = "admin";
         parent::init();
-        if (Yii::$app->user->isGuest) {
+        if (\Yii::$app->user->isGuest) {
             return $this->redirect('site/login');
+        }elseif (Yii::$app->user->identity->type != User::SUPER_ADMIN) {
+            throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
         }
 
     }

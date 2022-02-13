@@ -73,7 +73,20 @@ return [
     'Sagisted_Courses'=>'الدورات المقترحة',
     'YouTube'=>'رابط اليوتيوب',
     'Update Slider'=> 'تعديل السلايدر',
-    'Are you sure you want to delete this item?'=> 'هل انت متأكد من حذف العنصر؟'
+    'Are you sure you want to delete this item?'=> 'هل انت متأكد من حذف العنصر؟',
+    'Phone'=>'هاتف',
+    'Instagram'=>'انستجرام',
+    'Phone_Number'=>'رقم الهاتف',
+    'Snap'=>'سناب',
+    'Twitter'=>'تويتر',
+    'Address'=>'العنوان',
+    'Facebook'=>'فيسبوك',
+    'Password_Repeat'=>'تأكيد الباسورد',
+    'This email address has already been taken'=>'هذا الايميل مأـخوذ ',
+    "Passwords don't match"=>"كلمات المرور غير متطابقة",
+    
+
+    
 
 
 

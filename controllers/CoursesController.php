@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\courses\Courses;
 use app\models\courses\CoursesSearch;
+use app\models\User;
 use Yii;
 use yii\helpers\FileHelper;
 use yii\web\Controller;
@@ -20,8 +21,10 @@ class CoursesController extends Controller
     {
         $this->layout = "admin";
         parent::init();
-        if (Yii::$app->user->isGuest) {
+        if (\Yii::$app->user->isGuest) {
             return $this->redirect('site/login');
+        }elseif (Yii::$app->user->identity->type != User::SUPER_ADMIN) {
+            throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
         }
 
     }

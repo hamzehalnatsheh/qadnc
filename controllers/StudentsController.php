@@ -23,6 +23,8 @@ class StudentsController extends Controller
         parent::init();
         if (\Yii::$app->user->isGuest) {
             return $this->redirect('site/login');
+        }elseif (Yii::$app->user->identity->type != User::SUPER_ADMIN) {
+            throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
         }
 
     }

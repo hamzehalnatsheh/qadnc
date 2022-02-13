@@ -42,12 +42,38 @@ class SignupForm extends Model
             ['email', 'required'],
             ['email', 'email'],
             ['email', 'string', 'max' => 255],
-            ['email', 'unique', 'targetClass' => '\app\models\User', 'message' => 'This email address has already been taken.'],
-            ['password_repeat', 'compare', 'compareAttribute'=>'password', 'message'=>"Passwords don't match" ],
+            ['email', 'unique', 'targetClass' => '\app\models\User', 'message' =>  Yii::t('app', 'This email address has already been taken')],
+            ['password_repeat', 'compare', 'compareAttribute'=>'password', 'message'=>  Yii::t('app', "Passwords don't match") ],
             [['file'], 'image', 'skipOnEmpty' => true, 'extensions' => 'png,jpg,jpeg,gif'],
         ];
     }
 
+
+       /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => Yii::t('app', 'ID'),
+            'username' => Yii::t('app', 'Username'),
+            'first_name' => Yii::t('app', 'First_Name'),
+            'last_name' => Yii::t('app', 'Last_Name'),
+            'born_date' => Yii::t('app', 'Born_Date'),
+            'auth_key' => Yii::t('app', 'Auth_Key'),
+            'password' => Yii::t('app', 'Password'),
+            'password_repeat'=> Yii::t('app', 'Password_Repeat'),
+            'password_reset_token' => Yii::t('app', 'Password_Reset_Token'),
+            'email' => Yii::t('app', 'Email'),
+            'dateofbirth' => Yii::t('app', 'Dateofbirth'),
+            'verification_token' => Yii::t('app', 'Verification_Token'),
+            'type' => Yii::t('app', 'Type'),
+            'status' => Yii::t('app', 'Status'),
+            'file' => Yii::t('app', 'Image'),
+            'created_at' => Yii::t('app', 'Created_At'),
+            'updated_at' => Yii::t('app', 'Updated_At'),
+        ];
+    }
 
     /**
      * Signs user up.

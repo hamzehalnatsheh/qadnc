@@ -47,7 +47,15 @@ class Contactus extends \yii\db\ActiveRecord
             'address' => Yii::t('app', 'Address'),
             'email' => Yii::t('app', 'Email'),
             'phone' => Yii::t('app', 'Phone'),
-            'phone_number' => Yii::t('app', 'Phone Number'),
+            'phone_number' => Yii::t('app', 'Phone_Number'),
+            'snap' => Yii::t('app', 'Snap'),
+            'instagram'=> Yii::t('app', 'Instagram'),
+            'twitter'=> Yii::t('app', 'Twitter'),
+            'facebook'=> Yii::t('app', 'Facebook'),
+            
+            
+
+
         ];
     }
 
