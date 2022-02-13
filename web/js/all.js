@@ -43,7 +43,7 @@ function register_coure(event,course_id, is_logddin,registed){
                 
                 document.getElementById(`st_${course_id}`).textContent='تسجيل في الدورة';
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'success',
                     title: 'تم الغاء تسجيلك بنجاح',
                     showConfirmButton: false,
@@ -62,7 +62,7 @@ function register_coure(event,course_id, is_logddin,registed){
               
                 document.getElementById(`st_${course_id}`).textContent='ألغاء التسجيل';
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'success',
                     title: 'تم تسجيلك بنجاح',
                     showConfirmButton: false,

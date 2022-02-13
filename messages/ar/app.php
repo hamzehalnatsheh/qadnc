@@ -71,7 +71,9 @@ return [
     'Start_Time'=>'وقت البداية',
     'End_Time'=>'وقت النهاية' ,
     'Sagisted_Courses'=>'الدورات المقترحة',
-    'YouTube'=>'رابط اليوتيوب'
+    'YouTube'=>'رابط اليوتيوب',
+    'Update Slider'=> 'تعديل السلايدر',
+    'Are you sure you want to delete this item?'=> 'هل انت متأكد من حذف العنصر؟'
 
 
 

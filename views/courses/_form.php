@@ -16,7 +16,7 @@ use kartik\time\TimePicker;
 
     <div class="row">
         <div class="col-md-4">
-            <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'title')->textInput(['maxlength' => true, 'autocomplete' => 'off',]) ?>
         </div>
         <div class="col-md-4">
             <?= $form->field($model, 'start_at')->widget(

@@ -51,12 +51,12 @@ $regist_course=($is_loggedin == false || ($is_loggedin == true && !empty($coures
                     <?= $course->description; ?>
                 </div>
                 <hr>
-                <button type="submit" class="btn <?= $regist_course ?'btn-primary':'btn-success' ?>  register_coure" onclick="register_coure(event,<?= $course->id ?>,<?= $is_loggedin_str ?>,<?= ($is_loggedin == false || ($is_loggedin == true && !empty($coures_user))) ? 'true' : 'false' ?>)" course_id="<?= $course->id ?>" is_loggedin="<?= $is_loggedin_str ?>">
+                <button type="submit" class="btn <?= $regist_course ?'btn-primary':'btn-outline-primary' ?>  register_coure" onclick="register_coure(event,<?= $course->id ?>,<?= $is_loggedin_str ?>,<?= ($is_loggedin == false || ($is_loggedin == true && !empty($coures_user))) ? 'true' : 'false' ?>)" course_id="<?= $course->id ?>" is_loggedin="<?= $is_loggedin_str ?>">
                     <strong id="st_<?= $course->id ?>">
                         <?= ($is_loggedin == false || ($is_loggedin == true && !empty($coures_user))) ? ' الغاء التسجيل' : 'تسجيل في الدورة' ?>
                     </strong>
                 </button>
-                <div class="course-options">
+                <div class="course-options mt-4">
                     <i class="far fa-bookmark pl-2"></i>
                     <strong>تصنيف الدورة: </strong>
                     <?= $course['categorytype']['name']; ?>

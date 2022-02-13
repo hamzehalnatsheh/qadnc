@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
 
         <?php if (Yii::$app->session->hasFlash('success-edit')) : ?>
-            <div class="alert alert-secondary" role="alert">
+            <div class="alert alert-success" role="alert">
                 تم بنجاح
             </div>
 

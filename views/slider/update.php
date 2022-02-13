@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\slider\Slider */
 
-$this->title = Yii::t('app', 'Update Slider: {name}', [
+$this->title = Yii::t('app', 'تعديل السلايدر: {name}', [
     'name' => $model->title,
 ]);
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Sliders'), 'url' => ['index']];
