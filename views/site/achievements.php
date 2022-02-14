@@ -6,7 +6,18 @@ $this->title = $achievement->title ;
         <div class="row">
             <div class="col-12 col-lg-5">
                 <div>
-                    <img src="<?= Yii::$app->request->baseUrl . '/' . $achievement->image  ?>" width="100%" />
+                    <?php if(str_contains($achievement->image, 'youtube')):?>
+                        <?php 
+                             
+                             $parsed_video = parse_url($achievement->vedio, PHP_URL_QUERY);
+                             parse_str($parsed_video, $arr);?>
+                        <iframe width="100%" height="443" class="yvideo" id="p1QgNF6J1h0"
+                                src="https://www.youtube.com/embed/<?= $arr['v'];  ;?>"
+                                frameborder="0" allowfullscreen>
+                    </iframe>
+                    <?php else:?>
+                        <img src="<?= Yii::$app->request->baseUrl . '/' . $achievement->image  ?>" width="100%" />
+                     <?php endif;?>   
                 </div>
             </div>
             <div class="col-12 col-lg-7">

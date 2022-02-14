@@ -44,7 +44,21 @@ $this->params['breadcrumbs'][] = $this->title;
             //'status',
             //'created_at',
             //'updated_at',
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'template' => '{update} {delete}{view}',
+                'buttons' => [
+                    'delete' => function($url, $model){
+                        return Html::a('<span class="glyphicon glyphicon-trash"></span>', ['delete', 'id' => $model->id], [
+                            'class' => '',
+                            'data' => [
+                                'confirm' =>  Yii::t('app', 'Are you sure you want to delete this item?'),
+                                'method' => 'post',
+                            ],
+                        ]);
+                    }
+                ]
+            ],
         ],
     ]); ?>
 
