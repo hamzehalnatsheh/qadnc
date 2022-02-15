@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\achievements\Achievements */
 
-$this->title = Yii::t('app', 'Update Achievements: {name}', [
+$this->title = Yii::t('app', 'تعديل إنجاز: {name}', [
     'name' => $model->title,
 ]);
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Achievements'), 'url' => ['index']];

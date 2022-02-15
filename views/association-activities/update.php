@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\associationactivities\AssociationActivities */
 
-$this->title = Yii::t('app', 'Update Association Activities: {name}', [
+$this->title = Yii::t('app', 'تعديل أنشطة الجمعية: {name}', [
     'name' => $model->name,
 ]);
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Association Activities'), 'url' => ['index']];

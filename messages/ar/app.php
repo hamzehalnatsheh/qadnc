@@ -84,7 +84,8 @@ return [
     'Password_Repeat'=>'تأكيد الباسورد',
     'This email address has already been taken'=>'هذا الايميل مأـخوذ ',
     "Passwords don't match"=>"كلمات المرور غير متطابقة",
-    'Are you sure you want to delete this item?'=>'هل انت متأكد من حذف العنصر'
+    'Are you sure you want to delete this item?'=>'هل انت متأكد من حذف العنصر',
+    'Delete'=> 'حذف'
 
     
 

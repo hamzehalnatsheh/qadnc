@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\memberscouncil\MembersCouncil */
 
-$this->title = Yii::t('app', 'Update Members Council: {name}', [
+$this->title = Yii::t('app', 'تعديل مجلس الإدارة: {name}', [
     'name' => $model->name,
 ]);
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Members Councils'), 'url' => ['index']];

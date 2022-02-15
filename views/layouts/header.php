@@ -18,6 +18,7 @@ use yii\helpers\Html;
 
                 <li><a href="/#aboutUs"><span>من نحن</span></a></li>
                 <li><a href="/#activity"><span>أنشطة الجمعية</span></a></li>
+                <li><a href="/#achievements"><span>الأخبار والإعلانات</span></a></li>
                 <li><a href="/#contactUs"><span>اتصل بنا</span></a></li>
 
 
@@ -85,6 +86,7 @@ use yii\helpers\Html;
                                 <ul class="dropdown arrow-top">
                                     <li><a href="/#aboutUs">من نحن</a></li>
                                     <li><a href="/#activity">أنشطة الجمعية</a></li>
+                                    <li><a href="/#achievements">الأخبار والإعلانات</a></li>
                                     <li><a href="/#contactUs">اتصل بنا</a></li>
                                 </ul>
                             </li>

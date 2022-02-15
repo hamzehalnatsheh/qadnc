@@ -85,7 +85,7 @@ $this->title = 'Application';
         </div>
     </div>
 </div>
-<div class="achievements">
+<div id="achievements" class="achievements">
     <div class="container">
         <div class="row text-center">
             <div class="col-12 ">

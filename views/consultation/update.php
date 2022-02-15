@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\consultation\Consultation */
 
-$this->title = Yii::t('app', 'Update Consultation: {name}', [
+$this->title = Yii::t('app', 'تعديل استشارة: {name}', [
     'name' => $model->id,
 ]);
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Consultations'), 'url' => ['index']];
