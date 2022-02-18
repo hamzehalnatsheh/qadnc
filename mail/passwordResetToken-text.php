@@ -38,8 +38,15 @@ $resetLink = Yii::$app->urlManager->createAbsoluteUrl(['site/reset-password', 't
                                     <span style="display:inline-block; vertical-align:middle; margin:29px 0 26px; border-bottom:1px solid #cecece; width:100px;"></span>
                                     <p style="color:#455056; font-size:15px;line-height:24px; margin:0;">
                                         لإعادة تعيين كلمة المرور الخاصة بك ، انقر فوق الرابط التالي
-                                    </p>
-                                    <a href="<?= Html::encode($resetLink), $resetLink ?>" style="background:#00d0c5;text-decoration:none !important; font-weight:800; margin-top:35px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">
+                                    </p>    
+
+                                    <?= Html::a(' إعادة تعيين', $resetLink,['style'=>'background:#00d0c5;text-decoration:none !important; font-weight:800; margin-top:35px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;']) ?>
+
+
+
+                                    
+                                    <a href="/<?= Html::encode($resetLink), $resetLink ?>" 
+                                    style="background:#00d0c5;text-decoration:none !important; font-weight:800; margin-top:35px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">
                                         إعادة تعيين
                                     </a>
                                 </td>
