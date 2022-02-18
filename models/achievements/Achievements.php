@@ -3,6 +3,7 @@
 namespace app\models\achievements;
 
 use app\components\AchievementValidator;
+use phpDocumentor\Reflection\Types\Self_;
 use Yii;
 use yii\web\UploadedFile;
 
@@ -18,6 +19,8 @@ use yii\web\UploadedFile;
 class Achievements extends \yii\db\ActiveRecord
 {
     public  $file;
+    const Create="create";
+    const Update='update';
  
     /**
      * {@inheritdoc}
@@ -34,33 +37,37 @@ class Achievements extends \yii\db\ActiveRecord
     {
      
         return [
-            [['title', 'body'], 'required'],
-            [['body'], 'string'],
-            [['title'], 'string', 'max' => 1000],
-            [['vedio'], 'string', 'max' => 265],
-            [['file'], 'image', 'skipOnEmpty' => true, 'extensions' => 'png,jpg,jpeg,gif']    
+            [['title', 'body'], 'required','on'=>[self::Create ,self::Update ]],
+            [['body'], 'string','on'=>[self::Create ,self::Update ]],
+            [['title'], 'string', 'max' => 1000,'on'=>[self::Create ,self::Update ]],
+            [['vedio'], 'string', 'max' => 265,'on'=>[self::Create ,self::Update ]],
+            [['file'], 'image', 'skipOnEmpty' => true, 'extensions' => 'png,jpg,jpeg,gif','on'=>[self::Create ,self::Update ]]    
         ];
     }
 
 
 
-    public function beforeValidate()
+    public function afterValidate()
     {
         if (parent::beforeValidate()) {
             $this->file = UploadedFile::getInstance($this, 'file');
-            if(empty($this->vedio) &&  (empty($this->file) == true)){
-                $this->addError('file', 'يجب عليك اضافة رابط يوتيوب او صوره'); 
-                return false;
-            }elseif(isset($this->vedio) &&  (empty($this->file) == false)){
-                $this->addError('file', 'يجب عليك اضافة رابط يوتيوب او صوره'); 
-                return false;
-            }elseif(isset($this->vedio) &&  (empty($this->file) == true)){
-             
-                if (!preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/\s]{11})%i', $this->vedio, $match)) {
-                    $this->addError('vedio', 'الرابط غير صحيح'); 
+            if($this->scenario == self::Create){
+
+                if(empty($this->vedio) &&  (empty($this->file) == true)){
+                    $this->addError('file', 'يجب عليك اضافة رابط يوتيوب او صوره'); 
                     return false;
+                }elseif(isset($this->vedio) &&  (empty($this->file) == false)){
+                    $this->addError('file', 'يجب عليك اضافة رابط يوتيوب او صوره'); 
+                    return false;
+                }elseif(isset($this->vedio) &&  (empty($this->file) == true)){
+                 
+                    if (!preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/\s]{11})%i', $this->vedio, $match)) {
+                        $this->addError('vedio', 'الرابط غير صحيح'); 
+                        return false;
+                    }
                 }
             }
+           
 
             return true;
         }

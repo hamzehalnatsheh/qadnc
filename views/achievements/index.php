@@ -30,7 +30,18 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'title',
             'body:ntext',
-            'image',
+         
+            [
+                'attribute' => 'image',
+                'value'=> function($searchModel){
+                     if(str_contains($searchModel->image, 'youtube')){
+                            return  $searchModel->image;
+                    }else{
+                        return '/'.$searchModel->image;
+                    }
+                },
+                'format' => ['image',['width'=>'100','height'=>'100']],
+            ],
             'vedio',
 
             ['class' => 'yii\grid\ActionColumn'],

@@ -32,7 +32,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'name',
             'position',
-            'image',
+            // 'image',
+            [
+                'attribute' => 'image',
+                'value'=> '/'.$model->image,
+                'format' => ['image',['width'=>'100','height'=>'100']],
+            ],
             'general_definition:ntext',
             'experiences:ntext',
             'courses:ntext',

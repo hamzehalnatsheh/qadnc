@@ -33,6 +33,26 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'position',
             'image',
+
+            [
+
+                'attribute' => 'image',
+    
+                'format' => 'html',
+    
+    
+                'value' => function ($data) {
+                   
+    
+                    return Html::img('/'.$data['image'],
+    
+                        ['width' => '60px']);
+    
+                },
+    
+            ],
+
+            
             'general_definition:ntext',
             'experiences:ntext',
             'courses:ntext',

@@ -32,7 +32,18 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'title',
             'body:ntext',
-            'image',
+            [
+                'attribute' => 'image',
+                'value'=>function($model){
+                    if(str_contains($model->image, 'youtube')){
+                           return  $model->image;
+                   }else{
+                       return '/'.$model->image;
+                   }
+               },
+                'format' => ['image',['width'=>'100','height'=>'100']],
+              ],
+          
             'vedio',
         ],
     ]) ?>

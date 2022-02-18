@@ -109,7 +109,7 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->redirect(['courses/index']);
+            return $this->goHome();
         }
 
         $model->password = '';
