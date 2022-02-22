@@ -16,7 +16,7 @@ $this->title = ' أعضاء الجمعية المؤسسين' ;
 
         use yii\helpers\Html;
         foreach ($membersCouncil as $membersCou):?>
-                <div class="col-4 mb-5 text-center">
+                <div class="col-12 col-sm-6 col-lg-4 mb-5 text-center">
                     <div class="mb-3">
                         <?= \yii\helpers\Html::img( "/$membersCou->image" ,["alt"=>"", "class"=>"board-img"]);?>
                     </div>
