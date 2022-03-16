@@ -52,6 +52,7 @@ return [
     'Contactuses'=>'اتصل بنا',
     'Members Councils'=>'مجلس الاداره',
     'Create Members Council'=>'إضافة عضو جديد',
+    'Create Member'=>'إضافة عضو جديد',
     'General Definition'=>'تعريف عام',
     'Experiences'=>'الخبرات',
     'Position'=>'المنصب',

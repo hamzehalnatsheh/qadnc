@@ -4,7 +4,7 @@ $this->title = $achievement->title ;
 <div id="achievements" class="board">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-lg-5">
+            <div class="col-12 col-lg-6">
                 <div>
                     <?php if(str_contains($achievement->image, 'youtube')):?>
                         <?php 
@@ -20,7 +20,7 @@ $this->title = $achievement->title ;
                      <?php endif;?>   
                 </div>
             </div>
-            <div class="col-12 col-lg-7">
+            <div class="col-12 col-lg-6">
                 <div>
                     <h1 class="course-title">
                         <strong>
