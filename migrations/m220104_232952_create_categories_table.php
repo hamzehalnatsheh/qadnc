@@ -21,8 +21,11 @@ class m220104_232952_create_categories_table extends Migration
 
         $this->createTable('{{%categories}}', [
             'id' => $this->primaryKey(),
-            'name'=>$this->string(250)
-        ],$tableOptions);
+            'name' => $this->string()->notNull(),
+            'description' => $this->text()->null(),
+            'image' => $this->string()->null(),
+            'category_id' => $this->integer()->null(),
+        ], $tableOptions);
     }
 
     /**

@@ -4,17 +4,21 @@ namespace app\controllers;
 
 use app\models\categories\Categories;
 use app\models\categories\CategoriesSearch;
-use app\models\User;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\models\User;
 use Yii;
+
+
 /**
  * CategoriesController implements the CRUD actions for Categories model.
  */
 class CategoriesController extends Controller
 {
-
+    /**
+     * @inheritDoc
+     */
 
     public function init()
     {
@@ -22,14 +26,11 @@ class CategoriesController extends Controller
         parent::init();
         if (\Yii::$app->user->isGuest) {
             return $this->redirect('site/login');
-        }elseif (Yii::$app->user->identity->type != User::SUPER_ADMIN) {
+        } elseif (Yii::$app->user->identity->type != User::SUPER_ADMIN) {
             throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
         }
 
     }
-    /**
-     * @inheritDoc
-     */
     public function behaviors()
     {
         return array_merge(
